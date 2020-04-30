@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalClasses\KanbanSystemContextRepository.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardList.cs" />
     <Compile Include="Model\Comment.cs" />
