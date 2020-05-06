@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="AdditionalClasses\KanbanSystemContextRepository.cs" />
     <Compile Include="Model\Card.cs" />
+    <Compile Include="Model\CardActivity.cs" />
     <Compile Include="Model\CardList.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\KanbanSystemContext.cs" />
