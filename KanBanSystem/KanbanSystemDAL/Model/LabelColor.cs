@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanbanSystemDAL.Model
 {
-    [Table("LabelColors")]
     [Serializable]
     public class LabelColor
     {

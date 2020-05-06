@@ -2,6 +2,7 @@
 
 namespace KanbanSystemDAL.Model
 {
+    [Serializable]
     public class CardActivity
     {
         public int CardActivityId { get; set; }

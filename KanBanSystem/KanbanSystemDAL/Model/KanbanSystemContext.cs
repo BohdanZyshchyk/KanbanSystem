@@ -19,6 +19,9 @@ namespace KanbanSystemDAL.Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<LoginData>()
+                .HasOptional(ld => ld.User)
+                .WithRequired(u => u.LoginData);
         }
     }
 }

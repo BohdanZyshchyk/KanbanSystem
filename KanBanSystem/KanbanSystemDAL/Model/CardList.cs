@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanbanSystemDAL.Model
 {
-    [Table("CardLists")]
     [Serializable]
     public class CardList
     {

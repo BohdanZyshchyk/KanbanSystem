@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanbanSystemDAL.Model
 {
-    [Table("LoginDatas")]
     [Serializable]
     public class LoginData
     {
