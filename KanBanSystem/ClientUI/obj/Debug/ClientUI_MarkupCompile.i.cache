@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\bohdan.zyshchuk\Documents\KanbanSystem\KanBanSystem\ClientUI\App.xaml
-11151548125
+3-726179587
 
-6-1015772894
-13152784993
-MainWindow.xaml;
+8-889042579
+15-2065796237
+View\LoginWindow.xaml;View\MainWindow.xaml;View\UserRegistrationWindow.xaml;
 
 True
 
