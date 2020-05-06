@@ -14,6 +14,7 @@ namespace KanbanSystemDAL.Model
         [StringLength(30)]
         public string Name { get; set; }
         public virtual ICollection<Card> Cards { get; set; }
+        public virtual Board Board { get; set; }
         public virtual User Creator { get; set; }
         public CardList()
         {

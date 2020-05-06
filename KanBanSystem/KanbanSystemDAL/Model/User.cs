@@ -18,12 +18,14 @@ namespace KanbanSystemDAL.Model
         public virtual LoginData LoginData { get; set; }
         public virtual ICollection<CardList> CreatedCardLists { get; set; }
         public virtual ICollection<CardActivity> CardActivities { get; set; }
+        public virtual ICollection<Board> Boards { get; set; }
         public User()
         {
             Cards = new HashSet<Card>();
             UserComments = new HashSet<Comment>();
             CreatedCardLists = new HashSet<CardList>();
             CardActivities = new HashSet<CardActivity>();
+            Boards = new HashSet<Board>();
         }
     }
 }
