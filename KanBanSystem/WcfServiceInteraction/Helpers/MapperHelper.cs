@@ -135,7 +135,7 @@ namespace WcfServiceInteraction.Helpers
                 .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))
                 .ForMember(dest => dest.Cards, opt => opt.MapFrom(src => src.Cards));
 
-                x.CreateMap<LabelColor, LabelColorDTO>()
+                x.CreateMap<LabelColorDTO, LabelColor>()
                 .ForMember(dest => dest.Color, opt => opt.MapFrom(src => src.Color))
                 .ForMember(dest => dest.Cards, opt => opt.MapFrom(src => src.Cards));
             });
