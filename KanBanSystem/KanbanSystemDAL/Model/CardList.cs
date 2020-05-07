@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanbanSystemDAL.Model
 {
     [Serializable]
-    public class CardList
+    public class CardList : IComparable<CardList>
     {
         public int Id { get; set; }
         [Required]
@@ -18,6 +17,11 @@ namespace KanbanSystemDAL.Model
         public CardList()
         {
             Cards = new HashSet<Card>();
+        }
+
+        public int CompareTo(CardList other)
+        {
+            return this.Name.CompareTo(other.Name);
         }
     }
 }

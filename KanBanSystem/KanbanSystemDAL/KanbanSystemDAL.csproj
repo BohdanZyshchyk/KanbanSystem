@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalClasses\EntityInteraction\EntityInteractionBase.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\LoginDataInteraction.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\UserInteraction.cs" />
+    <Compile Include="AdditionalClasses\Helpers\FindHelper.cs" />
+    <Compile Include="AdditionalClasses\Helpers\UpdateHelper.cs" />
+    <Compile Include="AdditionalClasses\Interfaces\IEntityInteraction.cs" />
     <Compile Include="AdditionalClasses\KanbanSystemContextRepository.cs" />
     <Compile Include="Migrations\202005061849219_Initial.cs" />
     <Compile Include="Migrations\202005061849219_Initial.designer.cs">
@@ -77,6 +83,7 @@
       <DependentUpon>202005061849219_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

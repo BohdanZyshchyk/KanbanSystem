@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanbanSystemDAL.Model
 {
     [Serializable]
-    public class LabelColor
+    public class LabelColor : IComparable<LabelColor>
     {
         public int Id { get; set; }
         [Required]
@@ -16,6 +15,11 @@ namespace KanbanSystemDAL.Model
         public LabelColor()
         {
             Cards = new HashSet<Card>();
+        }
+
+        public int CompareTo(LabelColor other)
+        {
+            return this.Color.CompareTo(other.Color);
         }
     }
 }
