@@ -1,4 +1,5 @@
 ﻿using KanbanSystemDAL.AdditionalClasses.EntityInteraction;
+using KanbanSystemDAL.AdditionalClasses.Interfaces;
 using KanbanSystemDAL.Model;
 using System;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace KanbanSystemDAL.AdditionalClasses
         UserInteraction userInteraction;
         public KanbanSystemContextRepository()
         {
+            
         }
         public KanbanSystemContext KanbanSystemContext { get { return context ?? new KanbanSystemContext(); } }
         public BoardInteraction BoardInteraction { get { return boardInteraction ?? new BoardInteraction(KanbanSystemContext); } }

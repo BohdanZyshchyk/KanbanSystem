@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,9 +57,27 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IService1.cs" />
+    <Compile Include="DTO\BoardDTO.cs" />
+    <Compile Include="DTO\CardActivityDTO.cs" />
+    <Compile Include="DTO\CardDTO.cs" />
+    <Compile Include="DTO\CardListDTO.cs" />
+    <Compile Include="DTO\CommentDTO.cs" />
+    <Compile Include="DTO\LabelColorDTO.cs" />
+    <Compile Include="DTO\LoginDataDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Helpers\MapperHelper.cs" />
+    <Compile Include="IKanBanSystemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service1.cs" />
+    <Compile Include="KanBanSystemService.cs" />
+    <Compile Include="ServiceInterfaces\IBoardService.cs" />
+    <Compile Include="ServiceInterfaces\ICardActivityService.cs" />
+    <Compile Include="ServiceInterfaces\ICardListService.cs" />
+    <Compile Include="ServiceInterfaces\ICardService.cs" />
+    <Compile Include="ServiceInterfaces\ICommentService.cs" />
+    <Compile Include="ServiceInterfaces\IEntityService.cs" />
+    <Compile Include="ServiceInterfaces\ILabelColorService.cs" />
+    <Compile Include="ServiceInterfaces\ILoginDataService.cs" />
+    <Compile Include="ServiceInterfaces\IUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,6 +89,7 @@
       <Name>KanbanSystemDAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

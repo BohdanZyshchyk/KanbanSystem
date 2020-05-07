@@ -51,7 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalClasses\EntityInteraction\BoardInteraction.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\CardActivityInteraction.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\CardInteraction.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\CardListInteraction.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\CommentInteraction.cs" />
     <Compile Include="AdditionalClasses\EntityInteraction\EntityInteractionBase.cs" />
+    <Compile Include="AdditionalClasses\EntityInteraction\LabelColorInteraction.cs" />
     <Compile Include="AdditionalClasses\EntityInteraction\LoginDataInteraction.cs" />
     <Compile Include="AdditionalClasses\EntityInteraction\UserInteraction.cs" />
     <Compile Include="AdditionalClasses\Helpers\FindHelper.cs" />
