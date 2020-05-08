@@ -57,6 +57,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallbackInterfaces\IBoardInteractionCallback.cs" />
     <Compile Include="DTO\BoardDTO.cs" />
     <Compile Include="DTO\CardActivityDTO.cs" />
     <Compile Include="DTO\CardDTO.cs" />

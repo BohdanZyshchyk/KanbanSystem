@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WcfServiceInteraction.CallbackInterfaces
 {
-    interface IBoardInteractionCallback
+    public interface IBoardInteractionCallback
     {
+
     }
 }
