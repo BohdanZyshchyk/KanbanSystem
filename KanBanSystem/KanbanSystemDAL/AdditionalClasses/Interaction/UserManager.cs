@@ -1,5 +1,6 @@
 ﻿using KanbanSystemDAL.AdditionalClasses.Helpers;
 using KanbanSystemDAL.Model;
+using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
@@ -12,16 +13,30 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             context = _context;
         }
-        public async void Register(User user)
+        public async Task RegisterAsync(User user)
         {
-            var foundUser = await FindHelper<User>.FindEntityAsync(context.Users, user);
-            foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data is already in DB", true);
-            context.Users.Add(user);
+            try
+            {
+                var foundUser = await FindHelper<User>.FindEntityAsync(context.Users, user);
+                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data is already in DB", true);
+                context.Users.Add(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public async Task<User> Login(LoginData loginData)
+        public async Task<User> LoginAsync(LoginData loginData)
         {
-            var foundUser = await context.Users.FirstOrDefaultAsync(x => x.LoginData.CompareTo(loginData).Equals(0));
-            return CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data not found", false);
+            try
+            {
+                var foundUser = await context.Users.FirstOrDefaultAsync(x => x.LoginData.CompareTo(loginData).Equals(0));
+                return CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data not found", false);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

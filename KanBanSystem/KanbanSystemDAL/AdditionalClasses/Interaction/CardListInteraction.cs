@@ -13,21 +13,21 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             context = _context;
         }
-        public async void AddCardToCardListAsync(CardList cardList, Card card)
+        public async Task AddCardToCardListAsync(CardList cardList, Card card)
         {
             var foundCardList = await FindCardList(cardList);
             var foundCard = await FindHelper<Card>.FindEntityAsync(foundCardList.Cards, card);
             foundCard = CheckNullHelper<Card>.CheckNullable(foundCard, "Card is already in this card list!", true);
             foundCardList.Cards.Add(card);
         }
-        public async void RemoveCardFromCardListAsync(CardList cardList, Card card)
+        public async Task RemoveCardFromCardListAsync(CardList cardList, Card card)
         {
             var foundCardList = await FindCardList(cardList);
             var foundCard = await FindHelper<Card>.FindEntityAsync(foundCardList.Cards, card);
             foundCard = CheckNullHelper<Card>.CheckNullable(foundCard, "Card not found!", false);
             foundCardList.Cards.Remove(foundCard);
         }
-        public async void RenameCardListAsync(CardList cardList, string newName)
+        public async Task RenameCardListAsync(CardList cardList, string newName)
         {
             var foundCardList = await FindCardList(cardList);
             if (foundCardList.Name.Equals(newName))

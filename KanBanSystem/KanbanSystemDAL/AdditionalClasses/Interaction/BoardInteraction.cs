@@ -15,44 +15,79 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         }
         public async Task AddUserToBoardAsync(Board board, User user)
         {
-            var foundBoard = await FindBoardASync(board);
-            var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
-            foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this board!", true);
-            foundBoard.Users.Add(user);
+            try
+            {
+                var foundBoard = await FindBoardASync(board);
+                var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
+                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this board!", true);
+                foundBoard.Users.Add(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public async Task RemoveUserFromBoardAsync(Board board, User user)
         {
-            var foundBoard = await FindBoardASync(board);
-            var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
-            foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
-            foundBoard.Users.Remove(foundUser);
+            try
+            {
+                var foundBoard = await FindBoardASync(board);
+                var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
+                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
+                foundBoard.Users.Remove(foundUser);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public async Task AddCardListToBoardAsync(Board board, CardList cardList)
         {
-            var foundBoard = await FindBoardASync(board);
-            var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
-            foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list is already in this board!", true);
-            foundBoard.CardLists.Add(cardList);
+            try
+            {
+                var foundBoard = await FindBoardASync(board);
+                var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
+                foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list is already in this board!", true);
+                foundBoard.CardLists.Add(cardList);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public async Task RemoveCardListFromBoardAsync(Board board, CardList cardList)
         {
-            var foundBoard = await FindHelper<Board>.FindEntityAsync(context.Boards, board);
-            var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
-            foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list not found!", false);
-            foundBoard.CardLists.Remove(foundCardList);
+            try
+            {
+                var foundBoard = await FindBoardASync(board);
+                var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
+                foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list not found!", false);
+                foundBoard.CardLists.Remove(foundCardList);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public async Task RenameBoardAsync(Board board, string newName)
         {
-            var foundBoard = await FindHelper<Board>.FindEntityAsync(context.Boards, board);
-            if (foundBoard.Name.Equals(newName))
+            try
             {
-                throw new Exception("Names are equal!");
+                var foundBoard = await FindBoardASync(board);
+                if (foundBoard.Name.Equals(newName))
+                {
+                    throw new Exception("Names are equal!");
+                }
+                else
+                {
+                    context.Entry<Board>(foundBoard).State = EntityState.Detached;
+                    foundBoard.Name = newName;
+                    context.Entry<Board>(foundBoard).State = EntityState.Modified;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                context.Entry<Board>(foundBoard).State = EntityState.Detached;
-                foundBoard.Name = newName;
-                context.Entry<Board>(foundBoard).State = EntityState.Modified;
+                throw ex;
             }
         }
         private async Task<Board> FindBoardASync(Board board)

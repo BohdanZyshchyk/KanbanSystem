@@ -6,22 +6,22 @@ using WcfServiceInteraction.DTO;
 
 namespace WcfServiceInteraction.Helpers
 {
-    public class MapperHelper
+    public static class MapperHelper
     {
-        public IMapper BoardMapper { get; private set; }
-        public IMapper CardActivityMapper { get; private set; }
-        public IMapper CardMapper { get; private set; }
-        public IMapper CardListMapper { get; private set; }
-        public IMapper CommentMapper { get; private set; }
-        public IMapper LabelColorMapper { get; private set; }
-        public IMapper LoginDataMapper { get; private set; }
-        public IMapper UserMapper { get; private set; }
-        public MapperHelper()
+        public static IMapper BoardMapper { get; private set; }
+        public static IMapper CardActivityMapper { get; private set; }
+        public static IMapper CardMapper { get; private set; }
+        public static IMapper CardListMapper { get; private set; }
+        public static IMapper CommentMapper { get; private set; }
+        public static IMapper LabelColorMapper { get; private set; }
+        public static IMapper LoginDataMapper { get; private set; }
+        public static IMapper UserMapper { get; private set; }
+        static MapperHelper()
         {
             CreateMaps();
         }
 
-        private void CreateMaps()
+        private static void CreateMaps()
         {
             BoardMapper = GetBoardMapper();
             CardMapper = GetCardMapper();
@@ -33,7 +33,7 @@ namespace WcfServiceInteraction.Helpers
             UserMapper = GetUserMapper();
         }
 
-        private IMapper GetBoardMapper()
+        private static IMapper GetBoardMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -49,7 +49,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetCardMapper()
+        private static IMapper GetCardMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -77,7 +77,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetCardActivityMapper()
+        private static IMapper GetCardActivityMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -95,7 +95,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetCardListMapper()
+        private static IMapper GetCardListMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -113,7 +113,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetCommentMapper()
+        private static IMapper GetCommentMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -129,7 +129,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetLabelColorMapper()
+        private static IMapper GetLabelColorMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -143,7 +143,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetLoginDataMapper()
+        private static IMapper GetLoginDataMapper()
         {
             var config = new MapperConfiguration(x =>
             {
@@ -159,7 +159,7 @@ namespace WcfServiceInteraction.Helpers
             });
             return config.CreateMapper();
         }
-        private IMapper GetUserMapper()
+        private static IMapper GetUserMapper()
         {
             var config = new MapperConfiguration(x =>
             {
