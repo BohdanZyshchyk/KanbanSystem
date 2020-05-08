@@ -1,12 +1,8 @@
-﻿using AutoMapper;
-using KanbanSystemDAL.AdditionalClasses;
+﻿using KanbanSystemDAL.AdditionalClasses;
 using KanbanSystemDAL.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 using WcfServiceInteraction.CallbackInterfaces;
 using WcfServiceInteraction.DTO;
@@ -263,7 +259,7 @@ namespace WcfServiceInteraction.Services
         private async Task CommitChangesAsync()
         {
             await repository.CommitChangesAsync();
-        } 
+        }
         private async Task SendCallback()
         {
             var boards = await repository.BoardManager.GetEntitiesAsync();
