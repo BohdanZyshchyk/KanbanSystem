@@ -13,35 +13,35 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             context = _context;
         }
-        public async void AddUserToBoardAsync(Board board, User user)
+        public async Task AddUserToBoardAsync(Board board, User user)
         {
             var foundBoard = await FindBoardASync(board);
             var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
             foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this board!", true);
             foundBoard.Users.Add(user);
         }
-        public async void RemoveUserFromBoardAsync(Board board, User user)
+        public async Task RemoveUserFromBoardAsync(Board board, User user)
         {
             var foundBoard = await FindBoardASync(board);
             var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
             foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
             foundBoard.Users.Remove(foundUser);
         }
-        public async void AddCardListToBoardAsync(Board board, CardList cardList)
+        public async Task AddCardListToBoardAsync(Board board, CardList cardList)
         {
             var foundBoard = await FindBoardASync(board);
             var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
             foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list is already in this board!", true);
             foundBoard.CardLists.Add(cardList);
         }
-        public async void RemoveCardListFromBoardAsync(Board board, CardList cardList)
+        public async Task RemoveCardListFromBoardAsync(Board board, CardList cardList)
         {
             var foundBoard = await FindHelper<Board>.FindEntityAsync(context.Boards, board);
             var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
             foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list not found!", false);
             foundBoard.CardLists.Remove(foundCardList);
         }
-        public async void RenameBoardAsync(Board board, string newName)
+        public async Task RenameBoardAsync(Board board, string newName)
         {
             var foundBoard = await FindHelper<Board>.FindEntityAsync(context.Boards, board);
             if (foundBoard.Name.Equals(newName))

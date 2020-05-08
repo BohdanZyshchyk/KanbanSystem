@@ -7,6 +7,7 @@ namespace WcfServiceInteraction.DTO
     {
         public DateTime StartDate { get; set; }
         public DateTime DueDate { get; set; }
+        public string CardName { get; set; }
         public string Description { get; set; }
         public virtual ICollection<LabelColorDTO> LabelColors { get; set; }
         public virtual ICollection<UserDTO> Users { get; set; }

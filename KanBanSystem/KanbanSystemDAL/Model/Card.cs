@@ -30,7 +30,9 @@ namespace KanbanSystemDAL.Model
         }
         public int CompareTo(Card other)
         {
-            return this.Description.CompareTo(other.Description);
+            var res1 = this.CardName.CompareTo(other.CardName);
+            var res2 = this.Description.CompareTo(other.Description);
+            return res1.Equals(0) && res2.Equals(0) ? 0 : -1;
         }
     }
 }
