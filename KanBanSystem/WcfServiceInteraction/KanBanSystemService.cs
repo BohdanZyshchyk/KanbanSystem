@@ -21,16 +21,16 @@ namespace WcfServiceInteraction
         #region ADDs
         public async Task<bool> AddEntityAsync(BoardDTO entity)
         {
-            var res = await contextRepository.BoardInteraction.AddEntityAsync(mapperHelper.BoardMapper.Map<BoardDTO, Board>(entity));
+            await contextRepository.BoardInteraction.AddEntityAsync(mapperHelper.BoardMapper.Map<BoardDTO, Board>(entity));
             var saved = await contextRepository.CommitChangesAsync();
-            return res;
+            return true;
         }
 
         public async Task<bool> AddEntityAsync(CardActivityDTO entity)
         {
-            var res = await contextRepository.CardActivityInteraction.AddEntityAsync(mapperHelper.CardActivityMapper.Map<CardActivityDTO, CardActivity>(entity));
+            await contextRepository.CardActivityInteraction.AddEntityAsync(mapperHelper.CardActivityMapper.Map<CardActivityDTO, CardActivity>(entity));
             var saved = await contextRepository.CommitChangesAsync();
-            return res;
+            return true;
         }
 
         public async Task<bool> AddEntityAsync(CardListDTO entity)

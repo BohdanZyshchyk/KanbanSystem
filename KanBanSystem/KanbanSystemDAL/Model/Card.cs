@@ -13,6 +13,8 @@ namespace KanbanSystemDAL.Model
         [Required]
         public DateTime DueDate { get; set; }
         [Required]
+        public string CardName { get; set; }
+        [Required]
         public string Description { get; set; }
         public virtual ICollection<LabelColor> LabelColors { get; set; }
         public virtual ICollection<User> Users { get; set; }

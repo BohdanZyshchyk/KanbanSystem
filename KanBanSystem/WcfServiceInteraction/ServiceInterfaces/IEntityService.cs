@@ -14,6 +14,5 @@ namespace WcfServiceInteraction.ServiceInterfaces
         Task<bool> RemoveEntityAsync(T entity);
         [OperationContract]
         Task<bool> UpdateEntityAsync(T entity);
-        [OperationContract]
     }
 }

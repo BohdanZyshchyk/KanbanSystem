@@ -1,15 +1,17 @@
 ﻿using KanbanSystemDAL.Model;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KanbanSystemDAL.AdditionalClasses.Helpers
 {
-    public static class UpdateHelper<T> where T: class
+    public static class UpdateHelper<T> where T : class
     {
+        /// <summary>
+        /// Updates in <paramref name="context"/> an <paramref name="oldEntity"/> with values from <paramref name="newEntity"/>
+        /// </summary>
+        /// <param name="context">Context to work in</param>
+        /// <param name="oldEntity">Old entity</param>
+        /// <param name="newEntity">New entity from where to set values</param>
+        /// <returns></returns>
         public static T UpdateEntity(KanbanSystemContext context, T oldEntity, T newEntity)
         {
             context.Entry(oldEntity).State = EntityState.Detached;
