@@ -51,22 +51,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalClasses\EntityInteraction\BoardInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\CardActivityInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\CardInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\CardListInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\CommentInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\EntityInteractionBase.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\LabelColorInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\LoginDataInteraction.cs" />
-    <Compile Include="AdditionalClasses\EntityInteraction\UserInteraction.cs" />
+    <Compile Include="AdditionalClasses\Helpers\CheckNullHelper.cs" />
+    <Compile Include="AdditionalClasses\Helpers\ContextHelper.cs" />
     <Compile Include="AdditionalClasses\Helpers\FindHelper.cs" />
     <Compile Include="AdditionalClasses\Helpers\UpdateHelper.cs" />
+    <Compile Include="AdditionalClasses\Interaction\BoardInteraction.cs" />
+    <Compile Include="AdditionalClasses\Interaction\BoardManager.cs" />
+    <Compile Include="AdditionalClasses\Interaction\CardListInteraction.cs" />
+    <Compile Include="AdditionalClasses\Interaction\CardManager.cs" />
+    <Compile Include="AdditionalClasses\Interaction\ManagerBase.cs" />
+    <Compile Include="AdditionalClasses\Interaction\UserManager.cs" />
     <Compile Include="AdditionalClasses\Interfaces\IEntityInteraction.cs" />
     <Compile Include="AdditionalClasses\KanbanSystemContextRepository.cs" />
     <Compile Include="Migrations\202005061849219_Initial.cs" />
     <Compile Include="Migrations\202005061849219_Initial.designer.cs">
       <DependentUpon>202005061849219_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005081030314_CardModelChanged.cs" />
+    <Compile Include="Migrations\202005081030314_CardModelChanged.designer.cs">
+      <DependentUpon>202005081030314_CardModelChanged.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Board.cs" />
@@ -87,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005061849219_Initial.resx">
       <DependentUpon>202005061849219_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005081030314_CardModelChanged.resx">
+      <DependentUpon>202005081030314_CardModelChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

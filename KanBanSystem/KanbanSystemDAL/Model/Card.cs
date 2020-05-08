@@ -13,6 +13,8 @@ namespace KanbanSystemDAL.Model
         [Required]
         public DateTime DueDate { get; set; }
         [Required]
+        public string CardName { get; set; }
+        [Required]
         public string Description { get; set; }
         public virtual ICollection<LabelColor> LabelColors { get; set; }
         public virtual ICollection<User> Users { get; set; }
@@ -28,7 +30,9 @@ namespace KanbanSystemDAL.Model
         }
         public int CompareTo(Card other)
         {
-            return this.Description.CompareTo(other.Description);
+            var res1 = this.CardName.CompareTo(other.CardName);
+            var res2 = this.Description.CompareTo(other.Description);
+            return res1.Equals(0) && res2.Equals(0) ? 0 : -1;
         }
     }
 }
