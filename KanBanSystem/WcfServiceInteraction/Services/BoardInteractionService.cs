@@ -247,7 +247,7 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async void RenameCardListAsync(CardListDTO cardList, string newName)
+        public async void RenameCardList(CardListDTO cardList, string newName)
         {
             try
             {

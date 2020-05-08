@@ -27,7 +27,7 @@ namespace WcfServiceInteraction.ServiceInterfaces
         [OperationContract]
         void RemoveCardFromCardListAsync(CardListDTO cardList, CardDTO card);
         [OperationContract]
-        void RenameCardListAsync(CardListDTO cardList, string newName);
+        void RenameCardList(CardListDTO cardList, string newName);
         #endregion
 
         #region Card interaction
