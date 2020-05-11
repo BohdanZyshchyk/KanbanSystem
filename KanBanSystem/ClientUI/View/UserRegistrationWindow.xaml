@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="UserRegistrationWindow" Height="450" Width="800">
     <Grid>
-        
+       
     </Grid>
 </Window>
