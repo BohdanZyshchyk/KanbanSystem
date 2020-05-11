@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace ClientUI.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CardWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CardWindow : Window
     {
-        List<string> colors = new List<string>();
-        public MainWindow()
+        public CardWindow()
         {
             InitializeComponent();
-           
-        }
-
-        private void LoadedWind(object sender, RoutedEventArgs e)
-        {
-            colors = new List<string> { "1", "2" };
-            this.DataContext = colors;
         }
     }
 }

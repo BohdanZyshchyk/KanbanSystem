@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ClientUI.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="LoadedWind">
     <Grid>
         <ListView x:Name="lvCardsList" >
             <ListView.ItemsPanel>
@@ -45,15 +45,22 @@
                                 <ColumnDefinition Width="163*"/>
                                 <ColumnDefinition Width="37*"/>
                             </Grid.ColumnDefinitions>
-                            <ListView Grid.Row="0" Grid.ColumnSpan="2">
-                                <ListViewItem>
-                                    <StackPanel Orientation="Horizontal" x:Name="lvColorList" >
-                                        <Rectangle Fill="Black" Height="auto" Width="5" ></Rectangle>
-                                    </StackPanel>
-                                </ListViewItem>
-                            </ListView>
-                               
-                           
+
+                            <StackPanel Grid.Row="0" Background="Aquamarine" Orientation="Horizontal" x:Name="lvColorList" >
+                                <ListBox VerticalAlignment="Top" x:Name="lbColors" ItemsSource="{Binding}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Background="Black">
+                                                <Rectangle Fill="Black" Height="auto" Width="15" VerticalAlignment="Top" ></Rectangle>
+                                                <TextBlock Text="{Binding Path=Length}" Background="Black"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+
+
+
                             <TextBlock Grid.Column="0" Grid.Row="1"
                                        Margin="5 2"
                                        Style="{StaticResource MaterialDesignBody2TextBlock}" Grid.ColumnSpan="2" Grid.RowSpan="3">
