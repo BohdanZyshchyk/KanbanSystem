@@ -13,11 +13,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             context = _context;
         }
-        public async void AddUserToCard(Card card, User user)
+        public async Task AddUserToCardAsync(Card card, User user)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 var foundUser = await FindHelper<User>.FindEntityAsync(foundCard.Users, user);
                 foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this card!", true);
                 foundCard.Users.Add(user);
@@ -27,11 +27,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void RemoveUserFromCard(Card card, User user)
+        public async Task RemoveUserFromCardAsync(Card card, User user)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 var foundUser = await FindHelper<User>.FindEntityAsync(foundCard.Users, user);
                 foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
                 foundCard.Users.Remove(foundUser);
@@ -41,11 +41,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void AddLabelColorToCard(Card card, LabelColor labelColor)
+        public async Task AddLabelColorToCardAsync(Card card, LabelColor labelColor)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 var foundLabeColor = await FindHelper<LabelColor>.FindEntityAsync(foundCard.LabelColors, labelColor);
                 foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Such label color is already assigned to this card!", true);
                 foundCard.LabelColors.Add(labelColor);
@@ -55,11 +55,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void RemoveLabelColorFromCard(Card card, LabelColor labelColor)
+        public async Task RemoveLabelColorFromCardAsync(Card card, LabelColor labelColor)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 var foundLabeColor = await FindHelper<LabelColor>.FindEntityAsync(foundCard.LabelColors, labelColor);
                 foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Label color not found!", false);
                 foundCard.LabelColors.Remove(foundLabeColor);
@@ -69,11 +69,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void AddCommentToCard(Card card, Comment comment)
+        public async Task AddCommentToCardAsync(Card card, Comment comment)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 var foundComment = await FindHelper<Comment>.FindEntityAsync(foundCard.Comments, comment);
                 foundComment = CheckNullHelper<Comment>.CheckNullable(foundComment, "Comment is already assigned to a card!", true);
                 foundCard.Comments.Add(comment);
@@ -83,11 +83,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void RemoveCommentFromCard(Card card, Comment comment)
+        public async Task RemoveCommentFromCardAsync(Card card, Comment comment)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 var foundComment = await FindHelper<Comment>.FindEntityAsync(foundCard.Comments, comment);
                 foundComment = CheckNullHelper<Comment>.CheckNullable(foundComment, "Comment was not found!", false);
                 foundCard.Comments.Remove(foundComment);
@@ -97,11 +97,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void ChangeDueDateOfACard(Card card, DateTime date)
+        public async Task ChangeDueDateOfACardAsync(Card card, DateTime date)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 if (foundCard.DueDate.Equals(date))
                 {
                     throw new Exception("Dates are the same!");
@@ -119,11 +119,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async void ChangeNameOfACard(Card card, string newName)
+        public async Task ChangeNameOfACardAsync(Card card, string newName)
         {
             try
             {
-                var foundCard = await FindCard(card);
+                var foundCard = await FindCardAsync(card);
                 if (foundCard.CardName.Equals(newName))
                 {
                     throw new Exception("Names are the same!");
@@ -140,7 +140,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        private async Task<Card> FindCard(Card card)
+        private async Task<Card> FindCardAsync(Card card)
         {
             var foundCard = await FindHelper<Card>.FindEntityAsync(context.Cards, card);
             return foundCard ?? throw new Exception("Card not found!");
