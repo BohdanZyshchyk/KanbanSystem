@@ -25,7 +25,6 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-
                 var b = MapperHelper.GetBoardFromDTO(board);
                 var cl = MapperHelper.GetCardListFromDTO(cardList);
                 await repository.BoardInteraction.AddCardListToBoardAsync(b, cl);
