@@ -10,5 +10,9 @@ namespace WcfServiceInteraction.DTO
         public string Color { get; set; }
         [DataMember]
         public virtual ICollection<CardDTO> Cards { get; set; }
+        public LabelColorDTO()
+        {
+            Cards = Cards ?? new HashSet<CardDTO>();
+        }
     }
 }

@@ -25,5 +25,12 @@ namespace WcfServiceInteraction.DTO
         public virtual ICollection<CommentDTO> Comments { get; set; }
         [DataMember]
         public virtual ICollection<CardActivityDTO> CardActivities { get; set; }
+        public CardDTO()
+        {
+            LabelColors = LabelColors ?? new HashSet<LabelColorDTO>();
+            Users = Users ?? new HashSet<UserDTO>();
+            Comments = Comments ?? new HashSet<CommentDTO>();
+            CardActivities = CardActivities ?? new HashSet<CardActivityDTO>();
+        }
     }
 }

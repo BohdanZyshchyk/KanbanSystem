@@ -14,5 +14,9 @@ namespace WcfServiceInteraction.DTO
         public virtual BoardDTO Board { get; set; }
         [DataMember]
         public virtual UserDTO Creator { get; set; }
+        public CardListDTO()
+        {
+            Cards = Cards ?? new HashSet<CardDTO>();
+        }
     }
 }
