@@ -17,7 +17,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await FindHelper<User>.FindEntityAsync(context.Users, user);
+                var foundUser = await context.Users.FirstOrDefaultAsync(x => x.LoginData.CompareTo(user.LoginData).Equals(0));
                 foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data is already in DB", true);
                 context.Users.Add(user);
             }

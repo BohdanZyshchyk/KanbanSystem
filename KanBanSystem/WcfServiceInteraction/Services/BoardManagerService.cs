@@ -2,6 +2,7 @@
 using KanbanSystemDAL.Model;
 using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 using System.Threading.Tasks;
 using WcfServiceInteraction.CallbackInterfaces;
 using WcfServiceInteraction.DTO;
@@ -10,10 +11,16 @@ using WcfServiceInteraction.ServiceInterfaces;
 
 namespace WcfServiceInteraction.Services
 {
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
     public class BoardManagerService : IBoardManagerService
     {
         KanbanSystemContextRepository repository;
         IServiceCallback serviceCallback;
+        public BoardManagerService()
+        {
+            repository = new KanbanSystemContextRepository();
+            serviceCallback = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+        }
         public async void AddBoardAsync(BoardDTO board)
         {
             try

@@ -73,6 +73,7 @@
     <Compile Include="ServiceInterfaces\IUserManagerService.cs" />
     <Compile Include="Services\BoardInteractionService.cs" />
     <Compile Include="Services\BoardManagerService.cs" />
+    <Compile Include="Services\UserManagerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -205,5 +205,9 @@ namespace WcfServiceInteraction.Helpers
         {
             return UserMapper.Map<UserDTO, User>(userDTO);
         }
+        public static LoginData GetLoginDataFromDTO(LoginDataDTO loginDataDTO)
+        {
+            return LoginDataMapper.Map<LoginDataDTO, LoginData>(loginDataDTO);
+        }
     }
 }
