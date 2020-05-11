@@ -20,7 +20,6 @@ namespace WcfServiceInteraction.Helpers
         {
             CreateMaps();
         }
-
         private static void CreateMaps()
         {
             BoardMapper = GetBoardMapper();
@@ -32,7 +31,6 @@ namespace WcfServiceInteraction.Helpers
             LoginDataMapper = GetLoginDataMapper();
             UserMapper = GetUserMapper();
         }
-
         private static IMapper GetBoardMapper()
         {
             var config = new MapperConfiguration(x =>
@@ -182,6 +180,30 @@ namespace WcfServiceInteraction.Helpers
                 .ForMember(dest => dest.Boards, opt => opt.MapFrom(src => src.Boards));
             });
             return config.CreateMapper();
+        }
+        public static Board GetBoardFromDTO(BoardDTO boardDTO)
+        {
+            return BoardMapper.Map<BoardDTO, Board>(boardDTO);
+        }
+        public static CardList GetCardListFromDTO(CardListDTO cardListDTO)
+        {
+            return CardListMapper.Map<CardListDTO, CardList>(cardListDTO);
+        }
+        public static Card GetCardFromDTO(CardDTO cardDTO)
+        {
+            return CardMapper.Map<CardDTO, Card>(cardDTO);
+        }
+        public static Comment GetCommentFromDTO(CommentDTO commentDTO)
+        {
+            return CommentMapper.Map<CommentDTO, Comment>(commentDTO);
+        }
+        public static LabelColor GetLabelColorFromDTO(LabelColorDTO labelColorDTO)
+        {
+            return LabelColorMapper.Map<LabelColorDTO, LabelColor>(labelColorDTO);
+        }
+        public static User GetUserFromDTO(UserDTO userDTO)
+        {
+            return UserMapper.Map<UserDTO, User>(userDTO);
         }
     }
 }

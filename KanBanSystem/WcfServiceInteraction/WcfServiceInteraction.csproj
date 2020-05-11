@@ -72,6 +72,7 @@
     <Compile Include="ServiceInterfaces\IBoardManagerService.cs" />
     <Compile Include="ServiceInterfaces\IUserManagerService.cs" />
     <Compile Include="Services\BoardInteractionService.cs" />
+    <Compile Include="Services\BoardManagerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
