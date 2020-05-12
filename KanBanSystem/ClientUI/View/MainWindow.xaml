@@ -53,6 +53,9 @@
                                                 <Setter Property="Padding" Value="0"/>
                                             </Style>
                                         </ListBox.ItemContainerStyle>
+                                        <ListBoxItem>
+                                        <Ellipse Fill="Black"></Ellipse>
+                                        </ListBoxItem>
 
                                     </ListBox>
                                     <TextBlock Grid.Column="0" Grid.Row="1"
@@ -69,15 +72,26 @@
                                             <Button Content="Options" />
                                         </StackPanel>
                                     </materialDesign:PopupBox>
-                                    <StackPanel Orientation="Horizontal" Grid.Row="2">
-                                        <materialDesign:Chip Padding="10" Content="ZB"/>
-                                        <materialDesign:Chip Padding="10" Content="ZB"/>
-                                        <materialDesign:Chip Padding="10" Content="ZB" Margin="0,4" Width="40"/>
-                                    </StackPanel>
+                                    
+                                    <ListBox x:Name="userList" Grid.Row="2" VerticalAlignment="Center">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Setter Property="Padding" Value="0"/>
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
+                                        <ListBoxItem>
+                                            <materialDesign:Chip  FontSize="10" Content="ZB" Margin="1 0 0 0" Width="35" Height="35" />
+                                        </ListBoxItem>
+                                    </ListBox>
                                 </Grid>
                             </materialDesign:Card>
                         </ListBoxItem>
-                        
+
                     </ListBox>
                 </StackPanel>
             </ListBoxItem>

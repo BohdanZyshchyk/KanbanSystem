@@ -6,18 +6,20 @@
         xmlns:local="clr-namespace:ClientUI.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CardWindow" Height="579" Width="800">
+        Title="CardWindow" Height="579" Width="648.5" >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="19*"/>
-            <ColumnDefinition Width="377*"/>
-        </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="1">
-            <TextBox x:Name="tbCardName" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     FontSize="20" FontWeight="Bold">NAME</TextBox>
-            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Members</TextBlock>
             <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon  Kind="Application" Height="42" Width="42" VerticalAlignment="Bottom" />
+                <TextBox x:Name="tbCardName" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="20" FontWeight="Bold" Text="NAME"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="AccountAddOutline" VerticalAlignment="Bottom" Height="32" Width="42"/>
+                <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Members</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 0 0 0">
                 <ListBox>
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -36,8 +38,11 @@
                     <materialDesign:PackIcon Kind="Plus" />
                 </Button>
             </StackPanel>
-            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Labels</TextBlock>
             <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ColorLens" VerticalAlignment="Bottom" Height="29" Width="42"/>
+                <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Labels</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 0 0 0">
                 <ListBox HorizontalAlignment="Left" x:Name="labelList">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
@@ -50,39 +55,49 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
                     <ListBoxItem >
-                        <Label Background="Black" Height="20" Width="19"></Label>
+                        <Label Background="Black" Height="30" Width="30"></Label>
                     </ListBoxItem>
                 </ListBox>
                 <Button Style="{StaticResource MaterialDesignIconButton}"
                         Width="25" Height="25"
                         ToolTip="MaterialDesignIconButton"
-                        Background="{DynamicResource MaterialDesignTextFieldBoxBackground}">                    
+                        Background="{DynamicResource MaterialDesignTextFieldBoxBackground}">
                     <materialDesign:PackIcon Kind="Plus" />
                 </Button>
             </StackPanel>
-            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Description</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="PlaylistEdit" Width="42" Height="30"/>
+                <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Description</TextBlock>
+            </StackPanel>
             <TextBox TextWrapping="Wrap"
+                     Margin="40 0 40 0"
                      VerticalAlignment="Stretch"
                      MinWidth="280"
                      AcceptsReturn="True"
                      VerticalScrollBarVisibility="Auto"
                      SpellCheck.IsEnabled="True"
                      materialDesign:HintAssist.Hint="Multiline text"
-                     Height="80">
+                     Height="54">
             </TextBox>
-            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Comment</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="CommentOutline"  VerticalAlignment="Bottom" Height="27" Width="42"/>
+                <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Comment</TextBlock>
+            </StackPanel>
             <TextBox TextWrapping="Wrap"
+                     Margin="40 0 40 0"
                      VerticalAlignment="Stretch"
                      MinWidth="280"
                      AcceptsReturn="True"
                      VerticalScrollBarVisibility="Auto"
                      SpellCheck.IsEnabled="True"
                      materialDesign:HintAssist.Hint="Multiline text"
-                     Height="80">
+                     Height="54">
             </TextBox>
-            <TextBox></TextBox>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="FormatListBulletedSquare" VerticalAlignment="Bottom" Width="42" Height="27" />
             <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Activity</TextBlock>
-            <TextBlock>log</TextBlock>
+            </StackPanel>
+            <TextBlock Margin="40 0 0 0">log</TextBlock>
         </StackPanel>
     </Grid>
 </Window>
