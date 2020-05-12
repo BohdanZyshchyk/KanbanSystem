@@ -17,8 +17,12 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
+                var foundUser = await FindUserInDatabase(user);
+                // find board
                 var foundBoard = await FindBoardASync(board);
-                var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
+                // find user in found board users collection
+                foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
+                // check if found
                 foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this board!", true);
                 foundBoard.Users.Add(user);
             }
@@ -31,8 +35,9 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
+                var foundUser = await FindUserInDatabase(user);
                 var foundBoard = await FindBoardASync(board);
-                var foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
+                foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
                 foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
                 foundBoard.Users.Remove(foundUser);
             }
@@ -92,10 +97,28 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
+        /// <summary>
+        /// Find <paramref name="board"/> in database. If not found exception will be thrown
+        /// </summary>
+        /// <param name="board"></param>
+        /// <returns></returns>
         private async Task<Board> FindBoardASync(Board board)
         {
             var foundBoard = await FindHelper<Board>.FindEntityAsync(context.Boards, board);
             return foundBoard ?? throw new Exception("Board not found!");
+        }
+        /// <summary>
+        /// Find <paramref name="user"/> in database. If not found exception will be thrown
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        private async Task<User> FindUserInDatabase(User user)
+        {
+            // find user in db
+            var foundUser = await FindHelper<User>.FindEntityAsync(context.Users, user);
+            // check if found
+            foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User does not exist in database!", false);
+            return foundUser;
         }
     }
 }
