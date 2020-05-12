@@ -2,6 +2,7 @@
 using KanbanSystemDAL.Model;
 using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace KanbanSystemDAL.AdditionalClasses.Interaction
@@ -17,7 +18,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await context.Users.FirstOrDefaultAsync(x => x.LoginData.CompareTo(user.LoginData).Equals(0));
+                var foundUser = await FindUser(user.LoginData);
                 foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data is already in DB", true);
                 context.Users.Add(user);
             }
@@ -30,13 +31,19 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await context.Users.FirstOrDefaultAsync(x => x.LoginData.CompareTo(loginData).Equals(0));
+                var foundUser = await FindUser(loginData);
                 return CheckNullHelper<User>.CheckNullable(foundUser, "User with such login data not found", false);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+        private async Task<User> FindUser(LoginData loginData)
+        {
+            var users = await context.Users.ToListAsync();
+            var foundUser = users.FirstOrDefault(x => x.LoginData.CompareTo(loginData).Equals(0));
+            return foundUser;
         }
     }
 }

@@ -28,26 +28,26 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddBoardAsync">
+  <xs:element name="AddBoard">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q5:BoardDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddBoardAsyncResponse">
+  <xs:element name="AddBoardResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveBoardAsync">
+  <xs:element name="RemoveBoard">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q6:BoardDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveBoardAsyncResponse">
+  <xs:element name="RemoveBoardResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -60,18 +60,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="RefreshBoardsResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="InformAboutLogin">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="InformAboutLoginResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

@@ -13,12 +13,12 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// </summary>
         /// <param name="user"></param>
         [OperationContract]
-        void RegisterAsync(UserDTO user);
+        void Register(UserDTO user);
         /// <summary>
         /// Login into system using <paramref name="loginData"/>
         /// </summary>
         /// <param name="loginData"></param>
         [OperationContract]
-        Task<UserDTO> LoginAsync(LoginDataDTO loginData);
+        Task<UserDTO> Login(LoginDataDTO loginData);
     }
 }

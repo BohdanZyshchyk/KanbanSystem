@@ -14,7 +14,7 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        Task<IEnumerable<BoardDTO>> GetBoardsAsync();
+        Task<IEnumerable<BoardDTO>> GetBoards();
         /// <summary>
         /// Update an <paramref name="oldBoard"/> with data from <paramref name="newBoard"/>
         /// </summary>
@@ -22,18 +22,18 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="newBoard"></param>
         /// <returns></returns>
         [OperationContract]
-        Task<BoardDTO> UpdateBoardAsync(BoardDTO oldBoard, BoardDTO newBoard);
+        Task<BoardDTO> UpdateBoard(BoardDTO oldBoard, BoardDTO newBoard);
         /// <summary>
         /// Add a new <paramref name="board"/> to database
         /// </summary>
         /// <param name="board"></param>
         [OperationContract]
-        void AddBoardAsync(BoardDTO board);
+        void AddBoard(BoardDTO board);
         /// <summary>
         /// Remove a specific <paramref name="board"/> from database
         /// </summary>
         /// <param name="board"></param>
         [OperationContract]
-        void RemoveBoardAsync(BoardDTO board);
+        void RemoveBoard(BoardDTO board);
     }
 }

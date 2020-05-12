@@ -66,7 +66,7 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddCardToCardListAsync">
+  <xs:element name="AddCardToCardList">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q10:CardListDTO" />
@@ -74,12 +74,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddCardToCardListAsyncResponse">
+  <xs:element name="AddCardToCardListResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveCardFromCardListAsync">
+  <xs:element name="RemoveCardFromCardList">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q12:CardListDTO" />
@@ -87,7 +87,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveCardFromCardListAsyncResponse">
+  <xs:element name="RemoveCardFromCardListResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -217,18 +217,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="RefreshBoardsResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="InformAboutLogin">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="InformAboutLoginResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

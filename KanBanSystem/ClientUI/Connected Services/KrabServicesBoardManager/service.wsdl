@@ -195,7 +195,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_AddBoardAsync_Input_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_AddBoard_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -218,7 +218,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_AddBoardAsync_output_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_AddBoard_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -241,7 +241,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_RemoveBoardAsync_Input_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_RemoveBoard_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -264,7 +264,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_RemoveBoardAsync_output_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_RemoveBoard_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -311,52 +311,6 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_RefreshBoards_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_InformAboutLogin_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardManagerService_InformAboutLogin_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -444,29 +398,23 @@
   <wsdl:message name="IBoardManagerService_UpdateBoard_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBoardResponse" />
   </wsdl:message>
-  <wsdl:message name="IBoardManagerService_AddBoardAsync_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddBoardAsync" />
+  <wsdl:message name="IBoardManagerService_AddBoard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBoard" />
   </wsdl:message>
-  <wsdl:message name="IBoardManagerService_AddBoardAsync_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddBoardAsyncResponse" />
+  <wsdl:message name="IBoardManagerService_AddBoard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBoardResponse" />
   </wsdl:message>
-  <wsdl:message name="IBoardManagerService_RemoveBoardAsync_InputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveBoardAsync" />
+  <wsdl:message name="IBoardManagerService_RemoveBoard_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBoard" />
   </wsdl:message>
-  <wsdl:message name="IBoardManagerService_RemoveBoardAsync_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveBoardAsyncResponse" />
+  <wsdl:message name="IBoardManagerService_RemoveBoard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBoardResponse" />
   </wsdl:message>
   <wsdl:message name="IBoardManagerService_RefreshBoards_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RefreshBoards" />
   </wsdl:message>
   <wsdl:message name="IBoardManagerService_RefreshBoards_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RefreshBoardsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBoardManagerService_InformAboutLogin_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:InformAboutLogin" />
-  </wsdl:message>
-  <wsdl:message name="IBoardManagerService_InformAboutLogin_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:InformAboutLoginResponse" />
   </wsdl:message>
   <wsdl:message name="IBoardManagerService_InformAboutRegistration_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:InformAboutRegistration" />
@@ -483,21 +431,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/UpdateBoard" message="tns:IBoardManagerService_UpdateBoard_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/UpdateBoardResponse" message="tns:IBoardManagerService_UpdateBoard_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddBoardAsync">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/AddBoardAsync" message="tns:IBoardManagerService_AddBoardAsync_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/AddBoardAsyncResponse" message="tns:IBoardManagerService_AddBoardAsync_OutputMessage" />
+    <wsdl:operation name="AddBoard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/AddBoard" message="tns:IBoardManagerService_AddBoard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/AddBoardResponse" message="tns:IBoardManagerService_AddBoard_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RemoveBoardAsync">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/RemoveBoardAsync" message="tns:IBoardManagerService_RemoveBoardAsync_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/RemoveBoardAsyncResponse" message="tns:IBoardManagerService_RemoveBoardAsync_OutputMessage" />
+    <wsdl:operation name="RemoveBoard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/RemoveBoard" message="tns:IBoardManagerService_RemoveBoard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/RemoveBoardResponse" message="tns:IBoardManagerService_RemoveBoard_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RefreshBoards">
       <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/RefreshBoards" message="tns:IBoardManagerService_RefreshBoards_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/RefreshBoardsResponse" message="tns:IBoardManagerService_RefreshBoards_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InformAboutLogin">
-      <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/InformAboutLogin" message="tns:IBoardManagerService_InformAboutLogin_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IBoardManagerService/InformAboutLoginResponse" message="tns:IBoardManagerService_InformAboutLogin_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="InformAboutRegistration">
       <wsdl:output wsaw:Action="http://tempuri.org/IBoardManagerService/InformAboutRegistration" message="tns:IBoardManagerService_InformAboutRegistration_OutputCallbackMessage" />
@@ -529,25 +473,25 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddBoardAsync">
-      <soap12:operation soapAction="http://tempuri.org/IBoardManagerService/AddBoardAsync" style="document" />
+    <wsdl:operation name="AddBoard">
+      <soap12:operation soapAction="http://tempuri.org/IBoardManagerService/AddBoard" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_AddBoardAsync_Input_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_AddBoard_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_AddBoardAsync_output_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_AddBoard_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RemoveBoardAsync">
-      <soap12:operation soapAction="http://tempuri.org/IBoardManagerService/RemoveBoardAsync" style="document" />
+    <wsdl:operation name="RemoveBoard">
+      <soap12:operation soapAction="http://tempuri.org/IBoardManagerService/RemoveBoard" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_RemoveBoardAsync_Input_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_RemoveBoard_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_RemoveBoardAsync_output_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_RemoveBoard_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -559,17 +503,6 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_RefreshBoards_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InformAboutLogin">
-      <soap12:operation soapAction="http://tempuri.org/IBoardManagerService/InformAboutLogin" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_InformAboutLogin_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardManagerService_InformAboutLogin_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

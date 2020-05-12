@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClientUI.KrabServicesUserManager;
+using ClientUI.View;
 
 namespace ClientUI.Callbacks
 {
     public class UserCallback : IUserManagerServiceCallback
     {
-        public void InformAboutLogin(string message)
+        UserRegistrationWindow window;
+        public UserCallback(UserRegistrationWindow window)
         {
-            throw new NotImplementedException();
+            this.window = window;
         }
-
         public void InformAboutRegistration(string message)
         {
-            throw new NotImplementedException();
+            window.InformAboutRegistration(message);
+            window.RedirectToLoginWindow();
         }
 
         public void RefreshBoards(BoardDTO[] boards)

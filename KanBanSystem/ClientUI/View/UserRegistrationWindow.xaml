@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:ClientUI.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="UserRegistrationWindow" Height="450" Width="401.19">
+        Title="UserRegistrationWindow" Height="450" Width="401.19"
+        Loaded="Window_Loaded" x:Name="wind"
+        Closing="Window_Closing">
     <StackPanel>
             <StackPanel Margin="25">
             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}"
@@ -17,23 +19,29 @@
                              materialDesign:HintAssist.Hint="Username"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             Text="{Binding ElementName=wind,
+                             Path=User.Name, Mode=TwoWay}"/>
                 <TextBox Margin="20"
                              materialDesign:HintAssist.Hint="Email"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             Text="{Binding ElementName=wind,
+                             Path=User.LoginData.Email, Mode=TwoWay}"/>
                 <PasswordBox
                         Margin="20"
+                        x:Name="Pswd"
                         materialDesign:HintAssist.Hint="Password"
                         materialDesign:HintAssist.Foreground="Green"
                         materialDesign:TextFieldAssist.UnderlineBrush="Green"
-                        Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                        Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
             </StackPanel>
         <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
             <Button Margin="15 20"
-                        Content="Register"/>
+                        Content="Register"
+                    Click="Register_Click"/>
         </StackPanel>
     </StackPanel>
 </Window>

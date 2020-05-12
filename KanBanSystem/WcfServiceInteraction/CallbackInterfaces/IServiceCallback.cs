@@ -13,12 +13,6 @@ namespace WcfServiceInteraction.CallbackInterfaces
         [OperationContract]
         void RefreshBoards(IEnumerable<BoardDTO> boards);
         /// <summary>
-        /// Infrom a user about login with <paramref name="message"/>
-        /// </summary>
-        /// <param name="message"></param>
-        [OperationContract]
-        void InformAboutLogin(string message);
-        /// <summary>
         /// Infrom a user about registration with <paramref name="message"/>
         /// </summary>
         /// <param name="message"></param>

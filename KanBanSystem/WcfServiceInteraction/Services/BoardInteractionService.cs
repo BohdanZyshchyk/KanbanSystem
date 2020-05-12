@@ -34,7 +34,7 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async void AddCardToCardListAsync(CardListDTO cardList, CardDTO card)
+        public async void AddCardToCardList(CardListDTO cardList, CardDTO card)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async void RemoveCardFromCardListAsync(CardListDTO cardList, CardDTO card)
+        public async void RemoveCardFromCardList(CardListDTO cardList, CardDTO card)
         {
             try
             {

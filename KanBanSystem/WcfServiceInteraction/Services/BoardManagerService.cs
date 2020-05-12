@@ -20,7 +20,7 @@ namespace WcfServiceInteraction.Services
             repository = new KanbanSystemContextRepository();
             serviceCallback = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
         }
-        public async void AddBoardAsync(BoardDTO board)
+        public async void AddBoard(BoardDTO board)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async Task<IEnumerable<BoardDTO>> GetBoardsAsync()
+        public async Task<IEnumerable<BoardDTO>> GetBoards()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async void RemoveBoardAsync(BoardDTO board)
+        public async void RemoveBoard(BoardDTO board)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async Task<BoardDTO> UpdateBoardAsync(BoardDTO oldBoard, BoardDTO newBoard)
+        public async Task<BoardDTO> UpdateBoard(BoardDTO oldBoard, BoardDTO newBoard)
         {
             try
             {

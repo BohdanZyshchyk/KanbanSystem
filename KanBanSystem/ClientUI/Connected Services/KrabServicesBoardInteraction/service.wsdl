@@ -333,7 +333,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_AddCardToCardListAsync_Input_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_AddCardToCardList_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -356,7 +356,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_AddCardToCardListAsync_output_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_AddCardToCardList_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -379,7 +379,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardListAsync_Input_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardList_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -402,7 +402,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardListAsync_output_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardList_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -885,52 +885,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_InformAboutLogin_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_InformAboutLogin_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IBoardInteractionService_InformAboutRegistration_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -1014,17 +968,17 @@
   <wsdl:message name="IBoardInteractionService_RenameBoard_OutputMessage">
     <wsdl:part name="parameters" element="tns:RenameBoardResponse" />
   </wsdl:message>
-  <wsdl:message name="IBoardInteractionService_AddCardToCardListAsync_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddCardToCardListAsync" />
+  <wsdl:message name="IBoardInteractionService_AddCardToCardList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardToCardList" />
   </wsdl:message>
-  <wsdl:message name="IBoardInteractionService_AddCardToCardListAsync_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddCardToCardListAsyncResponse" />
+  <wsdl:message name="IBoardInteractionService_AddCardToCardList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardToCardListResponse" />
   </wsdl:message>
-  <wsdl:message name="IBoardInteractionService_RemoveCardFromCardListAsync_InputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveCardFromCardListAsync" />
+  <wsdl:message name="IBoardInteractionService_RemoveCardFromCardList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCardFromCardList" />
   </wsdl:message>
-  <wsdl:message name="IBoardInteractionService_RemoveCardFromCardListAsync_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveCardFromCardListAsyncResponse" />
+  <wsdl:message name="IBoardInteractionService_RemoveCardFromCardList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCardFromCardListResponse" />
   </wsdl:message>
   <wsdl:message name="IBoardInteractionService_RenameCardList_InputMessage">
     <wsdl:part name="parameters" element="tns:RenameCardList" />
@@ -1086,12 +1040,6 @@
   <wsdl:message name="IBoardInteractionService_RefreshBoards_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RefreshBoardsResponse" />
   </wsdl:message>
-  <wsdl:message name="IBoardInteractionService_InformAboutLogin_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:InformAboutLogin" />
-  </wsdl:message>
-  <wsdl:message name="IBoardInteractionService_InformAboutLogin_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:InformAboutLoginResponse" />
-  </wsdl:message>
   <wsdl:message name="IBoardInteractionService_InformAboutRegistration_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:InformAboutRegistration" />
   </wsdl:message>
@@ -1119,13 +1067,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/RenameBoard" message="tns:IBoardInteractionService_RenameBoard_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/RenameBoardResponse" message="tns:IBoardInteractionService_RenameBoard_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddCardToCardListAsync">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/AddCardToCardListAsync" message="tns:IBoardInteractionService_AddCardToCardListAsync_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/AddCardToCardListAsyncResponse" message="tns:IBoardInteractionService_AddCardToCardListAsync_OutputMessage" />
+    <wsdl:operation name="AddCardToCardList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/AddCardToCardList" message="tns:IBoardInteractionService_AddCardToCardList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/AddCardToCardListResponse" message="tns:IBoardInteractionService_AddCardToCardList_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RemoveCardFromCardListAsync">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardListAsync" message="tns:IBoardInteractionService_RemoveCardFromCardListAsync_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardListAsyncResponse" message="tns:IBoardInteractionService_RemoveCardFromCardListAsync_OutputMessage" />
+    <wsdl:operation name="RemoveCardFromCardList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardList" message="tns:IBoardInteractionService_RemoveCardFromCardList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardListResponse" message="tns:IBoardInteractionService_RemoveCardFromCardList_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RenameCardList">
       <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/RenameCardList" message="tns:IBoardInteractionService_RenameCardList_InputMessage" />
@@ -1166,10 +1114,6 @@
     <wsdl:operation name="RefreshBoards">
       <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/RefreshBoards" message="tns:IBoardInteractionService_RefreshBoards_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/RefreshBoardsResponse" message="tns:IBoardInteractionService_RefreshBoards_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="InformAboutLogin">
-      <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/InformAboutLogin" message="tns:IBoardInteractionService_InformAboutLogin_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IBoardInteractionService/InformAboutLoginResponse" message="tns:IBoardInteractionService_InformAboutLogin_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="InformAboutRegistration">
       <wsdl:output wsaw:Action="http://tempuri.org/IBoardInteractionService/InformAboutRegistration" message="tns:IBoardInteractionService_InformAboutRegistration_OutputCallbackMessage" />
@@ -1234,25 +1178,25 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddCardToCardListAsync">
-      <soap12:operation soapAction="http://tempuri.org/IBoardInteractionService/AddCardToCardListAsync" style="document" />
+    <wsdl:operation name="AddCardToCardList">
+      <soap12:operation soapAction="http://tempuri.org/IBoardInteractionService/AddCardToCardList" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_AddCardToCardListAsync_Input_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_AddCardToCardList_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_AddCardToCardListAsync_output_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_AddCardToCardList_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RemoveCardFromCardListAsync">
-      <soap12:operation soapAction="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardListAsync" style="document" />
+    <wsdl:operation name="RemoveCardFromCardList">
+      <soap12:operation soapAction="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardList" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardListAsync_Input_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardList_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardListAsync_output_policy" />
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_RemoveCardFromCardList_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -1363,17 +1307,6 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_RefreshBoards_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InformAboutLogin">
-      <soap12:operation soapAction="http://tempuri.org/IBoardInteractionService/InformAboutLogin" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_InformAboutLogin_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IBoardInteractionService_InformAboutLogin_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

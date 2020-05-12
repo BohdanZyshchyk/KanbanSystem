@@ -821,17 +821,17 @@ namespace ClientUI.KrabServicesBoardManager {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/UpdateBoard", ReplyAction="http://tempuri.org/IBoardManagerService/UpdateBoardResponse")]
         System.Threading.Tasks.Task<ClientUI.KrabServicesBoardManager.BoardDTO> UpdateBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO oldBoard, ClientUI.KrabServicesBoardManager.BoardDTO newBoard);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/AddBoardAsync", ReplyAction="http://tempuri.org/IBoardManagerService/AddBoardAsyncResponse")]
-        void AddBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/AddBoard", ReplyAction="http://tempuri.org/IBoardManagerService/AddBoardResponse")]
+        void AddBoard(ClientUI.KrabServicesBoardManager.BoardDTO board);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/AddBoardAsync", ReplyAction="http://tempuri.org/IBoardManagerService/AddBoardAsyncResponse")]
-        System.Threading.Tasks.Task AddBoardAsyncAsync(ClientUI.KrabServicesBoardManager.BoardDTO board);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/AddBoard", ReplyAction="http://tempuri.org/IBoardManagerService/AddBoardResponse")]
+        System.Threading.Tasks.Task AddBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/RemoveBoardAsync", ReplyAction="http://tempuri.org/IBoardManagerService/RemoveBoardAsyncResponse")]
-        void RemoveBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/RemoveBoard", ReplyAction="http://tempuri.org/IBoardManagerService/RemoveBoardResponse")]
+        void RemoveBoard(ClientUI.KrabServicesBoardManager.BoardDTO board);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/RemoveBoardAsync", ReplyAction="http://tempuri.org/IBoardManagerService/RemoveBoardAsyncResponse")]
-        System.Threading.Tasks.Task RemoveBoardAsyncAsync(ClientUI.KrabServicesBoardManager.BoardDTO board);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/RemoveBoard", ReplyAction="http://tempuri.org/IBoardManagerService/RemoveBoardResponse")]
+        System.Threading.Tasks.Task RemoveBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -839,9 +839,6 @@ namespace ClientUI.KrabServicesBoardManager {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/RefreshBoards", ReplyAction="http://tempuri.org/IBoardManagerService/RefreshBoardsResponse")]
         void RefreshBoards(ClientUI.KrabServicesBoardManager.BoardDTO[] boards);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/InformAboutLogin", ReplyAction="http://tempuri.org/IBoardManagerService/InformAboutLoginResponse")]
-        void InformAboutLogin(string message);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardManagerService/InformAboutRegistration", ReplyAction="http://tempuri.org/IBoardManagerService/InformAboutRegistrationResponse")]
         void InformAboutRegistration(string message);
@@ -891,20 +888,20 @@ namespace ClientUI.KrabServicesBoardManager {
             return base.Channel.UpdateBoardAsync(oldBoard, newBoard);
         }
         
-        public void AddBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board) {
-            base.Channel.AddBoardAsync(board);
+        public void AddBoard(ClientUI.KrabServicesBoardManager.BoardDTO board) {
+            base.Channel.AddBoard(board);
         }
         
-        public System.Threading.Tasks.Task AddBoardAsyncAsync(ClientUI.KrabServicesBoardManager.BoardDTO board) {
-            return base.Channel.AddBoardAsyncAsync(board);
+        public System.Threading.Tasks.Task AddBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board) {
+            return base.Channel.AddBoardAsync(board);
         }
         
-        public void RemoveBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board) {
-            base.Channel.RemoveBoardAsync(board);
+        public void RemoveBoard(ClientUI.KrabServicesBoardManager.BoardDTO board) {
+            base.Channel.RemoveBoard(board);
         }
         
-        public System.Threading.Tasks.Task RemoveBoardAsyncAsync(ClientUI.KrabServicesBoardManager.BoardDTO board) {
-            return base.Channel.RemoveBoardAsyncAsync(board);
+        public System.Threading.Tasks.Task RemoveBoardAsync(ClientUI.KrabServicesBoardManager.BoardDTO board) {
+            return base.Channel.RemoveBoardAsync(board);
         }
     }
 }

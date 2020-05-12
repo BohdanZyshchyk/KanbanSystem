@@ -809,11 +809,11 @@ namespace ClientUI.KrabServicesUserManager {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="KrabServicesUserManager.IUserManagerService", CallbackContract=typeof(ClientUI.KrabServicesUserManager.IUserManagerServiceCallback))]
     public interface IUserManagerService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/RegisterAsync", ReplyAction="http://tempuri.org/IUserManagerService/RegisterAsyncResponse")]
-        void RegisterAsync(ClientUI.KrabServicesUserManager.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/Register", ReplyAction="http://tempuri.org/IUserManagerService/RegisterResponse")]
+        void Register(ClientUI.KrabServicesUserManager.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/RegisterAsync", ReplyAction="http://tempuri.org/IUserManagerService/RegisterAsyncResponse")]
-        System.Threading.Tasks.Task RegisterAsyncAsync(ClientUI.KrabServicesUserManager.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/Register", ReplyAction="http://tempuri.org/IUserManagerService/RegisterResponse")]
+        System.Threading.Tasks.Task RegisterAsync(ClientUI.KrabServicesUserManager.UserDTO user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/Login", ReplyAction="http://tempuri.org/IUserManagerService/LoginResponse")]
         ClientUI.KrabServicesUserManager.UserDTO Login(ClientUI.KrabServicesUserManager.LoginDataDTO loginData);
@@ -827,9 +827,6 @@ namespace ClientUI.KrabServicesUserManager {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/RefreshBoards", ReplyAction="http://tempuri.org/IUserManagerService/RefreshBoardsResponse")]
         void RefreshBoards(ClientUI.KrabServicesUserManager.BoardDTO[] boards);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/InformAboutLogin", ReplyAction="http://tempuri.org/IUserManagerService/InformAboutLoginResponse")]
-        void InformAboutLogin(string message);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagerService/InformAboutRegistration", ReplyAction="http://tempuri.org/IUserManagerService/InformAboutRegistrationResponse")]
         void InformAboutRegistration(string message);
@@ -863,12 +860,12 @@ namespace ClientUI.KrabServicesUserManager {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void RegisterAsync(ClientUI.KrabServicesUserManager.UserDTO user) {
-            base.Channel.RegisterAsync(user);
+        public void Register(ClientUI.KrabServicesUserManager.UserDTO user) {
+            base.Channel.Register(user);
         }
         
-        public System.Threading.Tasks.Task RegisterAsyncAsync(ClientUI.KrabServicesUserManager.UserDTO user) {
-            return base.Channel.RegisterAsyncAsync(user);
+        public System.Threading.Tasks.Task RegisterAsync(ClientUI.KrabServicesUserManager.UserDTO user) {
+            return base.Channel.RegisterAsync(user);
         }
         
         public ClientUI.KrabServicesUserManager.UserDTO Login(ClientUI.KrabServicesUserManager.LoginDataDTO loginData) {

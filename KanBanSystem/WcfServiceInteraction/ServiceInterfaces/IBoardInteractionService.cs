@@ -53,14 +53,14 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="cardList"></param>
         /// <param name="card"></param>
         [OperationContract]
-        void AddCardToCardListAsync(CardListDTO cardList, CardDTO card);
+        void AddCardToCardList(CardListDTO cardList, CardDTO card);
         /// <summary>
         /// Remove a <paramref name="card"/> from a <paramref name="cardList"/>
         /// </summary>
         /// <param name="cardList"></param>
         /// <param name="card"></param>
         [OperationContract]
-        void RemoveCardFromCardListAsync(CardListDTO cardList, CardDTO card);
+        void RemoveCardFromCardList(CardListDTO cardList, CardDTO card);
         /// <summary>
         /// Rename a <paramref name="cardList"/> with new <paramref name="newName"/>
         /// </summary>

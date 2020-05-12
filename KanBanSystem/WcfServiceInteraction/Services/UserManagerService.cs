@@ -19,14 +19,13 @@ namespace WcfServiceInteraction.Services
             repository = new KanbanSystemContextRepository();
             serviceCallback = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
         }
-        public async Task<UserDTO> LoginAsync(LoginDataDTO loginData)
+        public async Task<UserDTO> Login(LoginDataDTO loginData)
         {
             try
             {
                 var ld = MapperBroker.GetLoginDataFromDTO(loginData);
                 var user = await repository.UserManager.LoginAsync(ld);
                 var userDTO = MapperBroker.GetUserDTOFromEntity(user);
-                SendCallback("Login was successful!", true);
                 return userDTO;
             }
             catch (Exception ex)
@@ -35,14 +34,14 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async void RegisterAsync(UserDTO user)
+        public async void Register(UserDTO user)
         {
             try
             {
                 var u = MapperBroker.GetUserFromDTO(user);
                 await repository.UserManager.RegisterAsync(u);
                 await CommitChangesAsync();
-                SendCallback("Registration was successful!", false);
+                SendCallback($"Welcome to our system, {user.Name}! Registration was successful! You will be redirected to login window now. Use your login data to enter");
             }
             catch (Exception ex)
             {
@@ -53,23 +52,9 @@ namespace WcfServiceInteraction.Services
         {
             await repository.CommitChangesAsync();
         }
-        private void SendCallback(string message, bool login)
+        private void SendCallback(string message)
         {
-            switch (login)
-            {
-                case true:
-                    {
-                        serviceCallback.InformAboutLogin(message);
-                        break;
-                    }
-                case false:
-                    {
-                        serviceCallback.InformAboutRegistration(message);
-                        break;
-                    }
-                default:
-                    break;
-            }
+            serviceCallback.InformAboutRegistration(message);
         }
     }
 }
