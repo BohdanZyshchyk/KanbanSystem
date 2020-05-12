@@ -45,7 +45,8 @@
                 <Button Margin="-15 -5 0 0"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         ToolTip="MaterialDesignFlatButton"
-                        Content="Register"/>
+                        Content="Register"
+                        Click="Login_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
