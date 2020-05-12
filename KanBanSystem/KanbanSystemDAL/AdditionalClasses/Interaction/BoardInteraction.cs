@@ -48,7 +48,9 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 var foundBoard = await FindBoardASync(board);
                 var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
                 foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list is already in this board!", true);
-                foundBoard.CardLists.Add(cardList);
+                cardList.Board = foundBoard;
+                context.Set<CardList>().Add(cardList);
+                //foundBoard.CardLists.Add(cardList);
             }
             catch (Exception ex)
             {
