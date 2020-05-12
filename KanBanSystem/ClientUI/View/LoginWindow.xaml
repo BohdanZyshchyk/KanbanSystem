@@ -13,7 +13,8 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="398.408" Width="345.225">
+        Title="LoginWindow" Height="398.408" Width="345.225"
+        Loaded="Window_Loaded">
     <Grid>
         <StackPanel >
                 <StackPanel Margin="25">

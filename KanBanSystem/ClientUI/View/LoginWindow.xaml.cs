@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClientUI.KrabServicesUserManager;
 
 namespace ClientUI.View
 {
@@ -19,12 +20,18 @@ namespace ClientUI.View
     /// </summary>
     public partial class LoginWindow : Window
     {
+        UserManagerServiceClient proxy;
         public LoginWindow()
         {
             InitializeComponent();
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

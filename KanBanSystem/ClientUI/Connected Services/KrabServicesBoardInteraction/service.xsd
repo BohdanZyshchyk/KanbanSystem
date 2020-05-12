@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" />
+  <xs:element name="AddUserToBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q1:BoardDTO" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="user" nillable="true" type="q2:UserDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserToBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserFromBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q3:BoardDTO" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="user" nillable="true" type="q4:UserDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserFromBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardListToBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q5:BoardDTO" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q6:CardListDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardListToBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCardListFromBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q7:BoardDTO" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q8:CardListDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCardListFromBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q9:BoardDTO" />
+        <xs:element minOccurs="0" name="newName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardToCardListAsync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q10:CardListDTO" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q11:CardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCardToCardListAsyncResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCardFromCardListAsync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q12:CardListDTO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q13:CardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCardFromCardListAsyncResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameCardList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="cardList" nillable="true" type="q14:CardListDTO" />
+        <xs:element minOccurs="0" name="newName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameCardListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserToCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q15:CardDTO" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="user" nillable="true" type="q16:UserDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserToCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserFromCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q17:CardDTO" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="user" nillable="true" type="q18:UserDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserFromCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddLabelColorToCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q19:CardDTO" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="labelColor" nillable="true" type="q20:LabelColorDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddLabelColorToCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLabelColorFromCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q21:CardDTO" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="labelColor" nillable="true" type="q22:LabelColorDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLabelColorFromCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentToCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q23:CardDTO" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="comment" nillable="true" type="q24:CommentDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentToCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCommentFromCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q25:CardDTO" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="comment" nillable="true" type="q26:CommentDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCommentFromCardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDueDateOfACard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q27:CardDTO" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDueDateOfACardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeNameOfACard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="card" nillable="true" type="q28:CardDTO" />
+        <xs:element minOccurs="0" name="newName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeNameOfACardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshBoards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="boards" nillable="true" type="q29:ArrayOfBoardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshBoardsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformAboutLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformAboutLoginResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformAboutRegistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformAboutRegistrationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

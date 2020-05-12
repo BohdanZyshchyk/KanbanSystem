@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUI", "ClientUI\ClientUI.csproj", "{264E8DAA-294E-4BB7-B89B-40579C02234E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F2234CFC-48F0-48DC-BE6D-5FD214F2819C} = {F2234CFC-48F0-48DC-BE6D-5FD214F2819C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceInteraction", "WcfServiceInteraction\WcfServiceInteraction.csproj", "{F2234CFC-48F0-48DC-BE6D-5FD214F2819C}"
 EndProject
