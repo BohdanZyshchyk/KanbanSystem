@@ -6,84 +6,81 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ClientUI.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="LoadedWind">
+        Title="KrabBan" Height="450" Width="800" Loaded="LoadedWind">
     <Grid>
-        <ListView x:Name="lvCardsList" >
-            <ListView.ItemsPanel>
+        <ListBox x:Name="lvCardsList" >
+            <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"></StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
                 </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <StackPanel>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBox Text="Name" BorderBrush="White" Margin="10,0"/>
-                    <materialDesign:PopupBox HorizontalAlignment="Right"
-                                                         Padding="2 0 2 0" Grid.Column="1">
-                        <StackPanel>
-                            <Button Content="More" />
-                            <Button Content="Options" />
-                        </StackPanel>
-                    </materialDesign:PopupBox>
-                </Grid>
-                <ListView x:Name="lvCards" Background="Black">
-                    <materialDesign:Card
-                        Background="AliceBlue"
-                        Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-                        Padding="0"
-                        Width="200">
-                        <Grid Height="85">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="6*"/>
-                                <RowDefinition Height="39*"/>
-                                <RowDefinition Height="40*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="163*"/>
-                                <ColumnDefinition Width="37*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <StackPanel Grid.Row="0" Background="Aquamarine" Orientation="Horizontal" x:Name="lvColorList" >
-                                <ListBox VerticalAlignment="Top" x:Name="lbColors" ItemsSource="{Binding}">
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Background="Black">
-                                                <Rectangle Fill="Black" Height="auto" Width="15" VerticalAlignment="Top" ></Rectangle>
-                                                <TextBlock Text="{Binding Path=Length}" Background="Black"></TextBlock>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>
+            </ListBox.ItemsPanel>
+            <ListBoxItem>
+                <StackPanel >
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="185*"/>
+                            <ColumnDefinition Width="31*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="Name" BorderBrush="White" Margin="10,0"/>
+                        <materialDesign:PopupBox HorizontalAlignment="Right"
+                                                         Padding="2 0 2 0" Grid.Column="1" Width="34">
+                            <StackPanel>
+                                <Button Content="More" />
+                                <Button Content="Options" />
                             </StackPanel>
+                        </materialDesign:PopupBox>
+                    </Grid>
+                    <ListBox x:Name="lvCards" Background="LightGray">
+                        <ListBoxItem>
+                            <materialDesign:Card Background="AliceBlue"
+                                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                             Padding="0"
+                                             Width="200">
+                                <Grid Height="85">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="6*"/>
+                                        <RowDefinition Height="39*"/>
+                                        <RowDefinition Height="40*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="163*"/>
+                                        <ColumnDefinition Width="37*"/>
+                                    </Grid.ColumnDefinitions>
 
+                                    <ListBox Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" x:Name="lbColors" Height="2">
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Setter Property="Padding" Value="0"/>
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
 
-
-                            <TextBlock Grid.Column="0" Grid.Row="1"
+                                    </ListBox>
+                                    <TextBlock Grid.Column="0" Grid.Row="1"
                                        Margin="5 2"
-                                       Style="{StaticResource MaterialDesignBody2TextBlock}" Grid.ColumnSpan="2" Grid.RowSpan="3">
+                                       Style="{StaticResource MaterialDesignBody2TextBlock}" Grid.ColumnSpan="2" Grid.RowSpan="2">
                                 Test
-                            </TextBlock>
-                            <materialDesign:PopupBox HorizontalAlignment="Right"
+                                    </TextBlock>
+                                    <materialDesign:PopupBox HorizontalAlignment="Right"
                                                          Padding="2 0 2 0"
                                                          Grid.Column="1" Grid.Row="1"
-                                                         Margin="0,2,2,2" >
-                                <StackPanel>
-                                    <Button Content="Add Label" />
-                                    <Button Content="Options" />
-                                </StackPanel>
-                            </materialDesign:PopupBox>
-                            <StackPanel Orientation="Horizontal" Grid.Row="2">
-                                <materialDesign:Chip Padding="10" Content="ZB"/>
-                                <materialDesign:Chip Padding="10" Content="ZB"/>
-                                <materialDesign:Chip Padding="10" Content="ZB" Margin="0,4" Width="40"/>
-                            </StackPanel>
-                        </Grid>
-                    </materialDesign:Card>
-                </ListView>
-            </StackPanel>
-        </ListView>
+                                                         Margin="0,2,2,2" Width="34" >
+                                        <StackPanel>
+                                            <Button Content="Add Label" />
+                                            <Button Content="Options" />
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                                        <materialDesign:Chip Padding="10" Content="ZB"/>
+                                        <materialDesign:Chip Padding="10" Content="ZB"/>
+                                        <materialDesign:Chip Padding="10" Content="ZB" Margin="0,4" Width="40"/>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </ListBoxItem>
+                        
+                    </ListBox>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
     </Grid>
 </Window>
