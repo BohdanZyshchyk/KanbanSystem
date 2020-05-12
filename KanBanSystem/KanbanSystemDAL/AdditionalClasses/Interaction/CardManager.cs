@@ -33,7 +33,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
             {
                 var foundCard = await FindCardAsync(card);
                 var foundUser = await FindHelper<User>.FindEntityAsync(foundCard.Users, user);
-                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
+                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User was not found!", false);
                 foundCard.Users.Remove(foundUser);
             }
             catch (Exception ex)
@@ -48,7 +48,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 var foundCard = await FindCardAsync(card);
                 var foundLabeColor = await FindHelper<LabelColor>.FindEntityAsync(foundCard.LabelColors, labelColor);
                 foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Such label color is already assigned to this card!", true);
-                foundCard.LabelColors.Add(labelColor);
+                labelColor.Cards.Add(foundCard);
+                context.Set<LabelColor>().Add(labelColor);
             }
             catch (Exception ex)
             {
@@ -61,7 +62,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
             {
                 var foundCard = await FindCardAsync(card);
                 var foundLabeColor = await FindHelper<LabelColor>.FindEntityAsync(foundCard.LabelColors, labelColor);
-                foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Label color not found!", false);
+                foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Label color was not found!", false);
                 foundCard.LabelColors.Remove(foundLabeColor);
             }
             catch (Exception ex)
@@ -76,7 +77,9 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 var foundCard = await FindCardAsync(card);
                 var foundComment = await FindHelper<Comment>.FindEntityAsync(foundCard.Comments, comment);
                 foundComment = CheckNullHelper<Comment>.CheckNullable(foundComment, "Comment is already assigned to a card!", true);
-                foundCard.Comments.Add(comment);
+                comment.Card = foundCard;
+                context.Set<Comment>().Add(comment);
+                //foundCard.Comments.Add(comment);
             }
             catch (Exception ex)
             {

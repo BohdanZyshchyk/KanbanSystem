@@ -142,7 +142,9 @@ namespace WcfServiceInteraction.Helpers
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="dto"></param>
         /// <returns></returns>
-        public static TEntity GetEntityFromDTO<TDTO, TEntity>(TDTO dto) where TEntity : class where TDTO : class
+        public static TEntity GetEntityFromDTO<TDTO, TEntity>(TDTO dto)
+            where TEntity : class
+            where TDTO : class
         {
             return mapper.Map<TDTO, TEntity>(dto);
         }
@@ -153,7 +155,9 @@ namespace WcfServiceInteraction.Helpers
         /// <typeparam name="TDTO"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public static TDTO GetDTOFromEntity<TEntity, TDTO>(TEntity entity) where TEntity : class where TDTO : class
+        public static TDTO GetDTOFromEntity<TEntity, TDTO>(TEntity entity)
+            where TEntity : class
+            where TDTO : class
         {
             return mapper.Map<TEntity, TDTO>(entity);
         }
