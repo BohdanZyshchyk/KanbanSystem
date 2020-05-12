@@ -1,5 +1,4 @@
 ﻿using KanbanSystemDAL.AdditionalClasses;
-using KanbanSystemDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
@@ -25,7 +24,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
+                var b = MapperBroker.GetBoardFromDTO(board);
                 await repository.BoardManager.AddEntityAsync(b);
                 await CommitAndSendCallbackAsync();
             }
@@ -40,8 +39,8 @@ namespace WcfServiceInteraction.Services
             try
             {
                 var boards = await repository.BoardManager.GetEntitiesAsync();
-                var boardsDTO = MapperHelper.BoardMapper.Map<IEnumerable<Board>, IEnumerable<BoardDTO>>(boards);
-                return boardsDTO;
+                var boardDTOs = MapperBroker.GetBoardDTOsFromBoards(boards);
+                return boardDTOs;
             }
             catch (Exception ex)
             {
@@ -53,7 +52,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
+                var b = MapperBroker.GetBoardFromDTO(board);
                 await repository.BoardManager.RemoveEntityAsync(b);
                 await CommitAndSendCallbackAsync();
             }
@@ -67,11 +66,11 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var oldB = MapperHelper.GetBoardFromDTO(oldBoard);
-                var newB = MapperHelper.GetBoardFromDTO(newBoard);
+                var oldB = MapperBroker.GetBoardFromDTO(oldBoard);
+                var newB = MapperBroker.GetBoardFromDTO(newBoard);
                 oldB = await repository.BoardManager.UpdateEntityAsync(oldB, newB);
                 await CommitAndSendCallbackAsync();
-                return MapperHelper.BoardMapper.Map<Board, BoardDTO>(oldB);
+                return MapperBroker.GetBoardDTOFromEntity(oldB);
             }
             catch (Exception ex)
             {
@@ -85,7 +84,7 @@ namespace WcfServiceInteraction.Services
         private async Task SendCallback()
         {
             var boards = await repository.BoardManager.GetEntitiesAsync();
-            var boardDTOs = MapperHelper.BoardMapper.Map<IEnumerable<Board>, IEnumerable<BoardDTO>>(boards);
+            var boardDTOs = MapperBroker.GetBoardDTOsFromBoards(boards);
             serviceCallback.RefreshBoards(boardDTOs);
         }
         private async Task CommitAndSendCallbackAsync()

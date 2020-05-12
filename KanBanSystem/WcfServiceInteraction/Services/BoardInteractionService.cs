@@ -1,7 +1,5 @@
 ﻿using KanbanSystemDAL.AdditionalClasses;
-using KanbanSystemDAL.Model;
 using System;
-using System.Collections.Generic;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using WcfServiceInteraction.CallbackInterfaces;
@@ -25,8 +23,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
-                var cl = MapperHelper.GetCardListFromDTO(cardList);
+                var b = MapperBroker.GetBoardFromDTO(board);
+                var cl = MapperBroker.GetCardListFromDTO(cardList);
                 await repository.BoardInteraction.AddCardListToBoardAsync(b, cl);
                 await CommitAndSendCallbackAsync();
             }
@@ -40,8 +38,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var cl = MapperHelper.GetCardListFromDTO(cardList);
-                var c = MapperHelper.GetCardFromDTO(card);
+                var cl = MapperBroker.GetCardListFromDTO(cardList);
+                var c = MapperBroker.GetCardFromDTO(card);
                 await repository.CardListInteraction.AddCardToCardListAsync(cl, c);
                 await CommitAndSendCallbackAsync();
             }
@@ -55,8 +53,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
-                var cm = MapperHelper.GetCommentFromDTO(comment);
+                var c = MapperBroker.GetCardFromDTO(card);
+                var cm = MapperBroker.GetCommentFromDTO(comment);
                 await repository.CardManager.AddCommentToCardAsync(c, cm);
                 await CommitAndSendCallbackAsync();
             }
@@ -70,8 +68,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
-                var lc = MapperHelper.GetLabelColorFromDTO(labelColor);
+                var c = MapperBroker.GetCardFromDTO(card);
+                var lc = MapperBroker.GetLabelColorFromDTO(labelColor);
                 await repository.CardManager.AddLabelColorToCardAsync(c, lc);
                 await CommitAndSendCallbackAsync();
             }
@@ -85,8 +83,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
-                var u = MapperHelper.GetUserFromDTO(user);
+                var b = MapperBroker.GetBoardFromDTO(board);
+                var u = MapperBroker.GetUserFromDTO(user);
                 await repository.BoardInteraction.AddUserToBoardAsync(b, u);
                 await CommitAndSendCallbackAsync();
             }
@@ -100,8 +98,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
-                var u = MapperHelper.GetUserFromDTO(user);
+                var c = MapperBroker.GetCardFromDTO(card);
+                var u = MapperBroker.GetUserFromDTO(user);
                 await repository.CardManager.AddUserToCardAsync(c, u);
                 await CommitAndSendCallbackAsync();
             }
@@ -115,7 +113,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
+                var c = MapperBroker.GetCardFromDTO(card);
                 await repository.CardManager.ChangeDueDateOfACardAsync(c, date);
                 await CommitAndSendCallbackAsync();
             }
@@ -129,7 +127,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
+                var c = MapperBroker.GetCardFromDTO(card);
                 await repository.CardManager.ChangeNameOfACardAsync(c, newName);
                 await CommitAndSendCallbackAsync();
             }
@@ -143,8 +141,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var cl = MapperHelper.GetCardListFromDTO(cardList);
-                var c = MapperHelper.GetCardFromDTO(card);
+                var cl = MapperBroker.GetCardListFromDTO(cardList);
+                var c = MapperBroker.GetCardFromDTO(card);
                 await repository.CardListInteraction.RemoveCardFromCardListAsync(cl, c);
                 await CommitAndSendCallbackAsync();
             }
@@ -158,8 +156,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
-                var cl = MapperHelper.GetCardListFromDTO(cardList);
+                var b = MapperBroker.GetBoardFromDTO(board);
+                var cl = MapperBroker.GetCardListFromDTO(cardList);
                 await repository.BoardInteraction.RemoveCardListFromBoardAsync(b, cl);
                 await CommitAndSendCallbackAsync();
             }
@@ -173,8 +171,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
-                var cm = MapperHelper.GetCommentFromDTO(comment);
+                var c = MapperBroker.GetCardFromDTO(card);
+                var cm = MapperBroker.GetCommentFromDTO(comment);
                 await repository.CardManager.RemoveCommentFromCardAsync(c, cm);
                 await CommitAndSendCallbackAsync();
             }
@@ -188,8 +186,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
-                var lc = MapperHelper.GetLabelColorFromDTO(labelColor);
+                var c = MapperBroker.GetCardFromDTO(card);
+                var lc = MapperBroker.GetLabelColorFromDTO(labelColor);
                 await repository.CardManager.RemoveLabelColorFromCardAsync(c, lc);
                 await CommitAndSendCallbackAsync();
             }
@@ -203,8 +201,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
-                var u = MapperHelper.GetUserFromDTO(user);
+                var b = MapperBroker.GetBoardFromDTO(board);
+                var u = MapperBroker.GetUserFromDTO(user);
                 await repository.BoardInteraction.RemoveUserFromBoardAsync(b, u);
                 await CommitAndSendCallbackAsync();
             }
@@ -218,8 +216,8 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var c = MapperHelper.GetCardFromDTO(card);
-                var u = MapperHelper.GetUserFromDTO(user);
+                var c = MapperBroker.GetCardFromDTO(card);
+                var u = MapperBroker.GetUserFromDTO(user);
                 await repository.CardManager.RemoveUserFromCardAsync(c, u);
                 await CommitAndSendCallbackAsync();
             }
@@ -233,7 +231,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var b = MapperHelper.GetBoardFromDTO(board);
+                var b = MapperBroker.GetBoardFromDTO(board);
                 await repository.BoardInteraction.RenameBoardAsync(b, newName);
                 await CommitAndSendCallbackAsync();
             }
@@ -247,7 +245,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var cl = MapperHelper.GetCardListFromDTO(cardList);
+                var cl = MapperBroker.GetCardListFromDTO(cardList);
                 await repository.CardListInteraction.RenameCardListAsync(cl, newName);
                 await CommitAndSendCallbackAsync();
             }
@@ -263,7 +261,7 @@ namespace WcfServiceInteraction.Services
         private async Task SendCallback()
         {
             var boards = await repository.BoardManager.GetEntitiesAsync();
-            var boardDTOs = MapperHelper.BoardMapper.Map<IEnumerable<Board>, IEnumerable<BoardDTO>>(boards);
+            var boardDTOs = MapperBroker.GetBoardDTOsFromBoards(boards);
             serviceCallback.RefreshBoards(boardDTOs);
         }
         private async Task CommitAndSendCallbackAsync()

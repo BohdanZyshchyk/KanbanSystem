@@ -1,5 +1,4 @@
 ﻿using KanbanSystemDAL.AdditionalClasses;
-using KanbanSystemDAL.Model;
 using System;
 using System.ServiceModel;
 using System.Threading.Tasks;
@@ -24,9 +23,9 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var ld = MapperHelper.GetLoginDataFromDTO(loginData);
+                var ld = MapperBroker.GetLoginDataFromDTO(loginData);
                 var user = await repository.UserManager.LoginAsync(ld);
-                var userDTO = MapperHelper.UserMapper.Map<User, UserDTO>(user);
+                var userDTO = MapperBroker.GetUserDTOFromEntity(user);
                 SendCallback("Login was successful!", true);
                 return userDTO;
             }
@@ -40,7 +39,7 @@ namespace WcfServiceInteraction.Services
         {
             try
             {
-                var u = MapperHelper.GetUserFromDTO(user);
+                var u = MapperBroker.GetUserFromDTO(user);
                 await repository.UserManager.RegisterAsync(u);
                 await CommitChangesAsync();
                 SendCallback("Registration was successful!", false);
