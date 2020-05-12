@@ -33,7 +33,7 @@
         <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
             <Button Margin="15 20"
-                        Content="Login"/>
+                        Content="Register"/>
         </StackPanel>
     </StackPanel>
 </Window>
