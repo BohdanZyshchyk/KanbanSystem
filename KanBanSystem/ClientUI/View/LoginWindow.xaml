@@ -13,12 +13,11 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="345.225">
+        Title="LoginWindow" Height="398.408" Width="345.225">
     <Grid>
         <StackPanel >
-            <Border Background="WhiteSmoke" Margin="10 20" CornerRadius="5">
                 <StackPanel Margin="25">
-                    <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                    <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}"
                                HorizontalAlignment="Center"
                                Text="Please enter your credentials">
                     </TextBlock>
@@ -34,7 +33,6 @@
                         materialDesign:TextFieldAssist.UnderlineBrush="Green"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 </StackPanel>
-            </Border>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <Button Margin="15 20"

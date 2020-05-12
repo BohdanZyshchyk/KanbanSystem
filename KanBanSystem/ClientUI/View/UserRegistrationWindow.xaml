@@ -9,7 +9,7 @@
         Title="UserRegistrationWindow" Height="450" Width="401.19">
     <StackPanel>
             <StackPanel Margin="25">
-                <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}"
                                HorizontalAlignment="Center"
                                Text="Please enter your credentials">
                 </TextBlock>
@@ -33,7 +33,7 @@
         <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
             <Button Margin="15 20"
-                        Content="Register"/>
+                        Content="Login"/>
         </StackPanel>
     </StackPanel>
 </Window>

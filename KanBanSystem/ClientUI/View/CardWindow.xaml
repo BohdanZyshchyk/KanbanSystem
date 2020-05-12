@@ -15,7 +15,7 @@
 
         <StackPanel Grid.Column="1">
             <TextBox x:Name="tbCardName">NAME</TextBox>
-            <TextBlock>Members</TextBlock>
+            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}">Members</TextBlock>
             <ListBox>
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -44,8 +44,28 @@
                 </ListBoxItem>
             </ListBox>
             <TextBlock>Description</TextBlock>
+            <TextBox TextWrapping="Wrap"
+                     VerticalAlignment="Stretch"
+                     MinWidth="280"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"
+                     SpellCheck.IsEnabled="True"
+                     materialDesign:HintAssist.Hint="Multiline text"
+                     Height="80">
+            </TextBox>
             <TextBlock>Comment</TextBlock>
+            <TextBox TextWrapping="Wrap"
+                     VerticalAlignment="Stretch"
+                     MinWidth="280"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"
+                     SpellCheck.IsEnabled="True"
+                     materialDesign:HintAssist.Hint="Multiline text"
+                     Height="80">
+            </TextBox>
+            <TextBox></TextBox>
             <TextBlock>Activity</TextBlock>
+            <TextBlock>log</TextBlock>
         </StackPanel>
     </Grid>
 </Window>
