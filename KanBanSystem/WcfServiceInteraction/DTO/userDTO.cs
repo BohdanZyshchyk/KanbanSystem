@@ -7,13 +7,15 @@ namespace WcfServiceInteraction.DTO
     public class UserDTO
     {
         [DataMember]
-        public string Name { get; set; }
+        public string UserName { get; set; }
+        [DataMember]
+        public string Email { get; set; }
+        [DataMember]
+        public string Password { get; set; }
         [DataMember]
         public virtual ICollection<CardDTO> Cards { get; set; }
         [DataMember]
         public virtual ICollection<CommentDTO> UserComments { get; set; }
-        [DataMember]
-        public virtual LoginDataDTO LoginData { get; set; }
         [DataMember]
         public virtual ICollection<CardListDTO> CreatedCardLists { get; set; }
         [DataMember]

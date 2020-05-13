@@ -18,7 +18,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await FindUserAndCheckAsync(user.LoginData, "User with such login data is already in DB", true);
+                var foundUser = await FindUserAndCheckAsync(user, "User with such login data is already in DB", true);
                 context.Users.Add(user);
             }
             catch (Exception ex)
@@ -26,11 +26,11 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        public async Task<User> LoginAsync(LoginData loginData)
+        public async Task<User> LoginAsync(User user)
         {
             try
             {
-                var foundUser = await FindUserAndCheckAsync(loginData, "User with such login data not found", false);
+                var foundUser = await FindUserAndCheckAsync(user, "User with such login data not found", false);
                 return foundUser;
             }
             catch (Exception ex)
@@ -38,10 +38,10 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 throw ex;
             }
         }
-        private async Task<User> FindUserAndCheckAsync(LoginData loginData, string msg, bool mustBeNull)
+        private async Task<User> FindUserAndCheckAsync(User user, string msg, bool mustBeNull)
         {
             var users = await context.Users.ToListAsync();
-            var foundUser = users.FirstOrDefault(x => x.LoginData.CompareTo(loginData).Equals(0));
+            var foundUser = users.FirstOrDefault(x => x.CompareTo(user).Equals(0));
             foundUser = FindAndCheckNullabilityHelper<User>.CheckNullable(foundUser, msg, mustBeNull);
             return foundUser;
         }

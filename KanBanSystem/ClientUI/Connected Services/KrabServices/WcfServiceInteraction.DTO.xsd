@@ -64,9 +64,10 @@
       <xs:element minOccurs="0" name="CardActivities" nillable="true" type="tns:ArrayOfCardActivityDTO" />
       <xs:element minOccurs="0" name="Cards" nillable="true" type="tns:ArrayOfCardDTO" />
       <xs:element minOccurs="0" name="CreatedCardLists" nillable="true" type="tns:ArrayOfCardListDTO" />
-      <xs:element minOccurs="0" name="LoginData" nillable="true" type="tns:LoginDataDTO" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserComments" nillable="true" type="tns:ArrayOfCommentDTO" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserDTO" nillable="true" type="tns:UserDTO" />
@@ -76,14 +77,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfBoardDTO" nillable="true" type="tns:ArrayOfBoardDTO" />
-  <xs:complexType name="LoginDataDTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="User" nillable="true" type="tns:UserDTO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="LoginDataDTO" nillable="true" type="tns:LoginDataDTO" />
   <xs:complexType name="ArrayOfCommentDTO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CommentDTO" nillable="true" type="tns:CommentDTO" />

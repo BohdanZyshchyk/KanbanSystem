@@ -277,7 +277,7 @@
   <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="loginData" nillable="true" type="q36:LoginDataDTO" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="user" nillable="true" type="q36:UserDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

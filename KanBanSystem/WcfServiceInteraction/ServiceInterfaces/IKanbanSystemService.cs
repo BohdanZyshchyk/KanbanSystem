@@ -175,7 +175,7 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// </summary>
         /// <param name="loginData"></param>
         [OperationContract]
-        Task<UserDTO> Login(LoginDataDTO loginData);
+        Task<UserDTO> Login(UserDTO user);
         #endregion
     }
 }
