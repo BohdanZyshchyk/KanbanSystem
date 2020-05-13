@@ -930,10 +930,10 @@ namespace ClientUI.KrabServices {
         System.Threading.Tasks.Task RemoveBoardAsync(ClientUI.KrabServices.BoardDTO board);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Register", ReplyAction="http://tempuri.org/IKanbanSystemService/RegisterResponse")]
-        void Register(ClientUI.KrabServices.UserDTO user);
+        bool Register(ClientUI.KrabServices.UserDTO user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Register", ReplyAction="http://tempuri.org/IKanbanSystemService/RegisterResponse")]
-        System.Threading.Tasks.Task RegisterAsync(ClientUI.KrabServices.UserDTO user);
+        System.Threading.Tasks.Task<bool> RegisterAsync(ClientUI.KrabServices.UserDTO user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Login", ReplyAction="http://tempuri.org/IKanbanSystemService/LoginResponse")]
         ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.LoginDataDTO loginData);
@@ -1140,11 +1140,11 @@ namespace ClientUI.KrabServices {
             return base.Channel.RemoveBoardAsync(board);
         }
         
-        public void Register(ClientUI.KrabServices.UserDTO user) {
-            base.Channel.Register(user);
+        public bool Register(ClientUI.KrabServices.UserDTO user) {
+            return base.Channel.Register(user);
         }
         
-        public System.Threading.Tasks.Task RegisterAsync(ClientUI.KrabServices.UserDTO user) {
+        public System.Threading.Tasks.Task<bool> RegisterAsync(ClientUI.KrabServices.UserDTO user) {
             return base.Channel.RegisterAsync(user);
         }
         

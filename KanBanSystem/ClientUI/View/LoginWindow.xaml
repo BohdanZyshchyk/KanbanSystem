@@ -14,7 +14,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="LoginWindow" Height="398.408" Width="345.225"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" x:Name="wind">
     <Grid>
         <StackPanel >
                 <StackPanel Margin="25">
@@ -26,18 +26,23 @@
                              materialDesign:HintAssist.Hint="Email"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                             Text="{Binding ElementName=wind,
+                                            Path=LoginUser.LoginData.Email,
+                                            Mode=TwoWay}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     <PasswordBox
                         Margin="20"
                         materialDesign:HintAssist.Hint="Password"
                         materialDesign:HintAssist.Foreground="Green"
                         materialDesign:TextFieldAssist.UnderlineBrush="Green"
+                        x:Name="Pswd"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <Button Margin="15 20"
-                        Content="Login"/>
+                        Content="Login"
+                        Click="Login_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
@@ -48,7 +53,7 @@
                         Style="{StaticResource MaterialDesignFlatButton}"
                         ToolTip="MaterialDesignFlatButton"
                         Content="Register"
-                        Click="Login_Click"/>
+                        Click="Register_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

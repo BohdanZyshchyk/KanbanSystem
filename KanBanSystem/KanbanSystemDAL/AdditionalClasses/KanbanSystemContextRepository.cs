@@ -48,11 +48,12 @@ namespace KanbanSystemDAL.AdditionalClasses
         /// Commit any changes in database
         /// </summary>
         /// <returns></returns>
-        public async Task CommitChangesAsync()
+        public async Task<bool> CommitChangesAsync()
         {
             try
             {
                 var result = await context.SaveChangesAsync();
+                return true;
             }
             catch (Exception ex)
             {

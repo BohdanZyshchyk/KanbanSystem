@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:ClientUI.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="UserRegistrationWindow" Height="450" Width="401.19"
-        Loaded="Window_Loaded" x:Name="wind">
+        Title="UserRegistrationWindow" Height="450" Width="401.19" x:Name="wind">
     <StackPanel>
             <StackPanel Margin="25">
             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}"
@@ -20,14 +19,14 @@
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                              Text="{Binding ElementName=wind,
-                             Path=User.Name, Mode=TwoWay}"/>
+                             Path=RegistrationUser.Name, Mode=TwoWay}"/>
                 <TextBox Margin="20"
                              materialDesign:HintAssist.Hint="Email"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                              Text="{Binding ElementName=wind,
-                             Path=User.LoginData.Email, Mode=TwoWay}"/>
+                             Path=RegistrationUser.LoginData.Email, Mode=TwoWay}"/>
                 <PasswordBox
                         Margin="20"
                         x:Name="Pswd"

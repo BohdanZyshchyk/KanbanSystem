@@ -337,15 +337,17 @@ namespace WcfServiceInteraction.Services
             }
         }
 
-        public async void Register(UserDTO user)
+        public async Task<bool> Register(UserDTO user)
         {
             try
             {
                 var u = MapperBroker.GetUserFromDTO(user);
+                var current = OperationContext.Current;
                 await repository.UserManager.RegisterAsync(u);
-                lastRegistred = new KanbanSystemServiceClient { Name = user.Name, Callback = OperationContext.Current.GetCallbackChannel<IServiceCallback>() };
+                lastRegistred = new KanbanSystemServiceClient { Name = user.Name, Callback = current.GetCallbackChannel<IServiceCallback>() };
                 SystemServiceClients.Add(lastRegistred);
                 await CommitAndSendCallbackAsync(true);
+                return true;
             }
             catch (Exception ex)
             {
@@ -355,9 +357,9 @@ namespace WcfServiceInteraction.Services
         #endregion
 
         #region Commit and send callbacks
-        private async Task CommitChangesAsync()
+        private async Task<bool> CommitChangesAsync()
         {
-            await repository.CommitChangesAsync();
+            return await repository.CommitChangesAsync();
         }
         private async Task SendCallback(bool isRegistration)
         {
@@ -377,8 +379,9 @@ namespace WcfServiceInteraction.Services
         }
         private async Task CommitAndSendCallbackAsync(bool isRegistration = false)
         {
-            await CommitChangesAsync();
-            await SendCallback(isRegistration);
+            var res = await CommitChangesAsync();
+            if (res)
+                await SendCallback(isRegistration);
         }
         #endregion
     }

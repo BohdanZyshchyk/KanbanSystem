@@ -169,7 +169,7 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// </summary>
         /// <param name="user"></param>
         [OperationContract]
-        void Register(UserDTO user);
+        Task<bool> Register(UserDTO user);
         /// <summary>
         /// Login into system using <paramref name="loginData"/>
         /// </summary>

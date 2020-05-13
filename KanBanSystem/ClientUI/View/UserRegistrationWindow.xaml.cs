@@ -1,7 +1,6 @@
-﻿using System;
+﻿using ClientUI.KrabServices;
+using System;
 using System.Windows;
-using ClientUI.Callbacks;
-using ClientUI.KrabServices;
 
 namespace ClientUI.View
 {
@@ -10,19 +9,21 @@ namespace ClientUI.View
     /// </summary>
     public partial class UserRegistrationWindow : Window
     {
-        public UserDTO User
+        public UserDTO RegistrationUser
         {
-            get { return (UserDTO)GetValue(UserProperty); }
-            set { SetValue(UserProperty, value); }
+            get { return (UserDTO)GetValue(RegistrationUserProperty); }
+            set { SetValue(RegistrationUserProperty, value); }
         }
 
-        public static readonly DependencyProperty UserProperty =
-            DependencyProperty.Register("User", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO() { LoginData = new LoginDataDTO() }));
+        public static readonly DependencyProperty RegistrationUserProperty =
+            DependencyProperty.Register("RegistrationUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO() { LoginData = new LoginDataDTO() }));
 
-        KanbanSystemServiceClient proxy;
-        public UserRegistrationWindow()
+        public KanbanSystemServiceClient Proxy { get; set; }
+
+        public UserRegistrationWindow(ref KanbanSystemServiceClient proxy)
         {
             InitializeComponent();
+            Proxy = proxy;
         }
         public void InformAboutRegistration(string message)
         {
@@ -36,36 +37,30 @@ namespace ClientUI.View
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                proxy = new KanbanSystemServiceClient(new System.ServiceModel.InstanceContext(new UserCallback(this)));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
         private async void Register_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                User.LoginData.Password = Pswd.Password;
-                await proxy.RegisterAsync(User);
+                RegistrationUser.LoginData.Password = Pswd.Password;
+                var result = await Proxy.RegisterAsync(RegistrationUser);
+                if (result)
+                {
+                    var msg = (this.Owner as LoginWindow).UserCallback.Message;
+                    MessageBox.Show(msg, "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    RedirectToLoginWindow();
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        public void RedirectToLoginWindow()
+        private void RedirectToLoginWindow()
         {
             try
             {
-                var loginWindow = new LoginWindow();
-                loginWindow.Show();
+                this.Owner.Show();
                 this.Close();
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientUI.KrabServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,16 +21,23 @@ namespace ClientUI.View
     public partial class MainWindow : Window
     {
         List<string> colors = new List<string>();
-        public MainWindow()
+        public KanbanSystemServiceClient Proxy { get; set; }
+        public MainWindow(ref KanbanSystemServiceClient proxy)
         {
             InitializeComponent();
-           
+            Proxy = proxy;
         }
 
         private void LoadedWind(object sender, RoutedEventArgs e)
         {
             colors = new List<string> { "1", "2" };
             this.DataContext = colors;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Owner.Show();
+            this.Owner.Close();
         }
     }
 }

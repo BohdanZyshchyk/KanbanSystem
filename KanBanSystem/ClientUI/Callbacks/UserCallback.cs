@@ -1,29 +1,23 @@
-﻿using System;
+﻿using ClientUI.KrabServices;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ClientUI.KrabServicesUserManager;
-using ClientUI.View;
 
 namespace ClientUI.Callbacks
 {
-    public class UserCallback : IUserManagerServiceCallback
+    public class UserCallback : IKanbanSystemServiceCallback
     {
-        UserRegistrationWindow window;
-        public UserCallback(UserRegistrationWindow window)
+        public string Message { get; set; }
+        public IEnumerable<BoardDTO> BoardDTOs { get; private set; }
+        public UserCallback()
         {
-            this.window = window;
         }
         public void InformAboutRegistration(string message)
         {
-            window.InformAboutRegistration(message);
-            window.RedirectToLoginWindow();
+            Message = message;
         }
 
         public void RefreshBoards(BoardDTO[] boards)
         {
-            throw new NotImplementedException();
+            BoardDTOs = boards;
         }
     }
 }
