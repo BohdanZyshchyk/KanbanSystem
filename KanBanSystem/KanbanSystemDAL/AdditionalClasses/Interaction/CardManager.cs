@@ -17,9 +17,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
-                var foundUser = await FindHelper<User>.FindEntityAsync(foundCard.Users, user);
-                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this card!", true);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
+                var foundUser = await FindAndCheckNullabilityHelper<User>.InCollectionAsync(foundCard.Users, user, "User is already assigned to this card!", true);
                 foundCard.Users.Add(user);
             }
             catch (Exception ex)
@@ -31,9 +30,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
-                var foundUser = await FindHelper<User>.FindEntityAsync(foundCard.Users, user);
-                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User was not found!", false);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
+                var foundUser = await FindAndCheckNullabilityHelper<User>.InCollectionAsync(foundCard.Users, user, "User was not found!", false);
                 foundCard.Users.Remove(foundUser);
             }
             catch (Exception ex)
@@ -45,9 +43,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
-                var foundLabeColor = await FindHelper<LabelColor>.FindEntityAsync(foundCard.LabelColors, labelColor);
-                foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Such label color is already assigned to this card!", true);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
+                var foundLabeColor = await FindAndCheckNullabilityHelper<LabelColor>.InCollectionAsync(foundCard.LabelColors, labelColor, "Such label color is already assigned to this card!", true);
                 labelColor.Cards.Add(foundCard);
                 context.Set<LabelColor>().Add(labelColor);
             }
@@ -60,9 +57,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
-                var foundLabeColor = await FindHelper<LabelColor>.FindEntityAsync(foundCard.LabelColors, labelColor);
-                foundLabeColor = CheckNullHelper<LabelColor>.CheckNullable(foundLabeColor, "Label color was not found!", false);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
+                var foundLabeColor = await FindAndCheckNullabilityHelper<LabelColor>.InCollectionAsync(foundCard.LabelColors, labelColor, "Label color was not found!", false);
                 foundCard.LabelColors.Remove(foundLabeColor);
             }
             catch (Exception ex)
@@ -74,9 +70,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
-                var foundComment = await FindHelper<Comment>.FindEntityAsync(foundCard.Comments, comment);
-                foundComment = CheckNullHelper<Comment>.CheckNullable(foundComment, "Comment is already assigned to a card!", true);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
+                var foundComment = await FindAndCheckNullabilityHelper<Comment>.InCollectionAsync(foundCard.Comments, comment, "Comment is already assigned to a card!", true);
                 comment.Card = foundCard;
                 context.Set<Comment>().Add(comment);
                 //foundCard.Comments.Add(comment);
@@ -90,9 +85,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
-                var foundComment = await FindHelper<Comment>.FindEntityAsync(foundCard.Comments, comment);
-                foundComment = CheckNullHelper<Comment>.CheckNullable(foundComment, "Comment was not found!", false);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
+                var foundComment = await FindAndCheckNullabilityHelper<Comment>.InCollectionAsync(foundCard.Comments, comment, "Comment was not found!", false);
                 foundCard.Comments.Remove(foundComment);
             }
             catch (Exception ex)
@@ -104,7 +98,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
                 if (foundCard.DueDate.Equals(date))
                 {
                     throw new Exception("Dates are the same!");
@@ -126,7 +120,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundCard = await FindCardAsync(card);
+                var foundCard = await FindAndCheckNullabilityHelper<Card>.InDatabaseAsync(context.Cards, card, "Card not found!", false);
                 if (foundCard.CardName.Equals(newName))
                 {
                     throw new Exception("Names are the same!");
@@ -142,11 +136,6 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
             {
                 throw ex;
             }
-        }
-        private async Task<Card> FindCardAsync(Card card)
-        {
-            var foundCard = await FindHelper<Card>.FindEntityAsync(context.Cards, card);
-            return foundCard ?? throw new Exception("Card not found!");
         }
     }
 }

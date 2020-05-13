@@ -51,9 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalClasses\Helpers\CheckNullHelper.cs" />
     <Compile Include="AdditionalClasses\Helpers\ContextHelper.cs" />
-    <Compile Include="AdditionalClasses\Helpers\FindHelper.cs" />
+    <Compile Include="AdditionalClasses\Helpers\FindAndCheckHelper.cs" />
     <Compile Include="AdditionalClasses\Helpers\UpdateHelper.cs" />
     <Compile Include="AdditionalClasses\Interaction\BoardInteraction.cs" />
     <Compile Include="AdditionalClasses\Interaction\BoardManager.cs" />

@@ -15,21 +15,19 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         }
         public async Task AddCardToCardListAsync(CardList cardList, Card card)
         {
-            var foundCardList = await FindCardList(cardList);
-            var foundCard = await FindHelper<Card>.FindEntityAsync(foundCardList.Cards, card);
-            foundCard = CheckNullHelper<Card>.CheckNullable(foundCard, "Card is already in this card list!", true);
+            var foundCardList = await FindAndCheckNullabilityHelper<CardList>.InDatabaseAsync(context.CardLists, cardList, "Card list not found!", false);
+            var foundCard = await FindAndCheckNullabilityHelper<Card>.InCollectionAsync(foundCardList.Cards, card, "Card is already in this card list!", true);
             foundCardList.Cards.Add(card);
         }
         public async Task RemoveCardFromCardListAsync(CardList cardList, Card card)
         {
-            var foundCardList = await FindCardList(cardList);
-            var foundCard = await FindHelper<Card>.FindEntityAsync(foundCardList.Cards, card);
-            foundCard = CheckNullHelper<Card>.CheckNullable(foundCard, "Card not found!", false);
+            var foundCardList = await FindAndCheckNullabilityHelper<CardList>.InDatabaseAsync(context.CardLists, cardList, "Card list not found!", false);
+            var foundCard = await FindAndCheckNullabilityHelper<Card>.InCollectionAsync(foundCardList.Cards, card, "Card not found!", false);
             foundCardList.Cards.Remove(foundCard);
         }
         public async Task RenameCardListAsync(CardList cardList, string newName)
         {
-            var foundCardList = await FindCardList(cardList);
+            var foundCardList = await FindAndCheckNullabilityHelper<CardList>.InDatabaseAsync(context.CardLists, cardList, "Card list not found!", false);
             if (foundCardList.Name.Equals(newName))
             {
                 throw new Exception("Names are equal!");
@@ -40,11 +38,6 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
                 foundCardList.Name = newName;
                 context.Entry<CardList>(foundCardList).State = EntityState.Modified;
             }
-        }
-        private async Task<CardList> FindCardList(CardList cardList)
-        {
-            var foundCardList = await FindHelper<CardList>.FindEntityAsync(context.CardLists, cardList);
-            return foundCardList ?? throw new Exception("Card list not found!");
         }
     }
 }

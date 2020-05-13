@@ -1,8 +1,8 @@
 ﻿using KanbanSystemDAL.AdditionalClasses.Helpers;
 using KanbanSystemDAL.Model;
 using System;
-using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace KanbanSystemDAL.AdditionalClasses.Interaction
 {
@@ -17,13 +17,9 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await FindUserInDatabase(user);
-                // find board
-                var foundBoard = await FindBoardASync(board);
-                // find user in found board users collection
-                foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
-                // check if found
-                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User is already assigned to this board!", true);
+                var foundBoard = await FindAndCheckNullabilityHelper<Board>.InDatabaseAsync(context.Boards, board, "Board was not found!", false);
+                var foundUser = await FindAndCheckNullabilityHelper<User>.InDatabaseAsync(context.Users, user, "User does not exist in database!", false);
+                foundUser = await FindAndCheckNullabilityHelper<User>.InCollectionAsync(foundBoard.Users, user, "User is already assigned to this board!", true);
                 foundBoard.Users.Add(user);
             }
             catch (Exception ex)
@@ -35,10 +31,9 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await FindUserInDatabase(user);
-                var foundBoard = await FindBoardASync(board);
-                foundUser = await FindHelper<User>.FindEntityAsync(foundBoard.Users, user);
-                foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User not found!", false);
+                var foundBoard = await FindAndCheckNullabilityHelper<Board>.InDatabaseAsync(context.Boards, board, "Board was not found!", false);
+                var foundUser = await FindAndCheckNullabilityHelper<User>.InDatabaseAsync(context.Users, user, "User does not exist in database!", false);
+                foundUser = await FindAndCheckNullabilityHelper<User>.InCollectionAsync(foundBoard.Users, user, "User is not assigned to this board!", false);
                 foundBoard.Users.Remove(foundUser);
             }
             catch (Exception ex)
@@ -50,9 +45,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundBoard = await FindBoardASync(board);
-                var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
-                foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list is already in this board!", true);
+                var foundBoard = await FindAndCheckNullabilityHelper<Board>.InDatabaseAsync(context.Boards, board, "Board was not found!", false);
+                var foundCardList = await FindAndCheckNullabilityHelper<CardList>.InCollectionAsync(foundBoard.CardLists, cardList, "Card list is already in this board!", true);
                 cardList.Board = foundBoard;
                 context.Set<CardList>().Add(cardList);
                 //foundBoard.CardLists.Add(cardList);
@@ -66,9 +60,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundBoard = await FindBoardASync(board);
-                var foundCardList = await FindHelper<CardList>.FindEntityAsync(foundBoard.CardLists, cardList);
-                foundCardList = CheckNullHelper<CardList>.CheckNullable(foundCardList, "Card list not found!", false);
+                var foundBoard = await FindAndCheckNullabilityHelper<Board>.InDatabaseAsync(context.Boards, board, "Board was not found!", false);
+                var foundCardList = await FindAndCheckNullabilityHelper<CardList>.InCollectionAsync(foundBoard.CardLists, cardList, "Card list not found!", false);
                 foundBoard.CardLists.Remove(foundCardList);
             }
             catch (Exception ex)
@@ -80,7 +73,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundBoard = await FindBoardASync(board);
+                var foundBoard = await FindAndCheckNullabilityHelper<Board>.InDatabaseAsync(context.Boards, board, "Board was not found!", false);
                 if (foundBoard.Name.Equals(newName))
                 {
                     throw new Exception("Names are equal!");
@@ -96,29 +89,6 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
             {
                 throw ex;
             }
-        }
-        /// <summary>
-        /// Find <paramref name="board"/> in database. If not found exception will be thrown
-        /// </summary>
-        /// <param name="board"></param>
-        /// <returns></returns>
-        private async Task<Board> FindBoardASync(Board board)
-        {
-            var foundBoard = await FindHelper<Board>.FindEntityAsync(context.Boards, board);
-            return foundBoard ?? throw new Exception("Board not found!");
-        }
-        /// <summary>
-        /// Find <paramref name="user"/> in database. If not found exception will be thrown
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        private async Task<User> FindUserInDatabase(User user)
-        {
-            // find user in db
-            var foundUser = await FindHelper<User>.FindEntityAsync(context.Users, user);
-            // check if found
-            foundUser = CheckNullHelper<User>.CheckNullable(foundUser, "User does not exist in database!", false);
-            return foundUser;
         }
     }
 }

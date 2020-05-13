@@ -1,9 +1,10 @@
 ﻿using KanbanSystemDAL.Model;
+using System;
 using System.Data.Entity;
 
 namespace KanbanSystemDAL.AdditionalClasses.Helpers
 {
-    public static class UpdateHelper<T> where T : class
+    public static class UpdateHelper<T> where T : class, IComparable<T>
     {
         /// <summary>
         /// Updates in <paramref name="context"/> an <paramref name="oldEntity"/> with values from <paramref name="newEntity"/>

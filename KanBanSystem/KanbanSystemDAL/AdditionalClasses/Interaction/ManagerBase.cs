@@ -11,8 +11,8 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
     /// <inheritdoc/>
     public abstract class ManagerBase<T> : IEntityInteraction<T> where T : class, IComparable<T>
     {
-        KanbanSystemContext context;
-        DbSet<T> set;
+        protected KanbanSystemContext context;
+        protected DbSet<T> set;
         public ManagerBase(KanbanSystemContext _context)
         {
             context = _context;
@@ -24,7 +24,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         }
         public async Task<T> FindEntityAsync(T entity)
         {
-            return await FindHelper<T>.FindEntityAsync(set, entity);
+            return await FindAndCheckNullabilityHelper<T>.FindEntityAsync(set, entity);
         }
         public async Task<T> UpdateEntityAsync(T oldEntity, T newEntity)
         {
@@ -47,8 +47,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var found = await FindEntityAsync(entity);
-                found = CheckNullHelper<T>.CheckNullable(found, $"Entity of type {entity.GetType()} is already in DB", true);
+                var found = await FindAndCheckNullabilityHelper<T>.InDatabaseAsync(set, entity, $"Entity of type {entity.GetType()} is already in DB", true);
                 set.Add(entity);
             }
             catch (Exception ex)
@@ -61,8 +60,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var found = await FindEntityAsync(entity);
-                found = CheckNullHelper<T>.CheckNullable(found, $"Entity of type {entity.GetType()} was not found", false);
+                var found = await FindAndCheckNullabilityHelper<T>.InDatabaseAsync(set, entity, $"Entity of type {entity.GetType()} was not found", false);
                 set.Remove(found);
             }
             catch (Exception ex)
