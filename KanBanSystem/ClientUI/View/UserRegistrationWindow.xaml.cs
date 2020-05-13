@@ -24,17 +24,6 @@ namespace ClientUI.View
             InitializeComponent();
             Proxy = proxy;
         }
-        public void InformAboutRegistration(string message)
-        {
-            try
-            {
-                MessageBox.Show(message, "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
 
         private async void Register_Click(object sender, RoutedEventArgs e)
         {

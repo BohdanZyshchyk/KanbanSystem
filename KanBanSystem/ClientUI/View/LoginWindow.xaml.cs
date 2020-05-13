@@ -68,7 +68,6 @@ namespace ClientUI.View
                     main.Owner = this;
                     main.Show();
                     this.Hide();
-                    //MessageBox.Show("OK");
                 }));
 
             }
