@@ -2,6 +2,7 @@
 using ClientUI.KrabServices;
 using System;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace ClientUI.View
 {
@@ -17,7 +18,7 @@ namespace ClientUI.View
         }
 
         public static readonly DependencyProperty LoginUserProperty =
-            DependencyProperty.Register("LoginUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO() { LoginData = new LoginDataDTO() }));
+            DependencyProperty.Register("LoginUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO()));
 
         private KanbanSystemServiceClient proxy;
         public UserCallback UserCallback { get; private set; }
@@ -59,12 +60,17 @@ namespace ClientUI.View
         {
             try
             {
-                LoginUser.LoginData.Password = Pswd.Password;
-                LoginUser = await proxy.LoginAsync(LoginUser.LoginData);
-                var main = new MainWindow(ref this.proxy);
-                main.Owner = this;
-                main.Show();
-                this.Hide();
+                await this.Dispatcher.BeginInvoke(new Action(async() =>
+                {
+                    LoginUser.Password = Pswd.Password;
+                    LoginUser = await proxy.LoginAsync(LoginUser);
+                    var main = new MainWindow(ref this.proxy);
+                    main.Owner = this;
+                    main.Show();
+                    this.Hide();
+                    //MessageBox.Show("OK");
+                }));
+
             }
             catch (Exception ex)
             {

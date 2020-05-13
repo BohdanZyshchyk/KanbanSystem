@@ -54,14 +54,6 @@ namespace WcfServiceInteraction.Helpers
         {
             return MapperHelper.GetEntityFromDTO<LabelColor, LabelColorDTO>(labelColor);
         }
-        public static LoginData GetLoginDataFromDTO(LoginDataDTO loginDataDTO)
-        {
-            return MapperHelper.GetEntityFromDTO<LoginDataDTO, LoginData>(loginDataDTO);
-        }
-        public static LoginDataDTO GetLoginDataDTOFromEntity(LoginData loginData)
-        {
-            return MapperHelper.GetEntityFromDTO<LoginData, LoginDataDTO>(loginData);
-        }
         public static User GetUserFromDTO(UserDTO userDTO)
         {
             return MapperHelper.GetEntityFromDTO<UserDTO, User>(userDTO);

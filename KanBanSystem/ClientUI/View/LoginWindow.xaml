@@ -27,7 +27,7 @@
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
                              Text="{Binding ElementName=wind,
-                                            Path=LoginUser.LoginData.Email,
+                                            Path=LoginUser.Email,
                                             Mode=TwoWay}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     <PasswordBox

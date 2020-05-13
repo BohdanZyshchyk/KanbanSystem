@@ -322,13 +322,13 @@ namespace WcfServiceInteraction.Services
         #endregion
 
         #region User manager
-        public async Task<UserDTO> Login(LoginDataDTO loginData)
+        public async Task<UserDTO> Login(UserDTO user)
         {
             try
             {
-                var ld = MapperBroker.GetLoginDataFromDTO(loginData);
-                var user = await repository.UserManager.LoginAsync(ld);
-                var userDTO = MapperBroker.GetUserDTOFromEntity(user);
+                var u = MapperBroker.GetUserFromDTO(user);
+                u = await repository.UserManager.LoginAsync(u);
+                var userDTO = MapperBroker.GetUserDTOFromEntity(u);
                 return userDTO;
             }
             catch (Exception ex)
@@ -344,7 +344,7 @@ namespace WcfServiceInteraction.Services
                 var u = MapperBroker.GetUserFromDTO(user);
                 var current = OperationContext.Current;
                 await repository.UserManager.RegisterAsync(u);
-                lastRegistred = new KanbanSystemServiceClient { Name = user.Name, Callback = current.GetCallbackChannel<IServiceCallback>() };
+                lastRegistred = new KanbanSystemServiceClient { Name = user.UserName, Callback = current.GetCallbackChannel<IServiceCallback>() };
                 SystemServiceClients.Add(lastRegistred);
                 await CommitAndSendCallbackAsync(true);
                 return true;

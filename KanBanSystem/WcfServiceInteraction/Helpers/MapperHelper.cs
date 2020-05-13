@@ -101,33 +101,23 @@ namespace WcfServiceInteraction.Helpers
                 .ForMember(dest => dest.Cards, opt => opt.MapFrom(src => src.Cards));
                 #endregion
 
-                #region Login data map
-                x.CreateMap<LoginData, LoginDataDTO>()
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
-                .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
-
-                x.CreateMap<LoginDataDTO, LoginData>()
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
-                .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
-                #endregion
-
                 #region User map
                 x.CreateMap<User, UserDTO>()
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
                 .ForMember(dest => dest.Cards, opt => opt.MapFrom(src => src.Cards))
                 .ForMember(dest => dest.UserComments, opt => opt.MapFrom(src => src.UserComments))
-                .ForMember(dest => dest.LoginData, opt => opt.MapFrom(src => src.LoginData))
                 .ForMember(dest => dest.CreatedCardLists, opt => opt.MapFrom(src => src.CreatedCardLists))
                 .ForMember(dest => dest.CardActivities, opt => opt.MapFrom(src => src.CardActivities))
                 .ForMember(dest => dest.Boards, opt => opt.MapFrom(src => src.Boards));
 
                 x.CreateMap<UserDTO, User>()
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
                 .ForMember(dest => dest.Cards, opt => opt.MapFrom(src => src.Cards))
                 .ForMember(dest => dest.UserComments, opt => opt.MapFrom(src => src.UserComments))
-                .ForMember(dest => dest.LoginData, opt => opt.MapFrom(src => src.LoginData))
                 .ForMember(dest => dest.CreatedCardLists, opt => opt.MapFrom(src => src.CreatedCardLists))
                 .ForMember(dest => dest.CardActivities, opt => opt.MapFrom(src => src.CardActivities))
                 .ForMember(dest => dest.Boards, opt => opt.MapFrom(src => src.Boards));

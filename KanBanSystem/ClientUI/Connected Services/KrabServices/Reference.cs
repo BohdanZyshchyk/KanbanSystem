@@ -205,13 +205,16 @@ namespace ClientUI.KrabServices {
         private ClientUI.KrabServices.CardListDTO[] CreatedCardListsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServices.LoginDataDTO LoginDataField;
+        private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ClientUI.KrabServices.CommentDTO[] UserCommentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -276,27 +279,27 @@ namespace ClientUI.KrabServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServices.LoginDataDTO LoginData {
+        public string Email {
             get {
-                return this.LoginDataField;
+                return this.EmailField;
             }
             set {
-                if ((object.ReferenceEquals(this.LoginDataField, value) != true)) {
-                    this.LoginDataField = value;
-                    this.RaisePropertyChanged("LoginData");
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public string Password {
             get {
-                return this.NameField;
+                return this.PasswordField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
                 }
             }
         }
@@ -310,6 +313,19 @@ namespace ClientUI.KrabServices {
                 if ((object.ReferenceEquals(this.UserCommentsField, value) != true)) {
                     this.UserCommentsField = value;
                     this.RaisePropertyChanged("UserComments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
                 }
             }
         }
@@ -728,83 +744,6 @@ namespace ClientUI.KrabServices {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoginDataDTO", Namespace="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO")]
-    [System.SerializableAttribute()]
-    public partial class LoginDataDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServices.UserDTO UserField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServices.UserDTO User {
-            get {
-                return this.UserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserField, value) != true)) {
-                    this.UserField = value;
-                    this.RaisePropertyChanged("User");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="KrabServices.IKanbanSystemService", CallbackContract=typeof(ClientUI.KrabServices.IKanbanSystemServiceCallback))]
     public interface IKanbanSystemService {
@@ -936,10 +875,10 @@ namespace ClientUI.KrabServices {
         System.Threading.Tasks.Task<bool> RegisterAsync(ClientUI.KrabServices.UserDTO user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Login", ReplyAction="http://tempuri.org/IKanbanSystemService/LoginResponse")]
-        ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.LoginDataDTO loginData);
+        ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.UserDTO user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Login", ReplyAction="http://tempuri.org/IKanbanSystemService/LoginResponse")]
-        System.Threading.Tasks.Task<ClientUI.KrabServices.UserDTO> LoginAsync(ClientUI.KrabServices.LoginDataDTO loginData);
+        System.Threading.Tasks.Task<ClientUI.KrabServices.UserDTO> LoginAsync(ClientUI.KrabServices.UserDTO user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1148,12 +1087,12 @@ namespace ClientUI.KrabServices {
             return base.Channel.RegisterAsync(user);
         }
         
-        public ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.LoginDataDTO loginData) {
-            return base.Channel.Login(loginData);
+        public ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.UserDTO user) {
+            return base.Channel.Login(user);
         }
         
-        public System.Threading.Tasks.Task<ClientUI.KrabServices.UserDTO> LoginAsync(ClientUI.KrabServices.LoginDataDTO loginData) {
-            return base.Channel.LoginAsync(loginData);
+        public System.Threading.Tasks.Task<ClientUI.KrabServices.UserDTO> LoginAsync(ClientUI.KrabServices.UserDTO user) {
+            return base.Channel.LoginAsync(user);
         }
     }
 }

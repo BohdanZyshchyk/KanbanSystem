@@ -14,9 +14,8 @@ namespace ClientUI.View
             get { return (UserDTO)GetValue(RegistrationUserProperty); }
             set { SetValue(RegistrationUserProperty, value); }
         }
-
         public static readonly DependencyProperty RegistrationUserProperty =
-            DependencyProperty.Register("RegistrationUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO() { LoginData = new LoginDataDTO() }));
+            DependencyProperty.Register("RegistrationUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO()));
 
         public KanbanSystemServiceClient Proxy { get; set; }
 
@@ -41,7 +40,7 @@ namespace ClientUI.View
         {
             try
             {
-                RegistrationUser.LoginData.Password = Pswd.Password;
+                RegistrationUser.Password = Pswd.Password;
                 var result = await Proxy.RegisterAsync(RegistrationUser);
                 if (result)
                 {
