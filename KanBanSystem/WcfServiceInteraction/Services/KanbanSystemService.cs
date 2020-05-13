@@ -1,24 +1,29 @@
 ﻿using KanbanSystemDAL.AdditionalClasses;
 using System;
+using System.Collections.Generic;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using WcfServiceInteraction.CallbackInterfaces;
 using WcfServiceInteraction.DTO;
 using WcfServiceInteraction.Helpers;
 using WcfServiceInteraction.ServiceInterfaces;
+using WcfServiceInteraction.Services.AdditionalClasses;
 
 namespace WcfServiceInteraction.Services
 {
+    /// <inheritdoc/>
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
-    public class BoardInteractionService : IBoardInteractionService
+    public class KanbanSystemService : IKanbanSystemService
     {
         KanbanSystemContextRepository repository;
-        IServiceCallback serviceCallback;
-        public BoardInteractionService()
+        KanbanSystemServiceClient lastRegistred;
+        ICollection<KanbanSystemServiceClient> SystemServiceClients { get; set; }
+        public KanbanSystemService()
         {
             repository = new KanbanSystemContextRepository();
-            serviceCallback = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+            SystemServiceClients = new List<KanbanSystemServiceClient>();
         }
+        #region Board interaction
         public async void AddCardListToBoard(BoardDTO board, CardListDTO cardList)
         {
             try
@@ -254,20 +259,127 @@ namespace WcfServiceInteraction.Services
                 throw ex;
             }
         }
+        #endregion
+
+        #region Board manager
+        public async void AddBoard(BoardDTO board)
+        {
+            try
+            {
+                var b = MapperBroker.GetBoardFromDTO(board);
+                await repository.BoardManager.AddEntityAsync(b);
+                await CommitAndSendCallbackAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<BoardDTO>> GetBoards()
+        {
+            try
+            {
+                var boards = await repository.BoardManager.GetEntitiesAsync();
+                var boardDTOs = MapperBroker.GetBoardDTOsFromBoards(boards);
+                return boardDTOs;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async void RemoveBoard(BoardDTO board)
+        {
+            try
+            {
+                var b = MapperBroker.GetBoardFromDTO(board);
+                await repository.BoardManager.RemoveEntityAsync(b);
+                await CommitAndSendCallbackAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<BoardDTO> UpdateBoard(BoardDTO oldBoard, BoardDTO newBoard)
+        {
+            try
+            {
+                var oldB = MapperBroker.GetBoardFromDTO(oldBoard);
+                var newB = MapperBroker.GetBoardFromDTO(newBoard);
+                oldB = await repository.BoardManager.UpdateEntityAsync(oldB, newB);
+                await CommitAndSendCallbackAsync();
+                return MapperBroker.GetBoardDTOFromEntity(oldB);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region User manager
+        public async Task<UserDTO> Login(LoginDataDTO loginData)
+        {
+            try
+            {
+                var ld = MapperBroker.GetLoginDataFromDTO(loginData);
+                var user = await repository.UserManager.LoginAsync(ld);
+                var userDTO = MapperBroker.GetUserDTOFromEntity(user);
+                return userDTO;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async void Register(UserDTO user)
+        {
+            try
+            {
+                var u = MapperBroker.GetUserFromDTO(user);
+                await repository.UserManager.RegisterAsync(u);
+                lastRegistred = new KanbanSystemServiceClient { Name = user.Name, Callback = OperationContext.Current.GetCallbackChannel<IServiceCallback>() };
+                SystemServiceClients.Add(lastRegistred);
+                await CommitAndSendCallbackAsync(true);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Commit and send callbacks
         private async Task CommitChangesAsync()
         {
             await repository.CommitChangesAsync();
         }
-        private async Task SendCallback()
+        private async Task SendCallback(bool isRegistration)
         {
-            var boards = await repository.BoardManager.GetEntitiesAsync();
-            var boardDTOs = MapperBroker.GetBoardDTOsFromBoards(boards);
-            serviceCallback.RefreshBoards(boardDTOs);
+            if (isRegistration)
+            {
+                lastRegistred.Callback.InformAboutRegistration($"Welcome to our system, {lastRegistred.Name}! Registration was successful! You will be redirected to login window now. Use your login data to enter");
+            }
+            else
+            {
+                var boards = await repository.BoardManager.GetEntitiesAsync();
+                var boardDTOs = MapperBroker.GetBoardDTOsFromBoards(boards);
+                foreach (var sc in SystemServiceClients)
+                {
+                    sc.Callback.RefreshBoards(boardDTOs);
+                }
+            }
         }
-        private async Task CommitAndSendCallbackAsync()
+        private async Task CommitAndSendCallbackAsync(bool isRegistration = false)
         {
             await CommitChangesAsync();
-            await SendCallback();
+            await SendCallback(isRegistration);
         }
+        #endregion
     }
 }

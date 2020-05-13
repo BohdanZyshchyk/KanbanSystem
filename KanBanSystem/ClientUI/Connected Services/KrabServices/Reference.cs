@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClientUI.KrabServicesBoardInteraction {
+namespace ClientUI.KrabServices {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,13 +23,13 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardListDTO[] CardListsField;
+        private ClientUI.KrabServices.CardListDTO[] CardListsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.UserDTO[] UsersField;
+        private ClientUI.KrabServices.UserDTO[] UsersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -42,7 +42,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardListDTO[] CardLists {
+        public ClientUI.KrabServices.CardListDTO[] CardLists {
             get {
                 return this.CardListsField;
             }
@@ -68,7 +68,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.UserDTO[] Users {
+        public ClientUI.KrabServices.UserDTO[] Users {
             get {
                 return this.UsersField;
             }
@@ -100,13 +100,13 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.BoardDTO BoardField;
+        private ClientUI.KrabServices.BoardDTO BoardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardDTO[] CardsField;
+        private ClientUI.KrabServices.CardDTO[] CardsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.UserDTO CreatorField;
+        private ClientUI.KrabServices.UserDTO CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -122,7 +122,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.BoardDTO Board {
+        public ClientUI.KrabServices.BoardDTO Board {
             get {
                 return this.BoardField;
             }
@@ -135,7 +135,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardDTO[] Cards {
+        public ClientUI.KrabServices.CardDTO[] Cards {
             get {
                 return this.CardsField;
             }
@@ -148,7 +148,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.UserDTO Creator {
+        public ClientUI.KrabServices.UserDTO Creator {
             get {
                 return this.CreatorField;
             }
@@ -193,25 +193,25 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.BoardDTO[] BoardsField;
+        private ClientUI.KrabServices.BoardDTO[] BoardsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardActivityDTO[] CardActivitiesField;
+        private ClientUI.KrabServices.CardActivityDTO[] CardActivitiesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardDTO[] CardsField;
+        private ClientUI.KrabServices.CardDTO[] CardsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardListDTO[] CreatedCardListsField;
+        private ClientUI.KrabServices.CardListDTO[] CreatedCardListsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.LoginDataDTO LoginDataField;
+        private ClientUI.KrabServices.LoginDataDTO LoginDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CommentDTO[] UserCommentsField;
+        private ClientUI.KrabServices.CommentDTO[] UserCommentsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -224,7 +224,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.BoardDTO[] Boards {
+        public ClientUI.KrabServices.BoardDTO[] Boards {
             get {
                 return this.BoardsField;
             }
@@ -237,7 +237,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardActivityDTO[] CardActivities {
+        public ClientUI.KrabServices.CardActivityDTO[] CardActivities {
             get {
                 return this.CardActivitiesField;
             }
@@ -250,7 +250,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardDTO[] Cards {
+        public ClientUI.KrabServices.CardDTO[] Cards {
             get {
                 return this.CardsField;
             }
@@ -263,7 +263,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardListDTO[] CreatedCardLists {
+        public ClientUI.KrabServices.CardListDTO[] CreatedCardLists {
             get {
                 return this.CreatedCardListsField;
             }
@@ -276,7 +276,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.LoginDataDTO LoginData {
+        public ClientUI.KrabServices.LoginDataDTO LoginData {
             get {
                 return this.LoginDataField;
             }
@@ -302,7 +302,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CommentDTO[] UserComments {
+        public ClientUI.KrabServices.CommentDTO[] UserComments {
             get {
                 return this.UserCommentsField;
             }
@@ -334,16 +334,16 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardActivityDTO[] CardActivitiesField;
+        private ClientUI.KrabServices.CardActivityDTO[] CardActivitiesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardListDTO CardListField;
+        private ClientUI.KrabServices.CardListDTO CardListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CardNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CommentDTO[] CommentsField;
+        private ClientUI.KrabServices.CommentDTO[] CommentsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -352,13 +352,13 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.DateTime DueDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.LabelColorDTO[] LabelColorsField;
+        private ClientUI.KrabServices.LabelColorDTO[] LabelColorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime StartDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.UserDTO[] UsersField;
+        private ClientUI.KrabServices.UserDTO[] UsersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -371,7 +371,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardActivityDTO[] CardActivities {
+        public ClientUI.KrabServices.CardActivityDTO[] CardActivities {
             get {
                 return this.CardActivitiesField;
             }
@@ -384,7 +384,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardListDTO CardList {
+        public ClientUI.KrabServices.CardListDTO CardList {
             get {
                 return this.CardListField;
             }
@@ -410,7 +410,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CommentDTO[] Comments {
+        public ClientUI.KrabServices.CommentDTO[] Comments {
             get {
                 return this.CommentsField;
             }
@@ -449,7 +449,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.LabelColorDTO[] LabelColors {
+        public ClientUI.KrabServices.LabelColorDTO[] LabelColors {
             get {
                 return this.LabelColorsField;
             }
@@ -475,7 +475,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.UserDTO[] Users {
+        public ClientUI.KrabServices.UserDTO[] Users {
             get {
                 return this.UsersField;
             }
@@ -507,7 +507,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardDTO CardField;
+        private ClientUI.KrabServices.CardDTO CardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CardActivityActionField;
@@ -516,7 +516,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.UserDTO UserField;
+        private ClientUI.KrabServices.UserDTO UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -529,7 +529,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardDTO Card {
+        public ClientUI.KrabServices.CardDTO Card {
             get {
                 return this.CardField;
             }
@@ -568,7 +568,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.UserDTO User {
+        public ClientUI.KrabServices.UserDTO User {
             get {
                 return this.UserField;
             }
@@ -600,10 +600,10 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardDTO CardField;
+        private ClientUI.KrabServices.CardDTO CardField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.UserDTO CommentAuthorField;
+        private ClientUI.KrabServices.UserDTO CommentAuthorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CommentContentField;
@@ -619,7 +619,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardDTO Card {
+        public ClientUI.KrabServices.CardDTO Card {
             get {
                 return this.CardField;
             }
@@ -632,7 +632,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.UserDTO CommentAuthor {
+        public ClientUI.KrabServices.UserDTO CommentAuthor {
             get {
                 return this.CommentAuthorField;
             }
@@ -677,7 +677,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.CardDTO[] CardsField;
+        private ClientUI.KrabServices.CardDTO[] CardsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ColorField;
@@ -693,7 +693,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.CardDTO[] Cards {
+        public ClientUI.KrabServices.CardDTO[] Cards {
             get {
                 return this.CardsField;
             }
@@ -744,7 +744,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClientUI.KrabServicesBoardInteraction.UserDTO UserField;
+        private ClientUI.KrabServices.UserDTO UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -783,7 +783,7 @@ namespace ClientUI.KrabServicesBoardInteraction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClientUI.KrabServicesBoardInteraction.UserDTO User {
+        public ClientUI.KrabServices.UserDTO User {
             get {
                 return this.UserField;
             }
@@ -806,270 +806,354 @@ namespace ClientUI.KrabServicesBoardInteraction {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="KrabServicesBoardInteraction.IBoardInteractionService", CallbackContract=typeof(ClientUI.KrabServicesBoardInteraction.IBoardInteractionServiceCallback))]
-    public interface IBoardInteractionService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="KrabServices.IKanbanSystemService", CallbackContract=typeof(ClientUI.KrabServices.IKanbanSystemServiceCallback))]
+    public interface IKanbanSystemService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddUserToBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddUserToBoardResponse")]
-        void AddUserToBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddUserToBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddUserToBoardResponse")]
+        void AddUserToBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddUserToBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddUserToBoardResponse")]
-        System.Threading.Tasks.Task AddUserToBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddUserToBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddUserToBoardResponse")]
+        System.Threading.Tasks.Task AddUserToBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveUserFromBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveUserFromBoardResponse")]
-        void RemoveUserFromBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveUserFromBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveUserFromBoardResponse")]
+        void RemoveUserFromBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveUserFromBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveUserFromBoardResponse")]
-        System.Threading.Tasks.Task RemoveUserFromBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveUserFromBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveUserFromBoardResponse")]
+        System.Threading.Tasks.Task RemoveUserFromBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddCardListToBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddCardListToBoardResponse")]
-        void AddCardListToBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddCardListToBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddCardListToBoardResponse")]
+        void AddCardListToBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddCardListToBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddCardListToBoardResponse")]
-        System.Threading.Tasks.Task AddCardListToBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddCardListToBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddCardListToBoardResponse")]
+        System.Threading.Tasks.Task AddCardListToBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveCardListFromBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveCardListFromBoardResponse")]
-        void RemoveCardListFromBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveCardListFromBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveCardListFromBoardResponse")]
+        void RemoveCardListFromBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveCardListFromBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveCardListFromBoardResponse")]
-        System.Threading.Tasks.Task RemoveCardListFromBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveCardListFromBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveCardListFromBoardResponse")]
+        System.Threading.Tasks.Task RemoveCardListFromBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RenameBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/RenameBoardResponse")]
-        void RenameBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, string newName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RenameBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RenameBoardResponse")]
+        void RenameBoard(ClientUI.KrabServices.BoardDTO board, string newName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RenameBoard", ReplyAction="http://tempuri.org/IBoardInteractionService/RenameBoardResponse")]
-        System.Threading.Tasks.Task RenameBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, string newName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RenameBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RenameBoardResponse")]
+        System.Threading.Tasks.Task RenameBoardAsync(ClientUI.KrabServices.BoardDTO board, string newName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddCardToCardList", ReplyAction="http://tempuri.org/IBoardInteractionService/AddCardToCardListResponse")]
-        void AddCardToCardList(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddCardToCardList", ReplyAction="http://tempuri.org/IKanbanSystemService/AddCardToCardListResponse")]
+        void AddCardToCardList(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddCardToCardList", ReplyAction="http://tempuri.org/IBoardInteractionService/AddCardToCardListResponse")]
-        System.Threading.Tasks.Task AddCardToCardListAsync(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddCardToCardList", ReplyAction="http://tempuri.org/IKanbanSystemService/AddCardToCardListResponse")]
+        System.Threading.Tasks.Task AddCardToCardListAsync(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardList", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardListResponse")]
-        void RemoveCardFromCardList(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveCardFromCardList", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveCardFromCardListResponse")]
+        void RemoveCardFromCardList(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardList", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveCardFromCardListResponse")]
-        System.Threading.Tasks.Task RemoveCardFromCardListAsync(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveCardFromCardList", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveCardFromCardListResponse")]
+        System.Threading.Tasks.Task RemoveCardFromCardListAsync(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RenameCardList", ReplyAction="http://tempuri.org/IBoardInteractionService/RenameCardListResponse")]
-        void RenameCardList(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, string newName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RenameCardList", ReplyAction="http://tempuri.org/IKanbanSystemService/RenameCardListResponse")]
+        void RenameCardList(ClientUI.KrabServices.CardListDTO cardList, string newName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RenameCardList", ReplyAction="http://tempuri.org/IBoardInteractionService/RenameCardListResponse")]
-        System.Threading.Tasks.Task RenameCardListAsync(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, string newName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RenameCardList", ReplyAction="http://tempuri.org/IKanbanSystemService/RenameCardListResponse")]
+        System.Threading.Tasks.Task RenameCardListAsync(ClientUI.KrabServices.CardListDTO cardList, string newName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddUserToCard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddUserToCardResponse")]
-        void AddUserToCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddUserToCard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddUserToCardResponse")]
+        void AddUserToCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddUserToCard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddUserToCardResponse")]
-        System.Threading.Tasks.Task AddUserToCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddUserToCard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddUserToCardResponse")]
+        System.Threading.Tasks.Task AddUserToCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveUserFromCard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveUserFromCardResponse")]
-        void RemoveUserFromCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveUserFromCard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveUserFromCardResponse")]
+        void RemoveUserFromCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveUserFromCard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveUserFromCardResponse")]
-        System.Threading.Tasks.Task RemoveUserFromCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveUserFromCard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveUserFromCardResponse")]
+        System.Threading.Tasks.Task RemoveUserFromCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddLabelColorToCard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddLabelColorToCardResponse")]
-        void AddLabelColorToCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddLabelColorToCard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddLabelColorToCardResponse")]
+        void AddLabelColorToCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddLabelColorToCard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddLabelColorToCardResponse")]
-        System.Threading.Tasks.Task AddLabelColorToCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddLabelColorToCard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddLabelColorToCardResponse")]
+        System.Threading.Tasks.Task AddLabelColorToCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveLabelColorFromCard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveLabelColorFromCardResponse")]
-        void RemoveLabelColorFromCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveLabelColorFromCard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveLabelColorFromCardResponse")]
+        void RemoveLabelColorFromCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveLabelColorFromCard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveLabelColorFromCardResponse")]
-        System.Threading.Tasks.Task RemoveLabelColorFromCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveLabelColorFromCard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveLabelColorFromCardResponse")]
+        System.Threading.Tasks.Task RemoveLabelColorFromCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddCommentToCard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddCommentToCardResponse")]
-        void AddCommentToCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddCommentToCard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddCommentToCardResponse")]
+        void AddCommentToCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/AddCommentToCard", ReplyAction="http://tempuri.org/IBoardInteractionService/AddCommentToCardResponse")]
-        System.Threading.Tasks.Task AddCommentToCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddCommentToCard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddCommentToCardResponse")]
+        System.Threading.Tasks.Task AddCommentToCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveCommentFromCard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveCommentFromCardResponse")]
-        void RemoveCommentFromCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveCommentFromCard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveCommentFromCardResponse")]
+        void RemoveCommentFromCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RemoveCommentFromCard", ReplyAction="http://tempuri.org/IBoardInteractionService/RemoveCommentFromCardResponse")]
-        System.Threading.Tasks.Task RemoveCommentFromCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveCommentFromCard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveCommentFromCardResponse")]
+        System.Threading.Tasks.Task RemoveCommentFromCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/ChangeDueDateOfACard", ReplyAction="http://tempuri.org/IBoardInteractionService/ChangeDueDateOfACardResponse")]
-        void ChangeDueDateOfACard(ClientUI.KrabServicesBoardInteraction.CardDTO card, System.DateTime date);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/ChangeDueDateOfACard", ReplyAction="http://tempuri.org/IKanbanSystemService/ChangeDueDateOfACardResponse")]
+        void ChangeDueDateOfACard(ClientUI.KrabServices.CardDTO card, System.DateTime date);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/ChangeDueDateOfACard", ReplyAction="http://tempuri.org/IBoardInteractionService/ChangeDueDateOfACardResponse")]
-        System.Threading.Tasks.Task ChangeDueDateOfACardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, System.DateTime date);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/ChangeDueDateOfACard", ReplyAction="http://tempuri.org/IKanbanSystemService/ChangeDueDateOfACardResponse")]
+        System.Threading.Tasks.Task ChangeDueDateOfACardAsync(ClientUI.KrabServices.CardDTO card, System.DateTime date);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/ChangeNameOfACard", ReplyAction="http://tempuri.org/IBoardInteractionService/ChangeNameOfACardResponse")]
-        void ChangeNameOfACard(ClientUI.KrabServicesBoardInteraction.CardDTO card, string newName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/ChangeNameOfACard", ReplyAction="http://tempuri.org/IKanbanSystemService/ChangeNameOfACardResponse")]
+        void ChangeNameOfACard(ClientUI.KrabServices.CardDTO card, string newName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/ChangeNameOfACard", ReplyAction="http://tempuri.org/IBoardInteractionService/ChangeNameOfACardResponse")]
-        System.Threading.Tasks.Task ChangeNameOfACardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, string newName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/ChangeNameOfACard", ReplyAction="http://tempuri.org/IKanbanSystemService/ChangeNameOfACardResponse")]
+        System.Threading.Tasks.Task ChangeNameOfACardAsync(ClientUI.KrabServices.CardDTO card, string newName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/GetBoards", ReplyAction="http://tempuri.org/IKanbanSystemService/GetBoardsResponse")]
+        ClientUI.KrabServices.BoardDTO[] GetBoards();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/GetBoards", ReplyAction="http://tempuri.org/IKanbanSystemService/GetBoardsResponse")]
+        System.Threading.Tasks.Task<ClientUI.KrabServices.BoardDTO[]> GetBoardsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/UpdateBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/UpdateBoardResponse")]
+        ClientUI.KrabServices.BoardDTO UpdateBoard(ClientUI.KrabServices.BoardDTO oldBoard, ClientUI.KrabServices.BoardDTO newBoard);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/UpdateBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/UpdateBoardResponse")]
+        System.Threading.Tasks.Task<ClientUI.KrabServices.BoardDTO> UpdateBoardAsync(ClientUI.KrabServices.BoardDTO oldBoard, ClientUI.KrabServices.BoardDTO newBoard);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddBoardResponse")]
+        void AddBoard(ClientUI.KrabServices.BoardDTO board);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/AddBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/AddBoardResponse")]
+        System.Threading.Tasks.Task AddBoardAsync(ClientUI.KrabServices.BoardDTO board);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveBoardResponse")]
+        void RemoveBoard(ClientUI.KrabServices.BoardDTO board);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RemoveBoard", ReplyAction="http://tempuri.org/IKanbanSystemService/RemoveBoardResponse")]
+        System.Threading.Tasks.Task RemoveBoardAsync(ClientUI.KrabServices.BoardDTO board);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Register", ReplyAction="http://tempuri.org/IKanbanSystemService/RegisterResponse")]
+        void Register(ClientUI.KrabServices.UserDTO user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Register", ReplyAction="http://tempuri.org/IKanbanSystemService/RegisterResponse")]
+        System.Threading.Tasks.Task RegisterAsync(ClientUI.KrabServices.UserDTO user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Login", ReplyAction="http://tempuri.org/IKanbanSystemService/LoginResponse")]
+        ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.LoginDataDTO loginData);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/Login", ReplyAction="http://tempuri.org/IKanbanSystemService/LoginResponse")]
+        System.Threading.Tasks.Task<ClientUI.KrabServices.UserDTO> LoginAsync(ClientUI.KrabServices.LoginDataDTO loginData);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBoardInteractionServiceCallback {
+    public interface IKanbanSystemServiceCallback {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/RefreshBoards", ReplyAction="http://tempuri.org/IBoardInteractionService/RefreshBoardsResponse")]
-        void RefreshBoards(ClientUI.KrabServicesBoardInteraction.BoardDTO[] boards);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/RefreshBoards", ReplyAction="http://tempuri.org/IKanbanSystemService/RefreshBoardsResponse")]
+        void RefreshBoards(ClientUI.KrabServices.BoardDTO[] boards);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBoardInteractionService/InformAboutRegistration", ReplyAction="http://tempuri.org/IBoardInteractionService/InformAboutRegistrationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKanbanSystemService/InformAboutRegistration", ReplyAction="http://tempuri.org/IKanbanSystemService/InformAboutRegistrationResponse")]
         void InformAboutRegistration(string message);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBoardInteractionServiceChannel : ClientUI.KrabServicesBoardInteraction.IBoardInteractionService, System.ServiceModel.IClientChannel {
+    public interface IKanbanSystemServiceChannel : ClientUI.KrabServices.IKanbanSystemService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BoardInteractionServiceClient : System.ServiceModel.DuplexClientBase<ClientUI.KrabServicesBoardInteraction.IBoardInteractionService>, ClientUI.KrabServicesBoardInteraction.IBoardInteractionService {
+    public partial class KanbanSystemServiceClient : System.ServiceModel.DuplexClientBase<ClientUI.KrabServices.IKanbanSystemService>, ClientUI.KrabServices.IKanbanSystemService {
         
-        public BoardInteractionServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+        public KanbanSystemServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
         }
         
-        public BoardInteractionServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+        public KanbanSystemServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
                 base(callbackInstance, endpointConfigurationName) {
         }
         
-        public BoardInteractionServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+        public KanbanSystemServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
                 base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public BoardInteractionServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public KanbanSystemServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public BoardInteractionServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public KanbanSystemServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void AddUserToBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public void AddUserToBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user) {
             base.Channel.AddUserToBoard(board, user);
         }
         
-        public System.Threading.Tasks.Task AddUserToBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public System.Threading.Tasks.Task AddUserToBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user) {
             return base.Channel.AddUserToBoardAsync(board, user);
         }
         
-        public void RemoveUserFromBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public void RemoveUserFromBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user) {
             base.Channel.RemoveUserFromBoard(board, user);
         }
         
-        public System.Threading.Tasks.Task RemoveUserFromBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public System.Threading.Tasks.Task RemoveUserFromBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.UserDTO user) {
             return base.Channel.RemoveUserFromBoardAsync(board, user);
         }
         
-        public void AddCardListToBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList) {
+        public void AddCardListToBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList) {
             base.Channel.AddCardListToBoard(board, cardList);
         }
         
-        public System.Threading.Tasks.Task AddCardListToBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList) {
+        public System.Threading.Tasks.Task AddCardListToBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList) {
             return base.Channel.AddCardListToBoardAsync(board, cardList);
         }
         
-        public void RemoveCardListFromBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList) {
+        public void RemoveCardListFromBoard(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList) {
             base.Channel.RemoveCardListFromBoard(board, cardList);
         }
         
-        public System.Threading.Tasks.Task RemoveCardListFromBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, ClientUI.KrabServicesBoardInteraction.CardListDTO cardList) {
+        public System.Threading.Tasks.Task RemoveCardListFromBoardAsync(ClientUI.KrabServices.BoardDTO board, ClientUI.KrabServices.CardListDTO cardList) {
             return base.Channel.RemoveCardListFromBoardAsync(board, cardList);
         }
         
-        public void RenameBoard(ClientUI.KrabServicesBoardInteraction.BoardDTO board, string newName) {
+        public void RenameBoard(ClientUI.KrabServices.BoardDTO board, string newName) {
             base.Channel.RenameBoard(board, newName);
         }
         
-        public System.Threading.Tasks.Task RenameBoardAsync(ClientUI.KrabServicesBoardInteraction.BoardDTO board, string newName) {
+        public System.Threading.Tasks.Task RenameBoardAsync(ClientUI.KrabServices.BoardDTO board, string newName) {
             return base.Channel.RenameBoardAsync(board, newName);
         }
         
-        public void AddCardToCardList(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card) {
+        public void AddCardToCardList(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card) {
             base.Channel.AddCardToCardList(cardList, card);
         }
         
-        public System.Threading.Tasks.Task AddCardToCardListAsync(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card) {
+        public System.Threading.Tasks.Task AddCardToCardListAsync(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card) {
             return base.Channel.AddCardToCardListAsync(cardList, card);
         }
         
-        public void RemoveCardFromCardList(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card) {
+        public void RemoveCardFromCardList(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card) {
             base.Channel.RemoveCardFromCardList(cardList, card);
         }
         
-        public System.Threading.Tasks.Task RemoveCardFromCardListAsync(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, ClientUI.KrabServicesBoardInteraction.CardDTO card) {
+        public System.Threading.Tasks.Task RemoveCardFromCardListAsync(ClientUI.KrabServices.CardListDTO cardList, ClientUI.KrabServices.CardDTO card) {
             return base.Channel.RemoveCardFromCardListAsync(cardList, card);
         }
         
-        public void RenameCardList(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, string newName) {
+        public void RenameCardList(ClientUI.KrabServices.CardListDTO cardList, string newName) {
             base.Channel.RenameCardList(cardList, newName);
         }
         
-        public System.Threading.Tasks.Task RenameCardListAsync(ClientUI.KrabServicesBoardInteraction.CardListDTO cardList, string newName) {
+        public System.Threading.Tasks.Task RenameCardListAsync(ClientUI.KrabServices.CardListDTO cardList, string newName) {
             return base.Channel.RenameCardListAsync(cardList, newName);
         }
         
-        public void AddUserToCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public void AddUserToCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user) {
             base.Channel.AddUserToCard(card, user);
         }
         
-        public System.Threading.Tasks.Task AddUserToCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public System.Threading.Tasks.Task AddUserToCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user) {
             return base.Channel.AddUserToCardAsync(card, user);
         }
         
-        public void RemoveUserFromCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public void RemoveUserFromCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user) {
             base.Channel.RemoveUserFromCard(card, user);
         }
         
-        public System.Threading.Tasks.Task RemoveUserFromCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.UserDTO user) {
+        public System.Threading.Tasks.Task RemoveUserFromCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.UserDTO user) {
             return base.Channel.RemoveUserFromCardAsync(card, user);
         }
         
-        public void AddLabelColorToCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor) {
+        public void AddLabelColorToCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor) {
             base.Channel.AddLabelColorToCard(card, labelColor);
         }
         
-        public System.Threading.Tasks.Task AddLabelColorToCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor) {
+        public System.Threading.Tasks.Task AddLabelColorToCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor) {
             return base.Channel.AddLabelColorToCardAsync(card, labelColor);
         }
         
-        public void RemoveLabelColorFromCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor) {
+        public void RemoveLabelColorFromCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor) {
             base.Channel.RemoveLabelColorFromCard(card, labelColor);
         }
         
-        public System.Threading.Tasks.Task RemoveLabelColorFromCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.LabelColorDTO labelColor) {
+        public System.Threading.Tasks.Task RemoveLabelColorFromCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.LabelColorDTO labelColor) {
             return base.Channel.RemoveLabelColorFromCardAsync(card, labelColor);
         }
         
-        public void AddCommentToCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment) {
+        public void AddCommentToCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment) {
             base.Channel.AddCommentToCard(card, comment);
         }
         
-        public System.Threading.Tasks.Task AddCommentToCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment) {
+        public System.Threading.Tasks.Task AddCommentToCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment) {
             return base.Channel.AddCommentToCardAsync(card, comment);
         }
         
-        public void RemoveCommentFromCard(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment) {
+        public void RemoveCommentFromCard(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment) {
             base.Channel.RemoveCommentFromCard(card, comment);
         }
         
-        public System.Threading.Tasks.Task RemoveCommentFromCardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, ClientUI.KrabServicesBoardInteraction.CommentDTO comment) {
+        public System.Threading.Tasks.Task RemoveCommentFromCardAsync(ClientUI.KrabServices.CardDTO card, ClientUI.KrabServices.CommentDTO comment) {
             return base.Channel.RemoveCommentFromCardAsync(card, comment);
         }
         
-        public void ChangeDueDateOfACard(ClientUI.KrabServicesBoardInteraction.CardDTO card, System.DateTime date) {
+        public void ChangeDueDateOfACard(ClientUI.KrabServices.CardDTO card, System.DateTime date) {
             base.Channel.ChangeDueDateOfACard(card, date);
         }
         
-        public System.Threading.Tasks.Task ChangeDueDateOfACardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, System.DateTime date) {
+        public System.Threading.Tasks.Task ChangeDueDateOfACardAsync(ClientUI.KrabServices.CardDTO card, System.DateTime date) {
             return base.Channel.ChangeDueDateOfACardAsync(card, date);
         }
         
-        public void ChangeNameOfACard(ClientUI.KrabServicesBoardInteraction.CardDTO card, string newName) {
+        public void ChangeNameOfACard(ClientUI.KrabServices.CardDTO card, string newName) {
             base.Channel.ChangeNameOfACard(card, newName);
         }
         
-        public System.Threading.Tasks.Task ChangeNameOfACardAsync(ClientUI.KrabServicesBoardInteraction.CardDTO card, string newName) {
+        public System.Threading.Tasks.Task ChangeNameOfACardAsync(ClientUI.KrabServices.CardDTO card, string newName) {
             return base.Channel.ChangeNameOfACardAsync(card, newName);
+        }
+        
+        public ClientUI.KrabServices.BoardDTO[] GetBoards() {
+            return base.Channel.GetBoards();
+        }
+        
+        public System.Threading.Tasks.Task<ClientUI.KrabServices.BoardDTO[]> GetBoardsAsync() {
+            return base.Channel.GetBoardsAsync();
+        }
+        
+        public ClientUI.KrabServices.BoardDTO UpdateBoard(ClientUI.KrabServices.BoardDTO oldBoard, ClientUI.KrabServices.BoardDTO newBoard) {
+            return base.Channel.UpdateBoard(oldBoard, newBoard);
+        }
+        
+        public System.Threading.Tasks.Task<ClientUI.KrabServices.BoardDTO> UpdateBoardAsync(ClientUI.KrabServices.BoardDTO oldBoard, ClientUI.KrabServices.BoardDTO newBoard) {
+            return base.Channel.UpdateBoardAsync(oldBoard, newBoard);
+        }
+        
+        public void AddBoard(ClientUI.KrabServices.BoardDTO board) {
+            base.Channel.AddBoard(board);
+        }
+        
+        public System.Threading.Tasks.Task AddBoardAsync(ClientUI.KrabServices.BoardDTO board) {
+            return base.Channel.AddBoardAsync(board);
+        }
+        
+        public void RemoveBoard(ClientUI.KrabServices.BoardDTO board) {
+            base.Channel.RemoveBoard(board);
+        }
+        
+        public System.Threading.Tasks.Task RemoveBoardAsync(ClientUI.KrabServices.BoardDTO board) {
+            return base.Channel.RemoveBoardAsync(board);
+        }
+        
+        public void Register(ClientUI.KrabServices.UserDTO user) {
+            base.Channel.Register(user);
+        }
+        
+        public System.Threading.Tasks.Task RegisterAsync(ClientUI.KrabServices.UserDTO user) {
+            return base.Channel.RegisterAsync(user);
+        }
+        
+        public ClientUI.KrabServices.UserDTO Login(ClientUI.KrabServices.LoginDataDTO loginData) {
+            return base.Channel.Login(loginData);
+        }
+        
+        public System.Threading.Tasks.Task<ClientUI.KrabServices.UserDTO> LoginAsync(ClientUI.KrabServices.LoginDataDTO loginData) {
+            return base.Channel.LoginAsync(loginData);
         }
     }
 }

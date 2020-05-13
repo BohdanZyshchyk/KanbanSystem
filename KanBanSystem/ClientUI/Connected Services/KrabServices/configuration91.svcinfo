@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="+WX/S1FzbsY1d38LGXmTFwUVVOkUTsqzfcU+Ql1Yi0c=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="E0H5z1ijYfQ7REA79w1zhIgL4ca2ToyIY6Bl1QacZhs=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="wsDualHttpBinding" name="WSDualHttpBinding_IUserManagerService">
+    <bindingConfiguration bindingType="wsDualHttpBinding" name="WSDualHttpBinding_IKanbanSystemService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IUserManagerService</serializedValue>
+          <serializedValue>WSDualHttpBinding_IKanbanSystemService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -97,10 +97,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSDualHttpBinding_IUserManagerService" contract="KrabServicesUserManager.IUserManagerService" bindingType="wsDualHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WcfServiceInteraction/UserManagerService/" bindingConfiguration="WSDualHttpBinding_IUserManagerService">
+    <endpoint name="WSDualHttpBinding_IKanbanSystemService" contract="KrabServices.IKanbanSystemService" bindingType="wsDualHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WcfServiceInteraction/KanbanSystemService/" bindingConfiguration="WSDualHttpBinding_IKanbanSystemService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8733/Design_Time_Addresses/WcfServiceInteraction/UserManagerService/</serializedValue>
+          <serializedValue>http://localhost:8733/Design_Time_Addresses/WcfServiceInteraction/KanbanSystemService/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -109,10 +109,10 @@
           <serializedValue>wsDualHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IUserManagerService</serializedValue>
+          <serializedValue>WSDualHttpBinding_IKanbanSystemService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>KrabServicesUserManager.IUserManagerService</serializedValue>
+          <serializedValue>KrabServices.IKanbanSystemService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -172,7 +172,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IUserManagerService</serializedValue>
+          <serializedValue>WSDualHttpBinding_IKanbanSystemService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -209,10 +209,87 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetBoards">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBoardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="GetBoardsResult" nillable="true" type="q29:ArrayOfBoardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="oldBoard" nillable="true" type="q30:BoardDTO" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="newBoard" nillable="true" type="q31:BoardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBoardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="UpdateBoardResult" nillable="true" type="q32:BoardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q33:BoardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="board" nillable="true" type="q34:BoardDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveBoardResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="user" nillable="true" type="q35:UserDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="loginData" nillable="true" type="q36:LoginDataDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="LoginResult" nillable="true" type="q37:UserDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RefreshBoards">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="boards" nillable="true" type="q29:ArrayOfBoardDTO" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfServiceInteraction.DTO" minOccurs="0" name="boards" nillable="true" type="q38:ArrayOfBoardDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

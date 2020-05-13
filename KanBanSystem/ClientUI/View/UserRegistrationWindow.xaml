@@ -7,8 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="UserRegistrationWindow" Height="450" Width="401.19"
-        Loaded="Window_Loaded" x:Name="wind"
-        Closing="Window_Closing">
+        Loaded="Window_Loaded" x:Name="wind">
     <StackPanel>
             <StackPanel Margin="25">
             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}"

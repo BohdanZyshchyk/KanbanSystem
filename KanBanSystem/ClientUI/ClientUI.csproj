@@ -73,21 +73,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Callbacks\UserCallback.cs" />
-    <Compile Include="Connected Services\KrabServicesBoardInteraction\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\KrabServicesBoardManager\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\KrabServicesUserManager\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="View\CardWindow.xaml.cs">
       <DependentUpon>CardWindow.xaml</DependentUpon>
     </Compile>
@@ -119,42 +104,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\KrabServicesBoardInteraction\service.wsdl" />
-    <None Include="Connected Services\KrabServicesBoardInteraction\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesBoardInteraction\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesBoardInteraction\WcfServiceInteraction.DTO.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesBoardManager\ClientUI.KrabServicesBoardManager.BoardDTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\KrabServicesBoardManager\service.wsdl" />
-    <None Include="Connected Services\KrabServicesBoardManager\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesBoardManager\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesBoardManager\WcfServiceInteraction.DTO.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesUserManager\ClientUI.KrabServicesUserManager.UserDTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\KrabServicesUserManager\service.wsdl" />
-    <None Include="Connected Services\KrabServicesUserManager\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesUserManager\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\KrabServicesUserManager\WcfServiceInteraction.DTO.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -184,50 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\KrabServicesBoardInteraction\" />
-    <WCFMetadataStorage Include="Connected Services\KrabServicesBoardManager\" />
-    <WCFMetadataStorage Include="Connected Services\KrabServicesUserManager\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesBoardInteraction\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesBoardInteraction\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesBoardInteraction\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesBoardManager\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesBoardManager\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesBoardManager\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesUserManager\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesUserManager\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KrabServicesUserManager\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\Commands\" />

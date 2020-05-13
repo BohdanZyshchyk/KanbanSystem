@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ServiceModel;
+using System.Threading.Tasks;
 using WcfServiceInteraction.CallbackInterfaces;
 using WcfServiceInteraction.DTO;
 
 namespace WcfServiceInteraction.ServiceInterfaces
 {
+    /// <inheritdoc/>
     [ServiceContract(CallbackContract = typeof(IServiceCallback))]
-    public interface IBoardInteractionService
+    public interface IKanbanSystemService
     {
+        #region Board ineraction methods
         #region Board Interaction
         /// <summary>
         /// Assign a <paramref name="user"/> to a <paramref name="board"/>
@@ -127,6 +131,51 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="newName"></param>
         [OperationContract]
         void ChangeNameOfACard(CardDTO card, string newName);
+        #endregion
+        #endregion
+
+        #region Board manager methods
+        /// <summary>
+        /// Get all boards from database
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        Task<IEnumerable<BoardDTO>> GetBoards();
+        /// <summary>
+        /// Update an <paramref name="oldBoard"/> with data from <paramref name="newBoard"/>
+        /// </summary>
+        /// <param name="oldBoard"></param>
+        /// <param name="newBoard"></param>
+        /// <returns></returns>
+        [OperationContract]
+        Task<BoardDTO> UpdateBoard(BoardDTO oldBoard, BoardDTO newBoard);
+        /// <summary>
+        /// Add a new <paramref name="board"/> to database
+        /// </summary>
+        /// <param name="board"></param>
+        [OperationContract]
+        void AddBoard(BoardDTO board);
+        /// <summary>
+        /// Remove a specific <paramref name="board"/> from database
+        /// </summary>
+        /// <param name="board"></param>
+        [OperationContract]
+        void RemoveBoard(BoardDTO board);
+        #endregion
+
+        #region User manager methods
+        /// <summary>
+        /// Register a new <paramref name="user"/>
+        /// </summary>
+        /// <param name="user"></param>
+        [OperationContract]
+        void Register(UserDTO user);
+        /// <summary>
+        /// Login into system using <paramref name="loginData"/>
+        /// </summary>
+        /// <param name="loginData"></param>
+        [OperationContract]
+        Task<UserDTO> Login(LoginDataDTO loginData);
         #endregion
     }
 }
