@@ -12,6 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClientUI.ViewModel;
+using ClientUI.ViewModel.Helpers;
+
 
 namespace ClientUI.View
 {
@@ -20,24 +23,27 @@ namespace ClientUI.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> colors = new List<string>();
         public KanbanSystemServiceClient Proxy { get; set; }
+        public ApplicationViewModel viewModel;
+
         public MainWindow(ref KanbanSystemServiceClient proxy)
         {
             InitializeComponent();
             Proxy = proxy;
+            this.DataContext = viewModel;
         }
 
-        private void LoadedWind(object sender, RoutedEventArgs e)
-        {
-            colors = new List<string> { "1", "2" };
-            this.DataContext = colors;
-        }
+      
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.Owner.Show();
             this.Owner.Close();
+        }
+
+        private async void LoadedWind(object sender, RoutedEventArgs e)
+        {
+            viewModel = new ApplicationViewModel(ArrayToObservable.ArrayToObseve(await Proxy.GetBoardsAsync()));
         }
     }
 }

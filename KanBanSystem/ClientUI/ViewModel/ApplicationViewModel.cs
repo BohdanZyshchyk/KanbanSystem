@@ -30,10 +30,17 @@ namespace ClientUI.ViewModel
             }
         }
 
+        private BoardDTO selectedBoard;
 
-        public ApplicationViewModel()
+        public BoardDTO SelectedBoard
         {
+            get { return selectedBoard; }
+            set { selectedBoard = value; }
+        }
 
+        public ApplicationViewModel(ObservableCollection<BoardDTO> board)
+        {
+            MyBoards = board;
         }
 
 

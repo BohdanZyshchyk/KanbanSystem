@@ -78,6 +78,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ApplicationViewModel.cs" />
+    <Compile Include="ViewModel\Helpers\ArrayToObservable.cs" />
     <Compile Include="View\CardWindow.xaml.cs">
       <DependentUpon>CardWindow.xaml</DependentUpon>
     </Compile>

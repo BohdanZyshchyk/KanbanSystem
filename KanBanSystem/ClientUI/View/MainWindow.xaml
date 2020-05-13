@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="KrabBan" Height="450" Width="800" Loaded="LoadedWind"
         Closing="Window_Closing">
-    <Grid>
-        <ListBox x:Name="lvCardsList" >
+    <Grid >
+        <ListBox x:Name="lvCardsList" ItemsSource="{Binding MyBoards.CardListDTO}" >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
