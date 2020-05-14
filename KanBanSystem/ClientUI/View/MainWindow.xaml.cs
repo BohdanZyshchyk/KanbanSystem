@@ -44,7 +44,7 @@ namespace ClientUI.View
             {
                 colors.AddRange(c.LabelColors);
             }
-            var color = colors.FirstOrDefault();
+            //var color = colors.FirstOrDefault();
         }
 
         private void lvCardsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
