@@ -21,6 +21,7 @@ namespace ClientUI.View
             DependencyProperty.Register("LoginUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO()));
 
         private KanbanSystemServiceClient proxy;
+        public KanbanSystemServiceClient Proxy { get { return proxy; } }
         public UserCallback UserCallback { get; private set; }
         public LoginWindow()
         {

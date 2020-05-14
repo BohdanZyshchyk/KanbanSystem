@@ -24,26 +24,16 @@ namespace ClientUI.View
     public partial class MainWindow : Window
     {
         public KanbanSystemServiceClient Proxy { get; set; }
-        public ApplicationViewModel viewModel;
 
-        public MainWindow(ref KanbanSystemServiceClient proxy)
+        public MainWindow()
         {
             InitializeComponent();
-            Proxy = proxy;
-            this.DataContext = viewModel;
+            this.Proxy = (this.Owner as LoginWindow).Proxy;
         }
-
-      
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.Owner.Show();
             this.Owner.Close();
-        }
-
-        private async void LoadedWind(object sender, RoutedEventArgs e)
-        {
-            viewModel = new ApplicationViewModel(ArrayToObservable.ArrayToObseve(await Proxy.GetBoardsAsync()));
         }
     }
 }

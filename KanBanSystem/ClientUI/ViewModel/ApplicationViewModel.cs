@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using ClientUI.KrabServices;
+using ClientUI.View;
+using ClientUI.ViewModel.Helpers;
 
 namespace ClientUI.ViewModel
 {
@@ -38,19 +40,25 @@ namespace ClientUI.ViewModel
             get { return selectedBoard; }
             set { selectedBoard = value; }
         }
-
-        public ApplicationViewModel(ObservableCollection<BoardDTO> board)
+        public ApplicationViewModel()
         {
-            MyBoards = board;
+            SetBoards();
         }
-
+        private void SetBoards()
+        {
+            Application.Current.Dispatcher.Invoke(async () =>
+            {
+                var window = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
+                var fromDB = await window.Proxy.GetBoardsAsync();
+                var boards = ArrayToObservable.ArrayToObseve(fromDB);
+                MyBoards = boards;
+            });
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChange([CallerMemberName]string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-
     }
 }
