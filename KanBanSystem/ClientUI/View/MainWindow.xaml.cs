@@ -1,19 +1,8 @@
 ﻿using ClientUI.KrabServices;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using ClientUI.ViewModel;
-using ClientUI.ViewModel.Helpers;
 
 
 namespace ClientUI.View
@@ -28,12 +17,39 @@ namespace ClientUI.View
         public MainWindow()
         {
             InitializeComponent();
-            this.Proxy = (this.Owner as LoginWindow).Proxy;
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.Owner.Show();
             this.Owner.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void comb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //lvCardsList.Items.Clear();
+            var source1 = lvCardsList.ItemsSource;
+            var items = new List<CardListDTO>();
+            var cards = new List<CardDTO>();
+            var colors = new List<LabelColorDTO>();
+            foreach (var i in lvCardsList.Items)
+            {
+                items.Add(i as CardListDTO);
+                cards.AddRange((i as CardListDTO).Cards);
+            }
+            foreach (var c in cards)
+            {
+                colors.AddRange(c.LabelColors);
+            }
+            var color = colors.FirstOrDefault();
+        }
+
+        private void lvCardsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //lvCards.Items.Clear();
         }
     }
 }

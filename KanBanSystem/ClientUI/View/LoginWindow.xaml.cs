@@ -63,10 +63,9 @@ namespace ClientUI.View
             {
                 await this.Dispatcher.BeginInvoke(new Action(async() =>
                 {
-                    LoginUser.Password = Pswd.Password;
-                    LoginUser = await proxy.LoginAsync(LoginUser);
-                    var main = new MainWindow(ref this.proxy);
-                    main.Owner = this;
+                    //LoginUser.Password = Pswd.Password;
+                    //LoginUser = await proxy.LoginAsync(LoginUser);
+                    var main = new MainWindow() { Owner = this, Proxy = this.Proxy };
                     main.Show();
                     this.Hide();
                 }));
