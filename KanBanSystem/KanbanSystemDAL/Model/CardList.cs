@@ -8,7 +8,6 @@ namespace KanbanSystemDAL.Model
     public class CardList : IComparable<CardList>
     {
         public int Id { get; set; }
-        [Required]
         [StringLength(30)]
         public string Name { get; set; }
         public virtual ICollection<Card> Cards { get; set; }

@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202005131631306_LoginDataUser.designer.cs">
       <DependentUpon>202005131631306_LoginDataUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005140747355_ModelsWereChanged.cs" />
+    <Compile Include="Migrations\202005140747355_ModelsWereChanged.designer.cs">
+      <DependentUpon>202005140747355_ModelsWereChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Board.cs" />
     <Compile Include="Model\Card.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005131631306_LoginDataUser.resx">
       <DependentUpon>202005131631306_LoginDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005140747355_ModelsWereChanged.resx">
+      <DependentUpon>202005140747355_ModelsWereChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

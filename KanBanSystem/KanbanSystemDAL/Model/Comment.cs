@@ -7,7 +7,6 @@ namespace KanbanSystemDAL.Model
     public class Comment : IComparable<Comment>
     {
         public int Id { get; set; }
-        [Required]
         [StringLength(500)]
         public string CommentContent { get; set; }
         public virtual User CommentAuthor { get; set; }

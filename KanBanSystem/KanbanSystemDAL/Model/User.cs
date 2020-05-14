@@ -8,13 +8,10 @@ namespace KanbanSystemDAL.Model
     public class User : IComparable<User>
     {
         public int UserId { get; set; }
-        [Required]
         [StringLength(30)]
         public string UserName { get; set; }
-        [Required]
         [StringLength(30)]
         public string Email { get; set; }
-        [Required]
         [StringLength(30)]
         public string Password { get; set; }
         public virtual ICollection<Card> Cards { get; set; }
@@ -33,10 +30,10 @@ namespace KanbanSystemDAL.Model
 
         public int CompareTo(User other)
         {
-            //var res1 = this.UserName.CompareTo(other.UserName);
+            var res1 = this.UserName.CompareTo(other.UserName);
             var res2 = this.Email.CompareTo(other.Email);
             var res3 = this.Password.CompareTo(other.Password);
-            return /*res1.Equals(0) && */res2.Equals(0) && res3.Equals(0) ? 0 : -1;
+            return res1.Equals(0) && res2.Equals(0) && res3.Equals(0) ? 0 : -1;
         }
     }
 }

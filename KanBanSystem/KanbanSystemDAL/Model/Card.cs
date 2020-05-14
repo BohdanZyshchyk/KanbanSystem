@@ -8,13 +8,9 @@ namespace KanbanSystemDAL.Model
     public class Card : IComparable<Card>
     {
         public int Id { get; set; }
-        [Required]
         public DateTime StartDate { get; set; }
-        [Required]
         public DateTime DueDate { get; set; }
-        [Required]
         public string CardName { get; set; }
-        [Required]
         public string Description { get; set; }
         public virtual ICollection<LabelColor> LabelColors { get; set; }
         public virtual ICollection<User> Users { get; set; }

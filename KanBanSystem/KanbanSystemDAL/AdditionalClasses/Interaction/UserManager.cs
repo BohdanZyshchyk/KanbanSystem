@@ -30,7 +30,7 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             try
             {
-                var foundUser = await FindUserAndCheckAsync(user, "User with such login data not found", false);
+                var foundUser = await FindUserAndCheckLoginAsync(user, "User with such login data not found", false);
                 return foundUser;
             }
             catch (Exception ex)
@@ -42,6 +42,13 @@ namespace KanbanSystemDAL.AdditionalClasses.Interaction
         {
             var users = await context.Users.ToListAsync();
             var foundUser = users.FirstOrDefault(x => x.CompareTo(user).Equals(0));
+            foundUser = FindAndCheckNullabilityHelper<User>.CheckNullable(foundUser, msg, mustBeNull);
+            return foundUser;
+        }
+        private async Task<User> FindUserAndCheckLoginAsync(User user, string msg, bool mustBeNull)
+        {
+            var users = await context.Users.ToListAsync();
+            var foundUser = users.FirstOrDefault(x => x.Email.Equals(user.Email) && x.Password.Equals(user.Password));
             foundUser = FindAndCheckNullabilityHelper<User>.CheckNullable(foundUser, msg, mustBeNull);
             return foundUser;
         }
