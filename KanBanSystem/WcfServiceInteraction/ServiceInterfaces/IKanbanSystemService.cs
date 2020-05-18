@@ -4,6 +4,7 @@ using System.ServiceModel;
 using System.Threading.Tasks;
 using WcfServiceInteraction.CallbackInterfaces;
 using WcfServiceInteraction.DTO;
+using WcfServiceInteraction.Services.AdditionalClasses;
 
 namespace WcfServiceInteraction.ServiceInterfaces
 {
@@ -19,35 +20,35 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="board"></param>
         /// <param name="user"></param>
         [OperationContract]
-        void AddUserToBoard(BoardDTO board, UserDTO user);
+        void AddUserToBoard(BoardDTO board, UserInfo user);
         /// <summary>
         /// Remove a <paramref name="user"/> from a <paramref name="board"/>
         /// </summary>
         /// <param name="board"></param>
         /// <param name="user"></param>
         [OperationContract]
-        void RemoveUserFromBoard(BoardDTO board, UserDTO user);
+        void RemoveUserFromBoard(BoardDTO board, UserInfo user);
         /// <summary>
         /// Add a <paramref name="cardList"/> to a <paramref name="board"/>
         /// </summary>
         /// <param name="board"></param>
         /// <param name="cardList"></param>
         [OperationContract]
-        void AddCardListToBoard(BoardDTO board, CardListDTO cardList);
+        void AddCardListToBoard(BoardDTO board, CardListDTO cardList, string token);
         /// <summary>
         /// Remove a <paramref name="cardList"/> from a <paramref name="board"/>
         /// </summary>
         /// <param name="board"></param>
         /// <param name="cardList"></param>
         [OperationContract]
-        void RemoveCardListFromBoard(BoardDTO board, CardListDTO cardList);
+        void RemoveCardListFromBoard(BoardDTO board, CardListDTO cardList, string token);
         /// <summary>
         /// Rename a <paramref name="board"/> with a new <paramref name="newName"/>
         /// </summary>
         /// <param name="board"></param>
         /// <param name="newName"></param>
         [OperationContract]
-        void RenameBoard(BoardDTO board, string newName);
+        void RenameBoard(BoardDTO board, string newName, string token);
         #endregion
 
         #region Cardlist interaction
@@ -57,21 +58,21 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="cardList"></param>
         /// <param name="card"></param>
         [OperationContract]
-        void AddCardToCardList(CardListDTO cardList, CardDTO card);
+        void AddCardToCardList(CardListDTO cardList, CardDTO card, string token);
         /// <summary>
         /// Remove a <paramref name="card"/> from a <paramref name="cardList"/>
         /// </summary>
         /// <param name="cardList"></param>
         /// <param name="card"></param>
         [OperationContract]
-        void RemoveCardFromCardList(CardListDTO cardList, CardDTO card);
+        void RemoveCardFromCardList(CardListDTO cardList, CardDTO card, string token);
         /// <summary>
         /// Rename a <paramref name="cardList"/> with new <paramref name="newName"/>
         /// </summary>
         /// <param name="cardList"></param>
         /// <param name="newName"></param>
         [OperationContract]
-        void RenameCardList(CardListDTO cardList, string newName);
+        void RenameCardList(CardListDTO cardList, string newName, string token);
         #endregion
 
         #region Card interaction
@@ -81,56 +82,56 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="card"></param>
         /// <param name="user"></param>
         [OperationContract]
-        void AddUserToCard(CardDTO card, UserDTO user);
+        void AddUserToCard(CardDTO card, UserInfo user);
         /// <summary>
         /// Remove a <paramref name="user"/> from a <paramref name="card"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="user"></param>
         [OperationContract]
-        void RemoveUserFromCard(CardDTO card, UserDTO user);
+        void RemoveUserFromCard(CardDTO card, UserInfo user);
         /// <summary>
         /// Add a <paramref name="labelColor"/> to a <paramref name="card"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="labelColor"></param>
         [OperationContract]
-        void AddLabelColorToCard(CardDTO card, LabelColorDTO labelColor);
+        void AddLabelColorToCard(CardDTO card, LabelColorDTO labelColor, string token);
         /// <summary>
         /// Remove <paramref name="labelColor"/> from a <paramref name="card"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="labelColor"></param>
         [OperationContract]
-        void RemoveLabelColorFromCard(CardDTO card, LabelColorDTO labelColor);
+        void RemoveLabelColorFromCard(CardDTO card, LabelColorDTO labelColor, string token);
         /// <summary>
         /// Add a <paramref name="comment"/> to a <paramref name="card"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="comment"></param>
         [OperationContract]
-        void AddCommentToCard(CardDTO card, CommentDTO comment);
+        void AddCommentToCard(CardDTO card, CommentDTO comment, string token);
         /// <summary>
         /// Remove <paramref name="comment"/> from a <paramref name="card"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="comment"></param>
         [OperationContract]
-        void RemoveCommentFromCard(CardDTO card, CommentDTO comment);
+        void RemoveCommentFromCard(CardDTO card, CommentDTO comment, string token);
         /// <summary>
         /// Change due date of a task in the <paramref name="card"/> using new <paramref name="date"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="date"></param>
         [OperationContract]
-        void ChangeDueDateOfACard(CardDTO card, DateTime date);
+        void ChangeDueDateOfACard(CardDTO card, DateTime date, string token);
         /// <summary>
         /// Rename a <paramref name="card"/> with new <paramref name="newName"/>
         /// </summary>
         /// <param name="card"></param>
         /// <param name="newName"></param>
         [OperationContract]
-        void ChangeNameOfACard(CardDTO card, string newName);
+        void ChangeNameOfACard(CardDTO card, string newName, string token);
         #endregion
         #endregion
 
@@ -148,19 +149,19 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// <param name="newBoard"></param>
         /// <returns></returns>
         [OperationContract]
-        Task<BoardDTO> UpdateBoard(BoardDTO oldBoard, BoardDTO newBoard);
+        Task<BoardDTO> UpdateBoard(BoardDTO oldBoard, BoardDTO newBoard, string token);
         /// <summary>
         /// Add a new <paramref name="board"/> to database
         /// </summary>
         /// <param name="board"></param>
         [OperationContract]
-        void AddBoard(BoardDTO board);
+        void AddBoard(BoardDTO board, string token);
         /// <summary>
         /// Remove a specific <paramref name="board"/> from database
         /// </summary>
         /// <param name="board"></param>
         [OperationContract]
-        void RemoveBoard(BoardDTO board);
+        void RemoveBoard(BoardDTO board, string token);
         #endregion
 
         #region User manager methods
@@ -175,7 +176,14 @@ namespace WcfServiceInteraction.ServiceInterfaces
         /// </summary>
         /// <param name="loginData"></param>
         [OperationContract]
-        Task<UserDTO> Login(UserDTO user);
+        Task<UserInfo> Login(UserDTO user);
+        /// <summary>
+        /// Logout from system
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [OperationContract]
+        bool Logout(UserInfo user);
         #endregion
     }
 }
