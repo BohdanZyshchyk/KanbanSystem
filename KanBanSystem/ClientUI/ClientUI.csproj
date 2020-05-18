@@ -114,7 +114,7 @@
     <None Include="Connected Services\KrabServices\ClientUI.KrabServices.BoardDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\KrabServices\ClientUI.KrabServices.UserDTO.datasource">
+    <None Include="Connected Services\KrabServices\ClientUI.KrabServices.UserInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\KrabServices\service.wsdl" />
@@ -125,6 +125,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\KrabServices\WcfServiceInteraction.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\KrabServices\WcfServiceInteraction.Services.AdditionalClasses.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

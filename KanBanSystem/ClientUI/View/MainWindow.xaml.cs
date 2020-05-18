@@ -1,6 +1,4 @@
 ﻿using ClientUI.KrabServices;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,6 +11,16 @@ namespace ClientUI.View
     public partial class MainWindow : Window
     {
         public KanbanSystemServiceClient Proxy { get; set; }
+
+
+        public UserInfo UserInfo
+        {
+            get { return (UserInfo)GetValue(UserInfoProperty); }
+            set { SetValue(UserInfoProperty, value); }
+        }
+
+        public static readonly DependencyProperty UserInfoProperty =
+            DependencyProperty.Register("UserInfoMain", typeof(UserInfo), typeof(MainWindow), new PropertyMetadata(new UserInfo()));
 
         public MainWindow()
         {
@@ -30,26 +38,10 @@ namespace ClientUI.View
 
         private void comb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //lvCardsList.Items.Clear();
-            var source1 = lvCardsList.ItemsSource;
-            var items = new List<CardListDTO>();
-            var cards = new List<CardDTO>();
-            var colors = new List<LabelColorDTO>();
-            foreach (var i in lvCardsList.Items)
-            {
-                items.Add(i as CardListDTO);
-                cards.AddRange((i as CardListDTO).Cards);
-            }
-            foreach (var c in cards)
-            {
-                colors.AddRange(c.LabelColors);
-            }
-            //var color = colors.FirstOrDefault();
         }
 
         private void lvCardsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //lvCards.Items.Clear();
         }
     }
 }
