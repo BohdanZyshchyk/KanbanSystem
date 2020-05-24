@@ -42,6 +42,7 @@
                         HorizontalAlignment="Center">
                 <Button Margin="15 20"
                         Content="Login"
+                        IsDefault="True"
                         Click="Login_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
