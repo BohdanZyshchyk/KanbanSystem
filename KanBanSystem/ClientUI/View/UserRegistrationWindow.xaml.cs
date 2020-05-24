@@ -9,13 +9,14 @@ namespace ClientUI.View
     /// </summary>
     public partial class UserRegistrationWindow : Window
     {
-        public UserDTO RegistrationUser
+        public UserInfo UserInfo
         {
-            get { return (UserDTO)GetValue(RegistrationUserProperty); }
-            set { SetValue(RegistrationUserProperty, value); }
+            get { return (UserInfo)GetValue(UserInfoProperty); }
+            set { SetValue(UserInfoProperty, value); }
         }
-        public static readonly DependencyProperty RegistrationUserProperty =
-            DependencyProperty.Register("RegistrationUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO()));
+
+        public static readonly DependencyProperty UserInfoProperty =
+            DependencyProperty.Register("UserInfoRegister", typeof(UserInfo), typeof(UserRegistrationWindow), new PropertyMetadata(new UserInfo { User = new UserDTO() }));
 
         public KanbanSystemServiceClient Proxy { get; set; }
 
@@ -29,8 +30,8 @@ namespace ClientUI.View
         {
             try
             {
-                RegistrationUser.Password = Pswd.Password;
-                var result = await Proxy.RegisterAsync(RegistrationUser);
+                UserInfo.User.Password = Pswd.Password;
+                var result = await Proxy.RegisterAsync(UserInfo.User);
                 if (result)
                 {
                     var msg = (this.Owner as LoginWindow).UserCallback.Message;

@@ -2,7 +2,6 @@
 using ClientUI.KrabServices;
 using System;
 using System.Windows;
-using System.Windows.Threading;
 
 namespace ClientUI.View
 {
@@ -11,14 +10,15 @@ namespace ClientUI.View
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public UserDTO LoginUser
+
+        public UserInfo UserInfo
         {
-            get { return (UserDTO)GetValue(LoginUserProperty); }
-            set { SetValue(LoginUserProperty, value); }
+            get { return (UserInfo)GetValue(UserInfoProperty); }
+            set { SetValue(UserInfoProperty, value); }
         }
 
-        public static readonly DependencyProperty LoginUserProperty =
-            DependencyProperty.Register("LoginUser", typeof(UserDTO), typeof(UserRegistrationWindow), new PropertyMetadata(new UserDTO()));
+        public static readonly DependencyProperty UserInfoProperty =
+            DependencyProperty.Register("UserInfoLogin", typeof(UserInfo), typeof(LoginWindow), new PropertyMetadata(new UserInfo { User = new UserDTO() }));
 
         private KanbanSystemServiceClient proxy;
         public KanbanSystemServiceClient Proxy { get { return proxy; } }
@@ -34,7 +34,7 @@ namespace ClientUI.View
             {
                 var reg = new UserRegistrationWindow(ref this.proxy);
                 reg.Owner = this;
-                reg.RegistrationUser = this.LoginUser;
+                reg.UserInfo = this.UserInfo;
                 reg.ShowDialog();
             }
             catch (Exception ex)
@@ -61,11 +61,11 @@ namespace ClientUI.View
         {
             try
             {
-                await this.Dispatcher.BeginInvoke(new Action(async() =>
+                await this.Dispatcher.BeginInvoke(new Action(async () =>
                 {
-                    //LoginUser.Password = Pswd.Password;
-                    //LoginUser = await proxy.LoginAsync(LoginUser);
-                    var main = new MainWindow() { Owner = this, Proxy = this.Proxy };
+                    UserInfo.User.Password = Pswd.Password;
+                    UserInfo = await proxy.LoginAsync(UserInfo.User);
+                    var main = new MainWindow() { Owner = this, Proxy = this.Proxy, UserInfo = this.UserInfo };
                     main.Show();
                     this.Hide();
                 }));

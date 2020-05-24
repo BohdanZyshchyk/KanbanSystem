@@ -69,6 +69,7 @@
     <Compile Include="Helpers\MapperHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceInterfaces\IKanbanSystemService.cs" />
+    <Compile Include="Services\AdditionalClasses\UserInfo.cs" />
     <Compile Include="Services\KanbanSystemService.cs" />
     <Compile Include="Services\AdditionalClasses\KanbanSystemServiceClient.cs" />
   </ItemGroup>
