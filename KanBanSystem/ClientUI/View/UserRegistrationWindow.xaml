@@ -39,7 +39,8 @@
                         HorizontalAlignment="Center">
             <Button Margin="15 20"
                         Content="Register"
-                    Click="Register_Click"/>
+                    Click="Register_Click"
+                    IsDefault="True"/>
         </StackPanel>
     </StackPanel>
 </Window>

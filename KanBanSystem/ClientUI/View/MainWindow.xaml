@@ -43,7 +43,7 @@
                                 <materialDesign:PopupBox HorizontalAlignment="Right"
                                                          Padding="2 0 2 0" Grid.Column="1" Width="34">
                                     <StackPanel>
-                                        <Button Content="More" />
+                                        <Button Content="Add board" Command="{Binding AddCardListCommand}" />
                                         <Button Content="Options" />
                                     </StackPanel>
                                 </materialDesign:PopupBox>

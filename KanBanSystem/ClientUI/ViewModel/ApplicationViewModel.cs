@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using ClientUI.KrabServices;
 using ClientUI.View;
+using ClientUI.ViewModel.Commands;
 using ClientUI.ViewModel.Helpers;
 
 namespace ClientUI.ViewModel
@@ -17,6 +19,7 @@ namespace ClientUI.ViewModel
     {
 
         private ObservableCollection<BoardDTO> myBoards;
+        public RelayCommand AddCardListCommand { get; private set; }
 
         public ObservableCollection<BoardDTO> MyBoards
         {
@@ -43,7 +46,21 @@ namespace ClientUI.ViewModel
         public ApplicationViewModel()
         {
             SetBoards();
+            AddCardListCommand = new RelayCommand(AddCardList);
         }
+
+        private void AddCardList()
+        {
+            MessageBox.Show("Hello");
+
+            //Application.Current.Dispatcher.Invoke(async () =>
+            //{
+            //    var window = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
+            //    var listToAdd = new CardListDTO() { Name = "test", Board = SelectedBoard };
+            //    await window.Proxy.AddCardListToBoardAsync(SelectedBoard, listToAdd, "t@gmail.com");
+            //});
+        }
+
         private void SetBoards()
         {
             Application.Current.Dispatcher.Invoke(async () =>
