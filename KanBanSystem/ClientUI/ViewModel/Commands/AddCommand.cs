@@ -15,16 +15,17 @@ namespace ClientUI.ViewModel.Commands
 
         public RelayCommand(Action execute)
         {
-            _execute = execute; 
+            _execute = execute;
         }
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            _execute.Invoke();
+            if (parameter != null)
+                _execute.Invoke();
         }
     }
 }

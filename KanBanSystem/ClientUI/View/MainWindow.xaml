@@ -8,14 +8,13 @@
         xmlns:local="clr-namespace:ClientUI.View"
         mc:Ignorable="d"
         Title="KrabBan" Height="450" Width="800"
-        Closing="Window_Closing"
-        Loaded="Window_Loaded">
+        Closing="Window_Closing">
 
     <Grid DataContext="{StaticResource avm}">
         <StackPanel>
             <ComboBox Name="comb" ItemsSource="{Binding Path=MyBoards}"
                       materialDesign:HintAssist.Hint="Select board"
-                      SelectionChanged="comb_SelectionChanged"
+                      SelectedItem="{Binding SelectedBoard, Mode=TwoWay}"
                       Margin="5 2 5 0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -24,8 +23,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <ListBox Name="lvCardsList" DataContext="{Binding ElementName=comb, Path=SelectedItem.CardLists}" 
-                     ItemsSource="{Binding}"
-                     SelectionChanged="lvCardsList_SelectionChanged">
+                     ItemsSource="{Binding}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
@@ -33,7 +31,7 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel DataContext="{StaticResource avm}">
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="185*"/>
@@ -43,7 +41,8 @@
                                 <materialDesign:PopupBox HorizontalAlignment="Right"
                                                          Padding="2 0 2 0" Grid.Column="1" Width="34">
                                     <StackPanel>
-                                        <Button Content="Add board" Command="{Binding AddCardListCommand}" />
+                                        <Button Content="Add board" Command="{Binding AddCardListCommand}"
+                                                CommandParameter="{Binding SelectedBoard}"/>
                                         <Button Content="Options" />
                                     </StackPanel>
                                 </materialDesign:PopupBox>

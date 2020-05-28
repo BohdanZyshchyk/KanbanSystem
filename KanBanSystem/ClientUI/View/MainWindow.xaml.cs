@@ -31,17 +31,5 @@ namespace ClientUI.View
             this.Owner.Show();
             this.Owner.Close();
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void comb_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
-        private void lvCardsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
     }
 }
