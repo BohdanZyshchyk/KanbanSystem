@@ -16,6 +16,9 @@ namespace ClientUI.ViewModel
 
         private ObservableCollection<BoardDTO> myBoards;
         public RelayCommand AddCardListCommand { get; private set; }
+        public RelayCommand AddCardTOListCommand { get; private set; }
+        public RelayCommand AddUserToCardCommand { get; private set; }
+        public RelayCommand AddLabelToCardCommand { get; private set; }
         public UserInfo User { get; set; }
 
         public ObservableCollection<BoardDTO> MyBoards
@@ -34,6 +37,7 @@ namespace ClientUI.ViewModel
         }
 
         private BoardDTO selectedBoard;
+        private CardDTO selectedCard;
 
         public BoardDTO SelectedBoard
         {
@@ -44,11 +48,24 @@ namespace ClientUI.ViewModel
                 OnPropertyChange();
             }
         }
+
+        public CardDTO SelectedCard
+        {
+            get { return selectedCard; }
+            set
+            {
+                selectedCard = value;
+                OnPropertyChange();
+            }
+        }
         public ApplicationViewModel()
         {
             try
             {
                 AddCardListCommand = new RelayCommand(AddCardList);
+                AddCardTOListCommand = new RelayCommand(AddCardTOList);
+                AddUserToCardCommand = new RelayCommand(AddUserToCard);
+                AddLabelToCardCommand = new RelayCommand(AddLabelToCard);
                 var loginWindow = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
                 this.User = loginWindow.UserInfo;
             }
@@ -57,6 +74,32 @@ namespace ClientUI.ViewModel
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             SetBoards();
+        }
+
+        private void AddCardTOList()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddLabelToCard()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddUserToCard()
+        {
+            try
+            {
+                Application.Current.Dispatcher.Invoke(async () =>
+                {
+                    var window = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                    await window.Proxy.AddUserToCardAsync(SelectedCard, User); //тут треба передивитись, по ідеї можна додавати не тільки поточного юзера
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void AddCardList()
@@ -75,6 +118,8 @@ namespace ClientUI.ViewModel
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+
 
         private void SetBoards()
         {
