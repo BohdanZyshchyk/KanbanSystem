@@ -34,6 +34,7 @@ namespace ClientUI.UserControls
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow parentWindow = MainWindow.GetWindow();
             var main = new CardWindow() { Owner = this, Proxy = this.Proxy, UserInfo = this.UserInfo };
             main.Show();
             this.Hide();

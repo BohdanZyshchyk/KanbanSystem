@@ -78,6 +78,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CardControl.xaml.cs">
+      <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CardInList.xaml.cs">
       <DependentUpon>CardInList.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UserControls\CardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\CardInList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
