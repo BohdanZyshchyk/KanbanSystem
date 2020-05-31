@@ -8,7 +8,8 @@
         xmlns:local="clr-namespace:ClientUI.View"
         mc:Ignorable="d"
         Title="KrabBan" Height="450" Width="800"
-        Closing="Window_Closing">
+        Closing="Window_Closing"
+        xmlns:uc="clr-namespace:ClientUI.UserControls">
 
     <Grid DataContext="{StaticResource avm}">
         <StackPanel>
@@ -24,6 +25,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <!--CardList-->
+            <uc:CardControl MouseDoubleClick="Card_WindowOpen"></uc:CardControl>
             <ListBox Name="lvCardsList" DataContext="{Binding ElementName=comb, Path=SelectedItem.CardLists}" 
                      ItemsSource="{Binding}">
                 <ListBox.ItemsPanel>

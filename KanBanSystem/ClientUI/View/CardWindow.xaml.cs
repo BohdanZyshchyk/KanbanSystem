@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientUI.KrabServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace ClientUI.View
     /// </summary>
     public partial class CardWindow : Window
     {
+
+        public KanbanSystemServiceClient Proxy { get; set; }
         public CardWindow()
         {
             InitializeComponent();

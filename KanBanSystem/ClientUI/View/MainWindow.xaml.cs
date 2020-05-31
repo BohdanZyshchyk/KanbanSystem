@@ -31,5 +31,10 @@ namespace ClientUI.View
             this.Owner.Show();
             this.Owner.Close();
         }
+
+        private void Card_WindowOpen(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            //TO DO new CardWindow
+        }
     }
 }
