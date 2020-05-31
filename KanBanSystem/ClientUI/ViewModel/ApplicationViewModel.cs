@@ -38,6 +38,7 @@ namespace ClientUI.ViewModel
 
         private BoardDTO selectedBoard;
         private CardDTO selectedCard;
+        private CardListDTO selectedCardList;
 
         public BoardDTO SelectedBoard
         {
@@ -55,6 +56,15 @@ namespace ClientUI.ViewModel
             set
             {
                 selectedCard = value;
+                OnPropertyChange();
+            }
+        }
+        public CardListDTO SelectedCardList
+        {
+            get { return selectedCardList; }
+            set 
+            { 
+                selectedCardList = value;
                 OnPropertyChange();
             }
         }

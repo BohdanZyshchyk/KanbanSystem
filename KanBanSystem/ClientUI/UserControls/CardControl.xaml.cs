@@ -22,8 +22,37 @@ namespace ClientUI.UserControls
     /// </summary>
     public partial class CardControl : UserControl
     {
-        public string NameOfCard { get; set; }
-        public List<Color> LabelsColors { get; set; }
+        public CardsListControl Owner
+        {
+            get { return (CardsListControl)GetValue(OwnerProperty); }
+            set { SetValue(OwnerProperty, value); }
+        }
+
+        public static readonly DependencyProperty OwnerProperty =
+            DependencyProperty.Register("Owner", typeof(CardsListControl), typeof(CardControl), new PropertyMetadata(null));
+
+
+
+        public string NameOfCard
+        {
+            get { return (string)GetValue(CardNameProperty); }
+            set { SetValue(CardNameProperty, value); }
+        }
+
+        public static readonly DependencyProperty CardNameProperty =
+            DependencyProperty.Register("NameOfCard", typeof(string), typeof(CardControl), new PropertyMetadata(""));
+
+
+        public IEnumerable<string> ColorsOfLabels
+        {
+            get { return (IEnumerable<string>)GetValue(LabelColorsProperty); }
+            set { SetValue(LabelColorsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LabelColors.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LabelColorsProperty =
+            DependencyProperty.Register("ColorsOfLabels", typeof(IEnumerable<string>), typeof(CardControl), new PropertyMetadata(null));
+
         private KanbanSystemServiceClient proxy;
         public KanbanSystemServiceClient Proxy { get { return proxy; } }
 
@@ -34,10 +63,11 @@ namespace ClientUI.UserControls
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow parentWindow = MainWindow.GetWindow();
-            var main = new CardWindow() { Owner = this, Proxy = this.Proxy, UserInfo = this.UserInfo };
-            main.Show();
-            this.Hide();
+            //MainWindow parentWindow = MainWindow.GetWindow();
+            //var main = new MainWindow() { Owner = this, Proxy = this.Proxy, UserInfo = this.UserInfo };
+            //main.Show();
+            //this.Hide();
+            
         }
     }
 }

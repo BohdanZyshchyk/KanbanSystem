@@ -78,11 +78,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Converters\CardListsConverter.cs" />
+    <Compile Include="Converters\LabelColorsConverter.cs" />
+    <Compile Include="UserControls\BoardControl.xaml.cs">
+      <DependentUpon>BoardControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CardControl.xaml.cs">
       <DependentUpon>CardControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CardInList.xaml.cs">
-      <DependentUpon>CardInList.xaml</DependentUpon>
+    <Compile Include="UserControls\CardsListControl.xaml.cs">
+      <DependentUpon>CardsListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\Commands\AddCommand.cs" />
@@ -147,11 +152,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UserControls\BoardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\CardControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\CardInList.xaml">
+    <Page Include="UserControls\CardsListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

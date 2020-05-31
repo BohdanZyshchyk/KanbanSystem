@@ -20,129 +20,19 @@
                       Margin="5 2 5 0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Path=Name}"/>
+                        <uc:BoardControl BoardName="{Binding Name}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <!--CardList-->
-            <uc:CardControl MouseDoubleClick="Card_WindowOpen"></uc:CardControl>
-            <ListBox Name="lvCardsList" DataContext="{Binding ElementName=comb, Path=SelectedItem.CardLists}" 
-                     ItemsSource="{Binding}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-                <ListBox.ItemTemplate>
+            <ListView DataContext="{Binding SelectedBoard}"
+                      ItemsSource="{Binding CardLists}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel DataContext="{StaticResource avm}">
-                            <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="185*"/>
-                                    <ColumnDefinition Width="31*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBox Text="{Binding Name}" BorderBrush="White" Margin="10,0"/>
-                                <materialDesign:PopupBox HorizontalAlignment="Right"
-                                                         Padding="2 0 2 0" Grid.Column="1" Width="34">
-                                    <StackPanel>
-                                        <Button Content="Add board" Command="{Binding AddCardListCommand}"
-                                                CommandParameter="{Binding SelectedBoard}"/>
-                                        <Button Content="Options" />
-                                    </StackPanel>
-                                </materialDesign:PopupBox>
-                            </Grid>
-                            
-                            <ListBox Name="lvCards" Background="LightGray" 
-                                     DataContext="{Binding Cards}"
-                                     ItemsSource="{Binding}">
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <materialDesign:Card Background="AliceBlue"
-                                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-                                             Padding="0"
-                                             Width="200">
-                                            <Grid Height="85">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="6*"/>
-                                                    <RowDefinition Height="39*"/>
-                                                    <RowDefinition Height="40*"/>
-                                                </Grid.RowDefinitions>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="163*"/>
-                                                    <ColumnDefinition Width="37*"/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <ListBox Grid.Row="0" Grid.ColumnSpan="2" 
-                                                         VerticalAlignment="Top" 
-                                                         x:Name="lbColors" Height="2"
-                                                         DataContext="{Binding LabelColors}"
-                                                         ItemsSource="{Binding}">
-                                                    <ListBox.ItemContainerStyle>
-                                                        <Style TargetType="ListBoxItem">
-                                                            <Setter Property="Padding" Value="0"/>
-                                                        </Style>
-                                                    </ListBox.ItemContainerStyle>
-                                                    <ListBox.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <Ellipse>
-                                                                <Ellipse.Fill>
-                                                                    <SolidColorBrush Color="{Binding Color}"/>
-                                                                </Ellipse.Fill>
-                                                            </Ellipse>
-                                                        </DataTemplate>
-                                                    </ListBox.ItemTemplate>
-
-                                                </ListBox>
-                                                <TextBlock Grid.Column="0" Grid.Row="1"
-                                                           Margin="5 2"
-                                                           Text="{Binding CardName}"
-                                                           Style="{StaticResource MaterialDesignBody2TextBlock}" 
-                                                           Grid.ColumnSpan="2" Grid.RowSpan="2">
-                                                </TextBlock>
-                                                <materialDesign:PopupBox HorizontalAlignment="Right"
-                                                         Padding="2 0 2 0"
-                                                         Grid.Column="1" Grid.Row="1"
-                                                         Margin="0,2,2,2" Width="34" >
-                                                    <StackPanel>
-                                                        <Button Content="Add Label" />
-                                                        <Button Content="Options" />
-                                                    </StackPanel>
-                                                </materialDesign:PopupBox>
-
-                                                <ListBox x:Name="userList" Grid.Row="2"
-                                                         VerticalAlignment="Center"
-                                                         DataContext="{Binding Users}"
-                                                         ItemsSource="{Binding}">
-                                                    <ListBox.ItemsPanel>
-                                                        <ItemsPanelTemplate>
-                                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
-                                                        </ItemsPanelTemplate>
-                                                    </ListBox.ItemsPanel>
-                                                    <ListBox.ItemContainerStyle>
-                                                        <Style TargetType="ListBoxItem">
-                                                            <Setter Property="Padding" Value="0"/>
-                                                        </Style>
-                                                    </ListBox.ItemContainerStyle>
-                                                    <ListBox.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <materialDesign:Chip
-                                                                FontSize="10" 
-                                                                Content="{Binding Path=UserName}" 
-                                                                Margin="1 0 0 0" 
-                                                                Width="35" 
-                                                                Height="35" />
-                                                        </DataTemplate>
-                                                    </ListBox.ItemTemplate>
-                                                </ListBox>
-                                            </Grid>
-                                        </materialDesign:Card>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
-                        </StackPanel>
+                        <uc:CardsListControl CardListName="{Binding Name}"/>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
 
     </Grid>

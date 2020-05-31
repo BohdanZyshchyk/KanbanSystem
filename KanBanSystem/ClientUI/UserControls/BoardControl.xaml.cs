@@ -16,11 +16,21 @@ using System.Windows.Shapes;
 namespace ClientUI.UserControls
 {
     /// <summary>
-    /// Interaction logic for CardInList.xaml
+    /// Interaction logic for BoardControl.xaml
     /// </summary>
-    public partial class CardInList : UserControl
+    public partial class BoardControl : UserControl
     {
-        public CardInList()
+        public string BoardName
+        {
+            get { return (string)GetValue(BoardNameProperty); }
+            set { SetValue(BoardNameProperty, value); }
+        }
+
+        public static readonly DependencyProperty BoardNameProperty =
+            DependencyProperty.Register("BoardName", typeof(string), typeof(BoardControl), new PropertyMetadata(""));
+
+
+        public BoardControl()
         {
             InitializeComponent();
         }

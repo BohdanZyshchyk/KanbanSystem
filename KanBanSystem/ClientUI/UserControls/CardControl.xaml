@@ -8,9 +8,9 @@
              mc:Ignorable="d">
     <Grid>
         <materialDesign:Card Background="AliceBlue"
-                                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-                                             Padding="0"
-                                             Width="200">
+                             Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                             Padding="0"
+                             Width="200">
             <Grid Height="85">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
@@ -22,10 +22,10 @@
                     <ColumnDefinition Width="37*"/>
                 </Grid.ColumnDefinitions>
                 <ListBox Grid.Row="0" Grid.ColumnSpan="2" 
-                                                         VerticalAlignment="Top" 
-                                                         x:Name="lbColors" Height="2"
-                                                         DataContext="{Binding LabelColors}"
-                                                         ItemsSource="{Binding}">
+                         VerticalAlignment="Top" 
+                         x:Name="lbColors" Height="2"
+                         DataContext="{Binding LabelColors}"
+                         ItemsSource="{Binding}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Padding" Value="0"/>
@@ -43,15 +43,15 @@
 
                 </ListBox>
                 <TextBlock Grid.Column="0" Grid.Row="1"
-                                                           Margin="5 2"
-                                                           Text="Test"
-                                                           Style="{StaticResource MaterialDesignBody2TextBlock}" 
-                                                           Grid.ColumnSpan="2" Grid.RowSpan="2">
+                           Margin="5 2"
+                           Text="Test"
+                           Style="{StaticResource MaterialDesignBody2TextBlock}" 
+                           Grid.ColumnSpan="2" Grid.RowSpan="2">
                 </TextBlock>
                 <materialDesign:PopupBox HorizontalAlignment="Right"
-                                                         Padding="2 0 2 0"
-                                                         Grid.Column="1" Grid.Row="1"
-                                                         Margin="0,2,2,2" Width="34" >
+                                         Padding="2 0 2 0"
+                                         Grid.Column="1" Grid.Row="1"
+                                         Margin="0,2,2,2" Width="34" >
                     <StackPanel>
                         <Button Content="Edit card" Click="Edit_Click" />
                         <Button Content="Delete card" />
@@ -59,9 +59,9 @@
                 </materialDesign:PopupBox>
 
                 <ListBox x:Name="userList" Grid.Row="2"
-                                                         VerticalAlignment="Center"
-                                                         DataContext="{Binding Users}"
-                                                         ItemsSource="{Binding}">
+                         VerticalAlignment="Center"
+                         DataContext="{Binding Users}"
+                         ItemsSource="{Binding}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
@@ -75,11 +75,11 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <materialDesign:Chip
-                                                                FontSize="10" 
-                                                                Content="{Binding Path=UserName}" 
-                                                                Margin="1 0 0 0" 
-                                                                Width="35" 
-                                                                Height="35" />
+                                FontSize="10" 
+                                Content="{Binding Path=UserName}" 
+                                Margin="1 0 0 0" 
+                                Width="35" 
+                                Height="35" />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
