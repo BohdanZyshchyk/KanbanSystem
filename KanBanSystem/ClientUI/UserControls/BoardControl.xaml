@@ -15,24 +15,18 @@
         <conv:CardListsConverter x:Key="clConv"/>
     </UserControl.Resources>
     <Grid DataContext="{Binding MyBoards}">
-        <ListView ItemsSource="{Binding}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}"/>
-                        <ListView DataContext="{Binding CardLists}"
+        <StackPanel>
+            <TextBlock Text="{Binding Name}"/>
+            <ListView DataContext="{Binding CardLists}"
                                   ItemsSource="{Binding}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <UC:CardsListControl
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <UC:CardsListControl
                                         CardListName="{Binding Name}"
                                         Cards="{Binding Cards}"/>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </UserControl>

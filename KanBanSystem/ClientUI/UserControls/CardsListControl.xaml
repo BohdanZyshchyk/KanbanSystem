@@ -20,7 +20,7 @@
             Converter={StaticResource clConv}}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel >
                         <ListView DataContext="{Binding Cards}"
                       ItemsSource="{Binding}">
                             <ListView.ItemTemplate>

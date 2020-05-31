@@ -17,12 +17,8 @@
             <ComboBox Name="comb" ItemsSource="{Binding Path=MyBoards}"
                       materialDesign:HintAssist.Hint="Select board"
                       SelectedItem="{Binding SelectedBoard, Mode=TwoWay}"
+                      DisplayMemberPath="Name"
                       Margin="5 2 5 0">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <uc:BoardControl BoardName="{Binding Name}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
             </ComboBox>
             <!--CardList-->
             <ListView DataContext="{Binding SelectedBoard}"
