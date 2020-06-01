@@ -9,31 +9,28 @@
              xmlns:conv="clr-namespace:ClientUI.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             DataContext="{StaticResource avm}">
+             Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <conv:LabelColorsConverter x:Key="lcConv"/>
         <conv:CardListsConverter x:Key="clConv"/>
+        <conv:CardsConverter x:Key="cardsConv"/>
     </UserControl.Resources>
 
-    <Grid DataContext="{Binding Path=SelectedBoard}">
-        <ListView ItemsSource="{Binding Path=CardLists}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <ListView DataContext="{Binding Path=Cards}"
-                      ItemsSource="{Binding}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <UC:CardControl NameOfCard="{Binding Path=CardName}"
-                                        ColorsOfLabels=
-                                        "{Binding LabelColors}"
-                                         AssignedUsers="{Binding Path=Users}"/>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding Path=CardListName, Mode=TwoWay}"/>
+            <ListView DataContext="{Binding Path=ListCards}"
+                                ItemsSource="{Binding Path=ListCards,
+                                Converter={StaticResource cardsConv},
+                                Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <UC:CardControl NameOfCard="{Binding Path=CardName}"
+                                        ColorsOfLabels="{Binding Path=LabelColors}"
+                                        AssignedUsers="{Binding Path=Users}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </UserControl>

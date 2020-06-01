@@ -10,15 +10,15 @@ namespace ClientUI.ViewModel.Helpers
 {
     public static class ArrayToObservable
     {
-        public static ObservableCollection<BoardDTO> ArrayToObseve(BoardDTO [] boards)
+        public static ObservableCollection<T> ArrayToObseve<T>(IEnumerable<T> items)
         {
-            ObservableCollection<BoardDTO> observBoards = new ObservableCollection<BoardDTO>();
-            foreach (var item in boards)
+            var observ = new ObservableCollection<T>();
+            foreach (var item in items)
             {
-                observBoards.Add(item);
+                observ.Add(item);
             }
 
-            return observBoards;
+            return observ;
         }
     }
 }

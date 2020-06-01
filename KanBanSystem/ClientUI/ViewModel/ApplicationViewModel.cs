@@ -139,7 +139,7 @@ namespace ClientUI.ViewModel
                 {
                     var window = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
                     var fromDB = await window.Proxy.GetBoardsAsync();
-                    var boards = ArrayToObservable.ArrayToObseve(fromDB);
+                    var boards = ArrayToObservable.ArrayToObseve<BoardDTO>(fromDB);
                     MyBoards = boards;
                 });
             }

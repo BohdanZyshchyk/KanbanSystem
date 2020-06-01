@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ClientUI.KrabServices;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,20 +21,26 @@ namespace ClientUI.UserControls
             DependencyProperty.Register("CardListName", typeof(string), typeof(CardsListControl), new PropertyMetadata(""));
 
 
-        public IEnumerable<CardControl> Cards
+        public IEnumerable<CardDTO> ListCards
         {
-            get { return (IEnumerable<CardControl>)GetValue(CardsProperty); }
-            set { SetValue(CardsProperty, value); }
+            get { return (IEnumerable<CardDTO>)GetValue(ListCardsProperty); }
+            set { SetValue(ListCardsProperty, value); }
         }
 
-        public static readonly DependencyProperty CardsProperty =
-            DependencyProperty.Register("Cards", typeof(IEnumerable<CardControl>), typeof(CardsListControl), new PropertyMetadata(new ObservableCollection<CardControl>()));
+        public static readonly DependencyProperty ListCardsProperty =
+            DependencyProperty.Register("ListCards", typeof(IEnumerable<CardDTO>), typeof(CardsListControl), new PropertyMetadata(null));
 
 
         public CardsListControl()
         {
             InitializeComponent();
+            
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
             var name = this.CardListName;
+            var cards = this.ListCards;
         }
     }
 }

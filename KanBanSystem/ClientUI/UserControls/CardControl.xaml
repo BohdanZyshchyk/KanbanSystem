@@ -6,11 +6,15 @@
              xmlns:local="clr-namespace:ClientUI.UserControls"
              xmlns:conv="clr-namespace:ClientUI.Converters"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <conv:UsernameConverter x:Key="unConv"/>
+        <conv:LabelColorsConverter x:Key="lcConv"/>
+        <conv:UsersConverter x:Key="uConv"/>
+        <conv:LabelColorConverter x:Key="colorConv"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid >
         <materialDesign:Card Background="AliceBlue"
                              Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
                              Padding="0"
@@ -29,7 +33,8 @@
                          VerticalAlignment="Top" 
                          x:Name="lbColors" Height="2"
                          DataContext="{Binding Path=ColorsOfLabels}"
-                         ItemsSource="{Binding}">
+                         ItemsSource="{Binding Path=ColorsOfLabels,
+                    Converter={StaticResource lcConv}, Mode=TwoWay}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Padding" Value="0"/>
@@ -39,7 +44,8 @@
                         <DataTemplate>
                             <Ellipse>
                                 <Ellipse.Fill>
-                                    <SolidColorBrush Color="{Binding Path=Color}"/>
+                                    <SolidColorBrush Color="{Binding Path=Color,
+                                        Converter={StaticResource colorConv}}"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </DataTemplate>
@@ -65,7 +71,8 @@
                 <ListBox x:Name="userList" Grid.Row="2"
                          VerticalAlignment="Center"
                          DataContext="{Binding Path=AssignedUsers}"
-                         ItemsSource="{Binding}">
+                         ItemsSource="{Binding Path=AssignedUsers,
+                    Converter={StaticResource uConv}, Mode=TwoWay}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top"/>
@@ -81,7 +88,7 @@
                             <materialDesign:Chip
                                 FontSize="10" 
                                 Content="{Binding Path=UserName,
-                                Converter={StaticResource unConv}}" 
+                                Converter={StaticResource unConv}, Mode=TwoWay}" 
                                 Margin="1 0 0 0" 
                                 Width="35" 
                                 Height="35" />

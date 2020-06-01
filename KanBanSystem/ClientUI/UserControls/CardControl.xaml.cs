@@ -22,15 +22,6 @@ namespace ClientUI.UserControls
     /// </summary>
     public partial class CardControl : UserControl
     {
-        public CardsListControl Owner
-        {
-            get { return (CardsListControl)GetValue(OwnerProperty); }
-            set { SetValue(OwnerProperty, value); }
-        }
-
-        public static readonly DependencyProperty OwnerProperty =
-            DependencyProperty.Register("Owner", typeof(CardsListControl), typeof(CardControl), new PropertyMetadata(null));
-
         public IEnumerable<UserDTO> AssignedUsers
         {
             get { return (IEnumerable<UserDTO>)GetValue(AssignedUsersProperty); }
@@ -74,6 +65,11 @@ namespace ClientUI.UserControls
             //main.Show();
             //this.Hide();
             
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var name = this.NameOfCard;
         }
     }
 }

@@ -79,8 +79,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Converters\CardListsConverter.cs" />
+    <Compile Include="Converters\CardsConverter.cs" />
+    <Compile Include="Converters\LabelColorConverter.cs" />
     <Compile Include="Converters\LabelColorsConverter.cs" />
     <Compile Include="Converters\UsernameConverter.cs" />
+    <Compile Include="Converters\UsersConverter.cs" />
     <Compile Include="UserControls\BoardControl.xaml.cs">
       <DependentUpon>BoardControl.xaml</DependentUpon>
     </Compile>

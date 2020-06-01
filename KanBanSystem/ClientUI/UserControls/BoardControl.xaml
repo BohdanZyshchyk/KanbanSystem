@@ -14,17 +14,19 @@
     <UserControl.Resources>
         <conv:LabelColorsConverter x:Key="lcConv"/>
         <conv:CardListsConverter x:Key="clConv"/>
+        <conv:CardsConverter x:Key="cardsConv"/>
     </UserControl.Resources>
-    <Grid DataContext="{Binding MyBoards}">
+    <Grid DataContext="{Binding Path=MyBoards}">
         <StackPanel>
-            <TextBlock Text="{Binding Name}"/>
-            <ListView DataContext="{Binding CardLists}"
+            <TextBlock Text="{Binding Path=Name}"/>
+            <ListView DataContext="{Binding Path=CardLists}"
                                   ItemsSource="{Binding}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <UC:CardsListControl
-                                        CardListName="{Binding Name}"
-                                        Cards="{Binding Cards}"/>
+                            CardListName="{Binding Path=Name}"
+                            ListCards="{Binding Path=Cards,
+                            Converter={StaticResource cardsConv}}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

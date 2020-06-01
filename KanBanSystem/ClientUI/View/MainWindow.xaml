@@ -16,20 +16,20 @@
             <!--board selector-->
             <ComboBox Name="comb" ItemsSource="{Binding Path=MyBoards}"
                       materialDesign:HintAssist.Hint="Select board"
-                      SelectedItem="{Binding SelectedBoard, Mode=TwoWay}"
+                      SelectedItem="{Binding Path=SelectedBoard, Mode=TwoWay}"
                       DisplayMemberPath="Name"
                       Margin="5 2 5 0">
             </ComboBox>
-            <!--CardList-->
-            <ListView DataContext="{Binding SelectedBoard}"
-                      ItemsSource="{Binding CardLists}">
+            <!--CardLists-->
+            <ListView DataContext="{Binding Path=SelectedBoard}"
+                      ItemsSource="{Binding Path=CardLists}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <uc:CardsListControl CardListName="{Binding Name}"/>
+                        <uc:CardsListControl CardListName="{Binding Path=Name}"
+                                             ListCards="{Binding Path=Cards}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-
     </Grid>
 </Window>

@@ -3,17 +3,20 @@ using ClientUI.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace ClientUI.Converters
 {
-    public class LabelColorsConverter : IValueConverter
+    public class UsersConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var labelColors = value as IEnumerable<LabelColorDTO>;
-            var colors = ArrayToObservable.ArrayToObseve<LabelColorDTO>(labelColors);
-            return colors;
+            var userDTOs = value as IEnumerable<UserDTO>;
+            var users = ArrayToObservable.ArrayToObseve<UserDTO>(userDTOs);
+            return users;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
