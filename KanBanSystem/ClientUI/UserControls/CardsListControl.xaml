@@ -27,8 +27,8 @@
                                 <DataTemplate>
                                     <UC:CardControl NameOfCard="{Binding CardName}"
                                         ColorsOfLabels=
-                                        "{Binding LabelColors, 
-                                        Converter={StaticResource lcConv}}"/>
+                                        "{Binding LabelColors}"
+                                         AssignedUsers="{Binding Users}"/>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>

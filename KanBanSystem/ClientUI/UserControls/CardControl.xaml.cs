@@ -28,10 +28,19 @@ namespace ClientUI.UserControls
             set { SetValue(OwnerProperty, value); }
         }
 
+
+        public ICollection<UserDTO> AssignedUsers
+        {
+            get { return (ICollection<UserDTO>)GetValue(UsersProperty); }
+            set { SetValue(UsersProperty, value); }
+        }
+
+        public static readonly DependencyProperty UsersProperty =
+            DependencyProperty.Register("AssignedUsers", typeof(ICollection<UserDTO>), typeof(CardControl), new PropertyMetadata(null));
+
+
         public static readonly DependencyProperty OwnerProperty =
             DependencyProperty.Register("Owner", typeof(CardsListControl), typeof(CardControl), new PropertyMetadata(null));
-
-
 
         public string NameOfCard
         {
@@ -43,15 +52,15 @@ namespace ClientUI.UserControls
             DependencyProperty.Register("NameOfCard", typeof(string), typeof(CardControl), new PropertyMetadata(""));
 
 
-        public IEnumerable<string> ColorsOfLabels
+        public ICollection<LabelColorDTO> ColorsOfLabels
         {
-            get { return (IEnumerable<string>)GetValue(LabelColorsProperty); }
+            get { return (ICollection<LabelColorDTO>)GetValue(LabelColorsProperty); }
             set { SetValue(LabelColorsProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for LabelColors.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LabelColorsProperty =
-            DependencyProperty.Register("ColorsOfLabels", typeof(IEnumerable<string>), typeof(CardControl), new PropertyMetadata(null));
+            DependencyProperty.Register("ColorsOfLabels", typeof(ICollection<LabelColorDTO>), typeof(CardControl), new PropertyMetadata(null));
 
         private KanbanSystemServiceClient proxy;
         public KanbanSystemServiceClient Proxy { get { return proxy; } }

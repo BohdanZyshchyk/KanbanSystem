@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Converters\CardListsConverter.cs" />
     <Compile Include="Converters\LabelColorsConverter.cs" />
+    <Compile Include="Converters\UsernameConverter.cs" />
     <Compile Include="UserControls\BoardControl.xaml.cs">
       <DependentUpon>BoardControl.xaml</DependentUpon>
     </Compile>

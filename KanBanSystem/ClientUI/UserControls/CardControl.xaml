@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientUI.UserControls"
+             xmlns:conv="clr-namespace:ClientUI.Converters"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <conv:UsernameConverter x:Key="unConv"/>
+    </UserControl.Resources>
     <Grid>
         <materialDesign:Card Background="AliceBlue"
                              Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
@@ -24,7 +28,7 @@
                 <ListBox Grid.Row="0" Grid.ColumnSpan="2" 
                          VerticalAlignment="Top" 
                          x:Name="lbColors" Height="2"
-                         DataContext="{Binding LabelColors}"
+                         DataContext="{Binding ColorsOfLabels}"
                          ItemsSource="{Binding}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
@@ -44,7 +48,7 @@
                 </ListBox>
                 <TextBlock Grid.Column="0" Grid.Row="1"
                            Margin="5 2"
-                           Text="Test"
+                           Text="{Binding NameOfCard}"
                            Style="{StaticResource MaterialDesignBody2TextBlock}" 
                            Grid.ColumnSpan="2" Grid.RowSpan="2">
                 </TextBlock>
@@ -60,11 +64,11 @@
 
                 <ListBox x:Name="userList" Grid.Row="2"
                          VerticalAlignment="Center"
-                         DataContext="{Binding Users}"
+                         DataContext="{Binding AssignedUsers}"
                          ItemsSource="{Binding}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top"/>
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
                     <ListBox.ItemContainerStyle>
@@ -76,7 +80,8 @@
                         <DataTemplate>
                             <materialDesign:Chip
                                 FontSize="10" 
-                                Content="{Binding Path=UserName}" 
+                                Content="{Binding Path=UserName,
+                                Converter={StaticResource unConv}}" 
                                 Margin="1 0 0 0" 
                                 Width="35" 
                                 Height="35" />
