@@ -15,20 +15,19 @@
         <conv:CardListsConverter x:Key="clConv"/>
     </UserControl.Resources>
 
-    <Grid DataContext="{Binding SelectedBoard}">
-        <ListView ItemsSource="{Binding CardLists,
-            Converter={StaticResource clConv}}">
+    <Grid DataContext="{Binding Path=SelectedBoard}">
+        <ListView ItemsSource="{Binding Path=CardLists}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel >
-                        <ListView DataContext="{Binding Cards}"
+                    <StackPanel>
+                        <ListView DataContext="{Binding Path=Cards}"
                       ItemsSource="{Binding}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <UC:CardControl NameOfCard="{Binding CardName}"
+                                    <UC:CardControl NameOfCard="{Binding Path=CardName}"
                                         ColorsOfLabels=
                                         "{Binding LabelColors}"
-                                         AssignedUsers="{Binding Users}"/>
+                                         AssignedUsers="{Binding Path=Users}"/>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>

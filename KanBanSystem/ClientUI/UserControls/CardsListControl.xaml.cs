@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ClientUI.UserControls
 {
@@ -33,17 +22,18 @@ namespace ClientUI.UserControls
 
         public IEnumerable<CardControl> Cards
         {
-            get { return (IEnumerable< CardControl>)GetValue(CardsProperty); }
+            get { return (IEnumerable<CardControl>)GetValue(CardsProperty); }
             set { SetValue(CardsProperty, value); }
         }
 
         public static readonly DependencyProperty CardsProperty =
-            DependencyProperty.Register("Cards", typeof(IEnumerable< CardControl>), typeof(CardsListControl), new PropertyMetadata(new ObservableCollection<CardControl>()));
+            DependencyProperty.Register("Cards", typeof(IEnumerable<CardControl>), typeof(CardsListControl), new PropertyMetadata(new ObservableCollection<CardControl>()));
 
 
         public CardsListControl()
         {
             InitializeComponent();
+            var name = this.CardListName;
         }
     }
 }

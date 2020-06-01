@@ -28,7 +28,7 @@
                 <ListBox Grid.Row="0" Grid.ColumnSpan="2" 
                          VerticalAlignment="Top" 
                          x:Name="lbColors" Height="2"
-                         DataContext="{Binding ColorsOfLabels}"
+                         DataContext="{Binding Path=ColorsOfLabels}"
                          ItemsSource="{Binding}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
@@ -39,7 +39,7 @@
                         <DataTemplate>
                             <Ellipse>
                                 <Ellipse.Fill>
-                                    <SolidColorBrush Color="{Binding Color}"/>
+                                    <SolidColorBrush Color="{Binding Path=Color}"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </DataTemplate>
@@ -48,7 +48,7 @@
                 </ListBox>
                 <TextBlock Grid.Column="0" Grid.Row="1"
                            Margin="5 2"
-                           Text="{Binding NameOfCard}"
+                           Text="{Binding Path=NameOfCard}"
                            Style="{StaticResource MaterialDesignBody2TextBlock}" 
                            Grid.ColumnSpan="2" Grid.RowSpan="2">
                 </TextBlock>
@@ -64,7 +64,7 @@
 
                 <ListBox x:Name="userList" Grid.Row="2"
                          VerticalAlignment="Center"
-                         DataContext="{Binding AssignedUsers}"
+                         DataContext="{Binding Path=AssignedUsers}"
                          ItemsSource="{Binding}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
