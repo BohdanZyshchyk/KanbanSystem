@@ -12,7 +12,7 @@ namespace ClientUI.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var cards = value as IEnumerable<CardDTO>;
-            var lists = ArrayToObservable.ArrayToObseve<CardDTO>(cards);
+            var lists = ArrayToObservable.ArrayToObserve<CardDTO>(cards);
             return lists;
         }
 

@@ -15,7 +15,7 @@ namespace ClientUI.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var userDTOs = value as IEnumerable<UserDTO>;
-            var users = ArrayToObservable.ArrayToObseve<UserDTO>(userDTOs);
+            var users = ArrayToObservable.ArrayToObserve<UserDTO>(userDTOs);
             return users;
         }
 

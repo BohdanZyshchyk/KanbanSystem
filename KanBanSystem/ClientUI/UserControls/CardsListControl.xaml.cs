@@ -1,6 +1,5 @@
 ﻿using ClientUI.KrabServices;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -34,7 +33,6 @@ namespace ClientUI.UserControls
         public CardsListControl()
         {
             InitializeComponent();
-            
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

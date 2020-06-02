@@ -10,7 +10,7 @@ namespace ClientUI.ViewModel.Helpers
 {
     public static class ArrayToObservable
     {
-        public static ObservableCollection<T> ArrayToObseve<T>(IEnumerable<T> items)
+        public static ObservableCollection<T> ArrayToObserve<T>(IEnumerable<T> items)
         {
             var observ = new ObservableCollection<T>();
             foreach (var item in items)

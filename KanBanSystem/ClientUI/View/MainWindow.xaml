@@ -7,14 +7,14 @@
         xmlns:VM="clr-namespace:ClientUI.ViewModel"
         xmlns:local="clr-namespace:ClientUI.View"
         mc:Ignorable="d"
-        Title="KrabBan" Height="450" Width="800"
+        Title="KrabBan" Height="600" Width="800"
         Closing="Window_Closing"
         xmlns:uc="clr-namespace:ClientUI.UserControls">
 
     <Grid DataContext="{StaticResource avm}">
         <StackPanel>
             <!--board selector-->
-            <ComboBox Name="comb" ItemsSource="{Binding Path=MyBoards}"
+            <ComboBox x:Name="comb" ItemsSource="{Binding Path=MyBoards}"
                       materialDesign:HintAssist.Hint="Select board"
                       SelectedItem="{Binding Path=SelectedBoard, Mode=TwoWay}"
                       DisplayMemberPath="Name"
@@ -23,10 +23,16 @@
             <!--CardLists-->
             <ListView DataContext="{Binding Path=SelectedBoard}"
                       ItemsSource="{Binding Path=CardLists}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <uc:CardsListControl CardListName="{Binding Path=Name}"
-                                             ListCards="{Binding Path=Cards}"/>
+                                             ListCards="{Binding Path=Cards}"
+                                             Margin="2"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

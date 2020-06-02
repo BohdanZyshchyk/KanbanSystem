@@ -16,7 +16,8 @@
         <conv:CardsConverter x:Key="cardsConv"/>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid
+        Background="Aqua">
         <StackPanel>
             <TextBlock Text="{Binding Path=CardListName, Mode=TwoWay}"/>
             <ListView DataContext="{Binding Path=ListCards}"

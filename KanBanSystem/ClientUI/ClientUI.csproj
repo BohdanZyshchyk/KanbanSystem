@@ -84,9 +84,6 @@
     <Compile Include="Converters\LabelColorsConverter.cs" />
     <Compile Include="Converters\UsernameConverter.cs" />
     <Compile Include="Converters\UsersConverter.cs" />
-    <Compile Include="UserControls\BoardControl.xaml.cs">
-      <DependentUpon>BoardControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\CardControl.xaml.cs">
       <DependentUpon>CardControl.xaml</DependentUpon>
     </Compile>
@@ -156,10 +153,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UserControls\BoardControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControls\CardControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

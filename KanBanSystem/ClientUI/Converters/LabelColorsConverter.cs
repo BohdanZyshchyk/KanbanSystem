@@ -12,7 +12,7 @@ namespace ClientUI.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var labelColors = value as IEnumerable<LabelColorDTO>;
-            var colors = ArrayToObservable.ArrayToObseve<LabelColorDTO>(labelColors);
+            var colors = ArrayToObservable.ArrayToObserve<LabelColorDTO>(labelColors);
             return colors;
         }
 
